@@ -24,6 +24,8 @@ setuptools.setup(
     install_requires=open(package_requirements_file).read().split("\n"),  # Automatically install the requirements
     extras_require={
         "dev": [
+            "build",
+            "twine",
             "setuptools>=42",
             "wheel",
             "pytest",
