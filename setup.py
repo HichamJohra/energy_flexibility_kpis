@@ -5,6 +5,7 @@ docs_requirements_file = "docs/requirements.txt"
 documentation_requirements = open(docs_requirements_file).read().split("\n")
 
 setuptools.setup(
+    version="0.0.0",
     name="energy_flexibility_kpis",  # Name of the package
     author="Hicham Johra",
     author_email="hj@build.aau.dk",
