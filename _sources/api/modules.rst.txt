@@ -1,0 +1,7 @@
+energy_flexibility_kpis
+=======================
+
+.. toctree::
+   :maxdepth: 4
+
+   energy_flexibility_kpis

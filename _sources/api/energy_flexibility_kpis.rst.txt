@@ -1,0 +1,23 @@
+energy\_flexibility\_kpis package
+=================================
+
+.. automodule:: energy_flexibility_kpis
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Subpackages
+-----------
+
+.. toctree::
+   :maxdepth: 4
+
+   energy_flexibility_kpis.test
+
+Submodules
+----------
+
+.. toctree::
+   :maxdepth: 4
+
+   energy_flexibility_kpis.kpi
