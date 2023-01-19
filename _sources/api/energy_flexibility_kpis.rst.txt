@@ -21,3 +21,4 @@ Submodules
    :maxdepth: 4
 
    energy_flexibility_kpis.kpi
+   energy_flexibility_kpis.utilities

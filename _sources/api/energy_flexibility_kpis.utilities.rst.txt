@@ -1,0 +1,7 @@
+energy\_flexibility\_kpis.utilities module
+==========================================
+
+.. automodule:: energy_flexibility_kpis.utilities
+   :members:
+   :undoc-members:
+   :show-inheritance:
