@@ -5,3 +5,11 @@ energy\_flexibility\_kpis.test package
    :members:
    :undoc-members:
    :show-inheritance:
+
+Submodules
+----------
+
+.. toctree::
+   :maxdepth: 4
+
+   energy_flexibility_kpis.test.test_kpi
