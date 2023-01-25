@@ -72,7 +72,7 @@ def flexibility_factor(generic_electricity_consumption_profile: List[float], hig
         (df['timestamp'] >= high_price_start_timestamp) & (df['timestamp'] <= high_price_end_timestamp)
     ]['generic_electricity_consumption'].sum()
     low_price_electricity_consumption = df[
-        (df['timestamp'] < high_price_start_timestamp) & (df['timestamp'] > high_price_end_timestamp)
+        (df['timestamp'] < high_price_start_timestamp) | (df['timestamp'] > high_price_end_timestamp)
     ]['generic_electricity_consumption'].sum()
     flexibility_factor = (low_price_electricity_consumption - high_price_electricity_consumption)/\
         (low_price_electricity_consumption + high_price_electricity_consumption)
