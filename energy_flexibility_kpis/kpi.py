@@ -11,7 +11,7 @@ from energy_flexibility_kpis.utilities import Parser
 def peak_power_reduction(grid_peak_timestamp: Union[str, datetime.datetime], baseline_electric_power_profile: List[float], flexible_electric_power_profile: List[float], timestamps: List[Union[str, datetime.datetime]]) -> float:
     """Reduced power demand during peak hour due to flexible operation.
 
-    Calculates the difference in daily peak between the baseline and flexible profiles.
+    Calculates the difference in daily peak between the baseline and flexible profiles at the grid peak timestamp.
 
     Parameters
     ----------
@@ -107,7 +107,7 @@ def load_factor(generic_electric_power_profile: List[float], load_profile_peak_t
 
     return load_factor
 
-def building_energy_flexibility_index(baseline_electric_power_profile: List[float], flexible_electric_power_profile: List[float]):
+def building_energy_flexibility_index(baseline_electric_power_profile: List[float], flexible_electric_power_profile: List[float]) -> float:
     """The average power reduction/increase.
     
     Calculates the difference between the energy used by a baseline (reference) load profile scenario and the energy used in a new, flexible event scenario divided by the duration of the event.
