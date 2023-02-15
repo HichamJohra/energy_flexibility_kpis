@@ -1,8 +1,6 @@
-Usage
-=====
-
+============
 Installation
-------------
+============
 
 To use energy_flexibility_kpis, first install it using pip:
 
