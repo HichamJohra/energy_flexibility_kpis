@@ -293,6 +293,18 @@ def ramp(
 
     return kpi
 
+def power_payback_ratio(
+        timestamps: List[Union[str, datetime.datetime]], 
+        generic_electric_power_profile: List[float],
+        evaluation_start_timestamp: Union[str, datetime.datetime] = None, evaluation_end_timestamp: Union[str, datetime.datetime] = None
+) -> float:
+    df = __set_df(
+        evaluation_start_timestamp=evaluation_start_timestamp, 
+        evaluation_end_timestamp=evaluation_end_timestamp,
+        timestamps=timestamps, 
+        generic_electric_power_profile=generic_electric_power_profile,
+    )
+
 def __set_df(
     evaluation_start_timestamp: Union[str, datetime.datetime], evaluation_end_timestamp: Union[str, datetime.datetime], 
     timestamps: List[Union[str, datetime.datetime]], baseline_electric_power_profile: List[float] = None, flexible_electric_power_profile: List[float] = None,
