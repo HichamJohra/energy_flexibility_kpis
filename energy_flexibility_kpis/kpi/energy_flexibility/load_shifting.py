@@ -1,3 +1,4 @@
+import datetime
 from typing import List, Union
 from energy_flexibility_kpis.kpi.base import KPI
 
@@ -5,11 +6,22 @@ class EnergyShiftFlexibilityFactor(KPI):
     """Measures the capability for shifting the energy consumption between periods: in here 
     from daytime to night time."""
 
-    def __init__(*args, **kwargs) -> None:
-        super().__init__(*args, **kwargs)
+    def __init__(self):
+        super().__init__()
 
-    def calculate(self) -> Union[float, List[float]]:
-        _ = super().calculate()
+    @classmethod
+    def calculate(
+        cls,
+        timestamps: Union[List[int], List[datetime.datetime], List[str]] = None,
+        evaluation_start_timestamp: Union[int, datetime.datetime, str] = None,
+        evaluation_end_timestamp: Union[int, datetime.datetime, str] = None,
+    ) -> float:
+        _, vs = super().calculate(
+            timestamps=timestamps,
+            evaluation_start_timestamp=evaluation_start_timestamp,
+            evaluation_end_timestamp=evaluation_end_timestamp,
+        )
+        
         raise NotImplementedError
     
 class FlexibilityFactor(KPI):
@@ -17,11 +29,22 @@ class FlexibilityFactor(KPI):
     low-load periods. It ranges between -1 (quantify was only during high-load periods) and 1 
     (quantify was only during low-load periods)."""
 
-    def __init__(*args, **kwargs) -> None:
-        super().__init__(*args, **kwargs)
+    def __init__(self):
+        super().__init__()
 
-    def calculate(self) -> Union[float, List[float]]:
-        _ = super().calculate()
+    @classmethod
+    def calculate(
+        cls,
+        timestamps: Union[List[int], List[datetime.datetime], List[str]] = None,
+        evaluation_start_timestamp: Union[int, datetime.datetime, str] = None,
+        evaluation_end_timestamp: Union[int, datetime.datetime, str] = None,
+    ) -> float:
+        _, vs = super().calculate(
+            timestamps=timestamps,
+            evaluation_start_timestamp=evaluation_start_timestamp,
+            evaluation_end_timestamp=evaluation_end_timestamp,
+        )
+        
         raise NotImplementedError
     
 class FlexibilityIndex(KPI):
@@ -32,11 +55,22 @@ class FlexibilityIndex(KPI):
     usage during the periods of high and medium price, the flexibility index takes the maximum 
     value of 100%."""
 
-    def __init__(*args, **kwargs) -> None:
-        super().__init__(*args, **kwargs)
+    def __init__(self):
+        super().__init__()
 
-    def calculate(self) -> Union[float, List[float]]:
-        _ = super().calculate()
+    @classmethod
+    def calculate(
+        cls,
+        timestamps: Union[List[int], List[datetime.datetime], List[str]] = None,
+        evaluation_start_timestamp: Union[int, datetime.datetime, str] = None,
+        evaluation_end_timestamp: Union[int, datetime.datetime, str] = None,
+    ) -> float:
+        _, vs = super().calculate(
+            timestamps=timestamps,
+            evaluation_start_timestamp=evaluation_start_timestamp,
+            evaluation_end_timestamp=evaluation_end_timestamp,
+        )
+        
         raise NotImplementedError
     
 class FlexibilityClassificationFactor(KPI):
@@ -47,11 +81,22 @@ class FlexibilityClassificationFactor(KPI):
     flexibility potential is available. The higher the flexibility of a building, 
     the higher the FCF value."""
 
-    def __init__(*args, **kwargs) -> None:
-        super().__init__(*args, **kwargs)
+    def __init__(self):
+        super().__init__()
 
-    def calculate(self) -> Union[float, List[float]]:
-        _ = super().calculate()
+    @classmethod
+    def calculate(
+        cls,
+        timestamps: Union[List[int], List[datetime.datetime], List[str]] = None,
+        evaluation_start_timestamp: Union[int, datetime.datetime, str] = None,
+        evaluation_end_timestamp: Union[int, datetime.datetime, str] = None,
+    ) -> float:
+        _, vs = super().calculate(
+            timestamps=timestamps,
+            evaluation_start_timestamp=evaluation_start_timestamp,
+            evaluation_end_timestamp=evaluation_end_timestamp,
+        )
+        
         raise NotImplementedError
     
 class FlexibilityIndicator(KPI):
@@ -59,11 +104,22 @@ class FlexibilityIndicator(KPI):
     in the next 24h: evaluation of the energy profile time series distance to reference 
     profile and target profile. Requires optimization."""
 
-    def __init__(*args, **kwargs) -> None:
-        super().__init__(*args, **kwargs)
+    def __init__(self):
+        super().__init__()
 
-    def calculate(self) -> Union[float, List[float]]:
-        _ = super().calculate()
+    @classmethod
+    def calculate(
+        cls,
+        timestamps: Union[List[int], List[datetime.datetime], List[str]] = None,
+        evaluation_start_timestamp: Union[int, datetime.datetime, str] = None,
+        evaluation_end_timestamp: Union[int, datetime.datetime, str] = None,
+    ) -> float:
+        _, vs = super().calculate(
+            timestamps=timestamps,
+            evaluation_start_timestamp=evaluation_start_timestamp,
+            evaluation_end_timestamp=evaluation_end_timestamp,
+        )
+        
         raise NotImplementedError
     
 class CyclePowerFlexibility(KPI):
@@ -73,9 +129,20 @@ class CyclePowerFlexibility(KPI):
     factor is defined as the ability to shift the energy use from high to low price periods 
     and viceversa."""
 
-    def __init__(*args, **kwargs) -> None:
-        super().__init__(*args, **kwargs)
+    def __init__(self):
+        super().__init__()
 
-    def calculate(self) -> Union[float, List[float]]:
-        _ = super().calculate()
+    @classmethod
+    def calculate(
+        cls,
+        timestamps: Union[List[int], List[datetime.datetime], List[str]] = None,
+        evaluation_start_timestamp: Union[int, datetime.datetime, str] = None,
+        evaluation_end_timestamp: Union[int, datetime.datetime, str] = None,
+    ) -> float:
+        _, vs = super().calculate(
+            timestamps=timestamps,
+            evaluation_start_timestamp=evaluation_start_timestamp,
+            evaluation_end_timestamp=evaluation_end_timestamp,
+        )
+        
         raise NotImplementedError

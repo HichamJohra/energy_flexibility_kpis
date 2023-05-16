@@ -1,3 +1,4 @@
+import datetime
 from typing import List, Union
 from energy_flexibility_kpis.kpi.base import KPI
 
@@ -6,11 +7,22 @@ class SelfConsumptionDuringDRAction(KPI):
     is a measure of the coincidence between locally produced electricity and increased 
     demand during a DR action."""
 
-    def __init__(*args, **kwargs) -> None:
-        super().__init__(*args, **kwargs)
+    def __init__(self):
+        super().__init__()
 
-    def calculate(self) -> Union[float, List[float]]:
-        _ = super().calculate()
+    @classmethod
+    def calculate(
+        cls,
+        timestamps: Union[List[int], List[datetime.datetime], List[str]] = None,
+        evaluation_start_timestamp: Union[int, datetime.datetime, str] = None,
+        evaluation_end_timestamp: Union[int, datetime.datetime, str] = None,
+    ) -> float:
+        _, vs = super().calculate(
+            timestamps=timestamps,
+            evaluation_start_timestamp=evaluation_start_timestamp,
+            evaluation_end_timestamp=evaluation_end_timestamp,
+        )
+        
         raise NotImplementedError
     
 class RelativeEnergyImportSavings(KPI):
@@ -18,11 +30,22 @@ class RelativeEnergyImportSavings(KPI):
     by local RES production) during demand response period in comparison to the reference 
     operation."""
 
-    def __init__(*args, **kwargs) -> None:
-        super().__init__(*args, **kwargs)
+    def __init__(self):
+        super().__init__()
 
-    def calculate(self) -> Union[float, List[float]]:
-        _ = super().calculate()
+    @classmethod
+    def calculate(
+        cls,
+        timestamps: Union[List[int], List[datetime.datetime], List[str]] = None,
+        evaluation_start_timestamp: Union[int, datetime.datetime, str] = None,
+        evaluation_end_timestamp: Union[int, datetime.datetime, str] = None,
+    ) -> float:
+        _, vs = super().calculate(
+            timestamps=timestamps,
+            evaluation_start_timestamp=evaluation_start_timestamp,
+            evaluation_end_timestamp=evaluation_end_timestamp,
+        )
+        
         raise NotImplementedError
     
 class FlexibilityAggregationSynergyFactor(KPI):
@@ -31,9 +54,20 @@ class FlexibilityAggregationSynergyFactor(KPI):
     from the aggregation relative to the sum of SFR capacities the systems could 
     provide individually."""
 
-    def __init__(*args, **kwargs) -> None:
-        super().__init__(*args, **kwargs)
+    def __init__(self):
+        super().__init__()
 
-    def calculate(self) -> Union[float, List[float]]:
-        _ = super().calculate()
+    @classmethod
+    def calculate(
+        cls,
+        timestamps: Union[List[int], List[datetime.datetime], List[str]] = None,
+        evaluation_start_timestamp: Union[int, datetime.datetime, str] = None,
+        evaluation_end_timestamp: Union[int, datetime.datetime, str] = None,
+    ) -> float:
+        _, vs = super().calculate(
+            timestamps=timestamps,
+            evaluation_start_timestamp=evaluation_start_timestamp,
+            evaluation_end_timestamp=evaluation_end_timestamp,
+        )
+        
         raise NotImplementedError

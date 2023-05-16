@@ -93,46 +93,6 @@ class DateTimeVariable(Variable):
 class DefaultVariableMetaClass(type):
     def __init__(cls, *args, **kwargs) -> None:
         pass
-
-    @property
-    def resource_ids(cls) -> Variable:
-        return Variable(
-            name='resource IDs',
-            definition='A list of resources IDs that map to other serial variables where resources may be a cluster of buildings or DERs (e.g. heat pump, battery energy storage system, thermal energy storage).',
-            primitive_type=DefaultPrimitiveType.unspecified,
-            value_type=ValueType.SERIAL,
-            operation_condition=OperationCondition.GENERIC,
-        )
-    
-    @property
-    def baseline_resource_count(cls) -> Variable:
-        return Variable(
-            name='baseline resource count',
-            definition='Number of resources in baseline case where resources may be a cluster of buildings or DERs (e.g. heat pump, battery energy storage system, thermal energy storage).',
-            primitive_type=DefaultPrimitiveType.unspecified,
-            value_type=ValueType.SINGLE,
-            operation_condition=OperationCondition.GENERIC,
-        )
-    
-    @property
-    def flexible_resource_count(cls) -> Variable:
-        return Variable(
-            name='flexible resource count',
-            definition='Number of resources in flexible case where resources may be a cluster of buildings or DERs (e.g. heat pump, battery energy storage system, thermal energy storage).',
-            primitive_type=DefaultPrimitiveType.unspecified,
-            value_type=ValueType.SINGLE,
-            operation_condition=OperationCondition.GENERIC,
-        )
-    
-    @property
-    def generic_resource_count(cls) -> Variable:
-        return Variable(
-            name='generic resource count',
-            definition='Number of resources for a generic case where resources may be a cluster of buildings or DERs (e.g. heat pump, battery energy storage system, thermal energy storage).',
-            primitive_type=DefaultPrimitiveType.unspecified,
-            value_type=ValueType.SINGLE,
-            operation_condition=OperationCondition.GENERIC,
-        )
     
     @property
     def availability(cls) -> Variable:
@@ -327,10 +287,6 @@ class DefaultVariable(metaclass=DefaultVariableMetaClass):
 class VariableSet(Definition):
     def __init__(
             self,
-            resource_ids: Union[List[int], List[str]] = None,
-            baseline_resource_count: int = None,
-            flexible_resource_count: int = None,
-            generic_resource_count: int = None,
             availability: Union[List[int], List[bool]] = None,
             timestamps: Union[List[int], List[datetime.datetime], List[str]] = None,
             evaluation_start_timestamp: Union[int, datetime.datetime, str] = None,
@@ -354,10 +310,6 @@ class VariableSet(Definition):
         ) -> None:
 
         # variables
-        self.resource_ids = resource_ids
-        self.baseline_resource_count = baseline_resource_count
-        self.flexible_resource_count = flexible_resource_count
-        self.generic_resource_count = generic_resource_count
         self.availability = availability
         self.baseline_electric_power_profile = baseline_electric_power_profile
         self.baseline_electricity_consumption_profile = baseline_electricity_consumption_profile
@@ -381,22 +333,6 @@ class VariableSet(Definition):
 
         # private variables
         self.validate_serial_variables()
-
-    @property
-    def resource_ids(self) -> Variable:
-        return self.__resource_ids
-    
-    @property
-    def baseline_resource_count(self) -> Variable:
-        return self.__baseline_resource_count
-    
-    @property
-    def flexible_resource_count(self) -> Variable:
-        return self.__flexible_resource_count
-    
-    @property
-    def generic_resource_count(self) -> Variable:
-        return self.__generic_resource_count
     
     @property
     def availability(self) -> Variable:
@@ -491,22 +427,6 @@ class VariableSet(Definition):
             else self.evaluation_end_timestamp.value
 
         return (timestamps >= evaluation_start_timestamp) & (timestamps <= evaluation_end_timestamp)
-    
-    @resource_ids.setter
-    def resource_ids(self, value: Union[List[int], List[str]]):
-        self.__resource_ids = self.__set_variable(DefaultVariable.resource_ids, value)
-
-    @baseline_resource_count.setter
-    def baseline_resource_count(self, value: int):
-        self.__baseline_resource_count = self.__set_variable(DefaultVariable.baseline_resource_count, value)
-
-    @flexible_resource_count.setter
-    def flexible_resource_count(self, value: int):
-        self.__flexible_resource_count = self.__set_variable(DefaultVariable.flexible_resource_count, value)
-
-    @generic_resource_count.setter
-    def generic_resource_count(self, value: int):
-        self.__generic_resource_count = self.__set_variable(DefaultVariable.generic_resource_count, value)
 
     @availability.setter
     def availability(self, value: Union[List[int], List[bool]]):

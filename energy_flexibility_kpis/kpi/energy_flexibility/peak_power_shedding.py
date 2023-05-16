@@ -5,7 +5,6 @@ from energy_flexibility_kpis.kpi.base import KPI
 from energy_flexibility_kpis.enumerations import BaseUnit, Complexity, DOEFlexibilityCategory, KPICategory, PerformanceAspect, Relevance 
 from energy_flexibility_kpis.enumerations import Stakeholder, TemporalEvaluationWindow,TemporalResolution, SpatialResolution
 from energy_flexibility_kpis.unit import Unit
-from energy_flexibility_kpis.variable import Variable
 
 class PeakPowerReduction(KPI):
     """Reduced power demand during peak hour due to flexible operation."""
@@ -44,7 +43,8 @@ class PeakPowerReduction(KPI):
             evaluation_end_timestamp=evaluation_end_timestamp,
         )
 
-        value = vs.baseline_electric_power_profile.value[vs.evaluation_mask] - vs.flexible_electric_power_profile.value[vs.evaluation_mask]
+        value = vs.baseline_electric_power_profile.value[vs.evaluation_mask]\
+            - vs.flexible_electric_power_profile.value[vs.evaluation_mask]
 
         return value
     
@@ -84,8 +84,9 @@ class HourlyRelativePowerDemandReduction(KPI):
             evaluation_end_timestamp=evaluation_end_timestamp,
         )
 
-        value = (vs.baseline_electric_power_profile.value[vs.evaluation_mask]
-                    - vs.flexible_electric_power_profile.value[vs.evaluation_mask]
+        value = (
+            vs.baseline_electric_power_profile.value[vs.evaluation_mask]
+                - vs.flexible_electric_power_profile.value[vs.evaluation_mask]
         )/vs.baseline_electric_power_profile.value[vs.evaluation_mask]
 
         return value
@@ -155,31 +156,35 @@ class PowerPaybackRatio(KPI):
 
     @classmethod
     def calculate(
-        resource_ids: Union[List[int], List[str]],
-        availability: Union[List[int], List[bool]],
-        baseline_electric_power_profile: Union[Variable, List[float]],
-        flexible_electric_power_profile: Union[Variable, List[float]],
-        timestamps: Union[Variable, List[int], List[datetime.datetime], List[str]] = None,
-        evaluation_start_timestamp: Union[Variable, int,datetime.datetime, str] = None,
-        evaluation_end_timestamp: Union[Variable, int,datetime.datetime, str] = None,
+        availability: Union[List[List[int]], List[List[bool]]],
+        baseline_electric_power_profile: List[List[float]],
+        flexible_electric_power_profile: List[List[float]],
+        timestamps: Union[List[int], List[datetime.datetime], List[str]] = None,
+        evaluation_start_timestamp: Union[int, datetime.datetime, str] = None,
+        evaluation_end_timestamp: Union[int, datetime.datetime, str] = None,
     ) -> float:
-        _, vs = super().calculate(
-            resource_ids=resource_ids,
-            availability=availability,
-            baseline_electric_power_profile=baseline_electric_power_profile,
-            flexible_electric_power_profile=flexible_electric_power_profile,
-            timestamps=timestamps,
-            evaluation_start_timestamp=evaluation_start_timestamp,
-            evaluation_end_timestamp=evaluation_end_timestamp,
-        )
+        
+        data_list = []
 
-        data = pd.DataFrame({
-            'resource_id': vs.resource_ids.value[vs.evaluation_mask],
-            'baseline_electric_power_profile': vs.baseline_electric_power_profile.value[vs.evaluation_mask]*vs.availability.value[vs.evaluation_mask],
-            'flexible_electric_power_profile': vs.flexible_electric_power_profile.value[vs.evaluation_mask]*vs.availability.value[vs.evaluation_mask],
-        })
-        data['timestep'] = data.groupby('group_id').cumcount()
-        data = data.groupby('timestep')[['baseline', 'flexible']].sum()
-        value = data['flexible_electric_power_profile'].max()/data['flexible_electric_power_profile'].max()
+        for a, b, f in zip(availability, baseline_electric_power_profile, flexible_electric_power_profile, timestamps):
+            _, vs = super().calculate(
+                availability=a,
+                baseline_electric_power_profile=b,
+                flexible_electric_power_profile=f,
+                timestamps=timestamps,
+                evaluation_start_timestamp=evaluation_start_timestamp,
+                evaluation_end_timestamp=evaluation_end_timestamp,
+            )
+            data = pd.DataFrame({
+                'baseline_electric_power_profile': vs.baseline_electric_power_profile.value[vs.evaluation_mask]*vs.availability.value[vs.evaluation_mask],
+                'flexible_electric_power_profile': vs.flexible_electric_power_profile.value[vs.evaluation_mask]*vs.availability.value[vs.evaluation_mask],
+            })
+            data['timestep'] = data.index
+            data_list.append(data)
+        
+        data = pd.concat(data_list, ignore_index=True)
+        del data_list
+        data = data.groupby('timestep')[['baseline_electric_power_profile', 'flexible_electric_power_profile']].sum()
+        value = data['flexible_electric_power_profile'].max()/data['baseline_electric_power_profile'].max()
 
         return value

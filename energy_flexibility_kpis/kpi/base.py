@@ -26,10 +26,6 @@ class KPI(Definition):
     @classmethod
     def calculate(
         cls,
-        resource_ids: Union[List[int], List[str]] = None,
-        baseline_resource_count: int = None,
-        flexible_resource_count: int = None,
-        generic_resource_count: int = None,
         availability: Union[List[int], List[bool]] = None,
         timestamps: Union[List[int], List[datetime.datetime], List[str]] = None,
         evaluation_start_timestamp: Union[int, datetime.datetime, str] = None,
