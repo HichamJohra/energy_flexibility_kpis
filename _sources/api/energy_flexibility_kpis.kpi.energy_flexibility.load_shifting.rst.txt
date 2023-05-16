@@ -1,0 +1,7 @@
+energy\_flexibility\_kpis.kpi.energy\_flexibility.load\_shifting module
+=======================================================================
+
+.. automodule:: energy_flexibility_kpis.kpi.energy_flexibility.load_shifting
+   :members:
+   :undoc-members:
+   :show-inheritance:

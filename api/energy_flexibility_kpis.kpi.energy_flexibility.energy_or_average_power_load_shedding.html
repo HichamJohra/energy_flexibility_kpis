@@ -1,0 +1,900 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding module &mdash; energy_flexibility_kpis 1.4.1 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="energy_flexibility_kpis.kpi.energy_flexibility.energy_storage_capability module" href="energy_flexibility_kpis.kpi.energy_flexibility.energy_storage_capability.html" />
+    <link rel="prev" title="energy_flexibility_kpis.kpi.energy_flexibility.demand_response_profile_reshaping module" href="energy_flexibility_kpis.kpi.energy_flexibility.demand_response_profile_reshaping.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            energy_flexibility_kpis
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">energy_flexibility_kpis</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="energy_flexibility_kpis.html">energy_flexibility_kpis package</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="energy_flexibility_kpis.html#subpackages">Subpackages</a><ul class="current">
+<li class="toctree-l4 current"><a class="reference internal" href="energy_flexibility_kpis.kpi.html">energy_flexibility_kpis.kpi package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="energy_flexibility_kpis.test.html">energy_flexibility_kpis.test package</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="energy_flexibility_kpis.html#submodules">Submodules</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../references.html">References</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">energy_flexibility_kpis</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="modules.html">energy_flexibility_kpis</a></li>
+          <li class="breadcrumb-item"><a href="energy_flexibility_kpis.html">energy_flexibility_kpis package</a></li>
+          <li class="breadcrumb-item"><a href="energy_flexibility_kpis.kpi.html">energy_flexibility_kpis.kpi package</a></li>
+          <li class="breadcrumb-item"><a href="energy_flexibility_kpis.kpi.energy_flexibility.html">energy_flexibility_kpis.kpi.energy_flexibility package</a></li>
+      <li class="breadcrumb-item active">energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding module</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/api/energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding">
+<span id="energy-flexibility-kpis-kpi-energy-flexibility-energy-or-average-power-load-shedding-module"></span><h1>energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding module<a class="headerlink" href="#module-energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding" title="Permalink to this heading"></a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.AnnualAverageDailyLoadVariation">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.</span></span><span class="sig-name descname"><span class="pre">AnnualAverageDailyLoadVariation</span></span><a class="headerlink" href="#energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.AnnualAverageDailyLoadVariation" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="energy_flexibility_kpis.kpi.base.html#energy_flexibility_kpis.kpi.base.KPI" title="energy_flexibility_kpis.kpi.base.KPI"><code class="xref py py-class docutils literal notranslate"><span class="pre">KPI</span></code></a></p>
+<p>An indicator expressing the overall level of load variability in buildings quantified using the accumulated sum of daily load variations relative to the annual heating energy use (unit: unitless). Knowledge about load variations is of interest to.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.AnnualAverageDailyLoadVariation.CATEGORY">
+<span class="sig-name descname"><span class="pre">CATEGORY</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">(&lt;BaseKPICategory.EF_KPI:</span> <span class="pre">'EF</span> <span class="pre">KPI'&gt;,</span> <span class="pre">'Energy/Average</span> <span class="pre">Power</span> <span class="pre">Load</span> <span class="pre">Shedding')</span></em><a class="headerlink" href="#energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.AnnualAverageDailyLoadVariation.CATEGORY" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.AnnualAverageDailyLoadVariation.COMPLEXITY">
+<span class="sig-name descname"><span class="pre">COMPLEXITY</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.AnnualAverageDailyLoadVariation.COMPLEXITY" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.AnnualAverageDailyLoadVariation.DEFINITION">
+<span class="sig-name descname"><span class="pre">DEFINITION</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'An</span> <span class="pre">indicator</span> <span class="pre">expressing</span> <span class="pre">the</span> <span class="pre">overall</span> <span class="pre">level</span> <span class="pre">of</span> <span class="pre">load</span> <span class="pre">variability</span> <span class="pre">in</span> <span class="pre">buildings</span> <span class="pre">quantified</span> <span class="pre">using</span> <span class="pre">the</span> <span class="pre">accumulated</span> <span class="pre">sum</span> <span class="pre">of</span> <span class="pre">daily</span> <span class="pre">load</span> <span class="pre">variations</span> <span class="pre">relative</span> <span class="pre">to</span> <span class="pre">the</span> <span class="pre">annual</span> <span class="pre">heating</span> <span class="pre">energy</span> <span class="pre">use</span> <span class="pre">(unit:</span> <span class="pre">unitless).</span> <span class="pre">Knowledge</span> <span class="pre">about</span> <span class="pre">load</span> <span class="pre">variations</span> <span class="pre">is</span> <span class="pre">of</span> <span class="pre">interest</span> <span class="pre">to.'</span></em><a class="headerlink" href="#energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.AnnualAverageDailyLoadVariation.DEFINITION" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.AnnualAverageDailyLoadVariation.DOE_FLEXIBILITY_CATEGORY">
+<span class="sig-name descname"><span class="pre">DOE_FLEXIBILITY_CATEGORY</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[&lt;DOEFlexibilityCategory.LOAD_SHEDDING:</span> <span class="pre">'load</span> <span class="pre">shedding'&gt;]</span></em><a class="headerlink" href="#energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.AnnualAverageDailyLoadVariation.DOE_FLEXIBILITY_CATEGORY" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.AnnualAverageDailyLoadVariation.NAME">
+<span class="sig-name descname"><span class="pre">NAME</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'annual</span> <span class="pre">average</span> <span class="pre">daily</span> <span class="pre">load</span> <span class="pre">variation'</span></em><a class="headerlink" href="#energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.AnnualAverageDailyLoadVariation.NAME" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.AnnualAverageDailyLoadVariation.NEED_BASELINE">
+<span class="sig-name descname"><span class="pre">NEED_BASELINE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.AnnualAverageDailyLoadVariation.NEED_BASELINE" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.AnnualAverageDailyLoadVariation.PERFORMANCE_ASPECT">
+<span class="sig-name descname"><span class="pre">PERFORMANCE_ASPECT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[&lt;PerformanceAspect.ENERGY:</span> <span class="pre">'energy'&gt;]</span></em><a class="headerlink" href="#energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.AnnualAverageDailyLoadVariation.PERFORMANCE_ASPECT" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.AnnualAverageDailyLoadVariation.RELEVANCE">
+<span class="sig-name descname"><span class="pre">RELEVANCE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.AnnualAverageDailyLoadVariation.RELEVANCE" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.AnnualAverageDailyLoadVariation.SPATIAL_RESOLUTION">
+<span class="sig-name descname"><span class="pre">SPATIAL_RESOLUTION</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'unspecified'</span></em><a class="headerlink" href="#energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.AnnualAverageDailyLoadVariation.SPATIAL_RESOLUTION" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.AnnualAverageDailyLoadVariation.STAKEHOLDERS">
+<span class="sig-name descname"><span class="pre">STAKEHOLDERS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[&lt;Stakeholder.UTILITY_COMPANY:</span> <span class="pre">'utility</span> <span class="pre">company'&gt;]</span></em><a class="headerlink" href="#energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.AnnualAverageDailyLoadVariation.STAKEHOLDERS" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.AnnualAverageDailyLoadVariation.TEMPORAL_EVALUATION_WINDOW">
+<span class="sig-name descname"><span class="pre">TEMPORAL_EVALUATION_WINDOW</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'whole</span> <span class="pre">year'</span></em><a class="headerlink" href="#energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.AnnualAverageDailyLoadVariation.TEMPORAL_EVALUATION_WINDOW" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.AnnualAverageDailyLoadVariation.TEMPORAL_RESOLUTION">
+<span class="sig-name descname"><span class="pre">TEMPORAL_RESOLUTION</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'hourly'</span></em><a class="headerlink" href="#energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.AnnualAverageDailyLoadVariation.TEMPORAL_RESOLUTION" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.AnnualAverageDailyLoadVariation.UNIT">
+<span class="sig-name descname"><span class="pre">UNIT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;energy_flexibility_kpis.unit.Unit</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.AnnualAverageDailyLoadVariation.UNIT" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.AnnualAverageDailyLoadVariation.calculate">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">calculate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">generic_electric_power_profile</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timestamps</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">datetime</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">evaluation_start_timestamp</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">datetime</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">evaluation_end_timestamp</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">datetime</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.AnnualAverageDailyLoadVariation.calculate" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.AverageDownwardPowerDeviation">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.</span></span><span class="sig-name descname"><span class="pre">AverageDownwardPowerDeviation</span></span><a class="headerlink" href="#energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.AverageDownwardPowerDeviation" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="energy_flexibility_kpis.kpi.base.html#energy_flexibility_kpis.kpi.base.KPI" title="energy_flexibility_kpis.kpi.base.KPI"><code class="xref py py-class docutils literal notranslate"><span class="pre">KPI</span></code></a></p>
+<p>Average power deviation during the downward modulation period.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.AverageDownwardPowerDeviation.CATEGORY">
+<span class="sig-name descname"><span class="pre">CATEGORY</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">(&lt;BaseKPICategory.EF_KPI:</span> <span class="pre">'EF</span> <span class="pre">KPI'&gt;,</span> <span class="pre">'Energy/Average</span> <span class="pre">Power</span> <span class="pre">Load</span> <span class="pre">Shedding')</span></em><a class="headerlink" href="#energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.AverageDownwardPowerDeviation.CATEGORY" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.AverageDownwardPowerDeviation.COMPLEXITY">
+<span class="sig-name descname"><span class="pre">COMPLEXITY</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.AverageDownwardPowerDeviation.COMPLEXITY" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.AverageDownwardPowerDeviation.DEFINITION">
+<span class="sig-name descname"><span class="pre">DEFINITION</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'Average</span> <span class="pre">power</span> <span class="pre">deviation</span> <span class="pre">during</span> <span class="pre">the</span> <span class="pre">downward</span> <span class="pre">modulation</span> <span class="pre">period.'</span></em><a class="headerlink" href="#energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.AverageDownwardPowerDeviation.DEFINITION" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.AverageDownwardPowerDeviation.DOE_FLEXIBILITY_CATEGORY">
+<span class="sig-name descname"><span class="pre">DOE_FLEXIBILITY_CATEGORY</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[&lt;DOEFlexibilityCategory.EFFICIENCY:</span> <span class="pre">'efficiency'&gt;,</span> <span class="pre">&lt;DOEFlexibilityCategory.LOAD_SHEDDING:</span> <span class="pre">'load</span> <span class="pre">shedding'&gt;]</span></em><a class="headerlink" href="#energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.AverageDownwardPowerDeviation.DOE_FLEXIBILITY_CATEGORY" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.AverageDownwardPowerDeviation.NAME">
+<span class="sig-name descname"><span class="pre">NAME</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'average</span> <span class="pre">downward</span> <span class="pre">power</span> <span class="pre">deviation'</span></em><a class="headerlink" href="#energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.AverageDownwardPowerDeviation.NAME" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.AverageDownwardPowerDeviation.NEED_BASELINE">
+<span class="sig-name descname"><span class="pre">NEED_BASELINE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">True</span></em><a class="headerlink" href="#energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.AverageDownwardPowerDeviation.NEED_BASELINE" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.AverageDownwardPowerDeviation.PERFORMANCE_ASPECT">
+<span class="sig-name descname"><span class="pre">PERFORMANCE_ASPECT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[&lt;PerformanceAspect.POWER:</span> <span class="pre">'power'&gt;]</span></em><a class="headerlink" href="#energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.AverageDownwardPowerDeviation.PERFORMANCE_ASPECT" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.AverageDownwardPowerDeviation.RELEVANCE">
+<span class="sig-name descname"><span class="pre">RELEVANCE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3</span></em><a class="headerlink" href="#energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.AverageDownwardPowerDeviation.RELEVANCE" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.AverageDownwardPowerDeviation.SPATIAL_RESOLUTION">
+<span class="sig-name descname"><span class="pre">SPATIAL_RESOLUTION</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'single</span> <span class="pre">building'</span></em><a class="headerlink" href="#energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.AverageDownwardPowerDeviation.SPATIAL_RESOLUTION" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.AverageDownwardPowerDeviation.STAKEHOLDERS">
+<span class="sig-name descname"><span class="pre">STAKEHOLDERS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[&lt;Stakeholder.GRID_OPERATOR:</span> <span class="pre">'grid</span> <span class="pre">operator'&gt;,</span> <span class="pre">&lt;Stakeholder.DISTRIBUTION_SYSTEM_OPERATOR:</span> <span class="pre">'distribution</span> <span class="pre">system</span> <span class="pre">operator'&gt;]</span></em><a class="headerlink" href="#energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.AverageDownwardPowerDeviation.STAKEHOLDERS" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.AverageDownwardPowerDeviation.TEMPORAL_EVALUATION_WINDOW">
+<span class="sig-name descname"><span class="pre">TEMPORAL_EVALUATION_WINDOW</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'single</span> <span class="pre">event'</span></em><a class="headerlink" href="#energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.AverageDownwardPowerDeviation.TEMPORAL_EVALUATION_WINDOW" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.AverageDownwardPowerDeviation.TEMPORAL_RESOLUTION">
+<span class="sig-name descname"><span class="pre">TEMPORAL_RESOLUTION</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'unspecified'</span></em><a class="headerlink" href="#energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.AverageDownwardPowerDeviation.TEMPORAL_RESOLUTION" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.AverageDownwardPowerDeviation.UNIT">
+<span class="sig-name descname"><span class="pre">UNIT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;energy_flexibility_kpis.unit.Unit</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.AverageDownwardPowerDeviation.UNIT" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.AverageDownwardPowerDeviation.calculate">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">calculate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">timestamps</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">datetime</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">evaluation_start_timestamp</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">datetime</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">evaluation_end_timestamp</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">datetime</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="headerlink" href="#energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.AverageDownwardPowerDeviation.calculate" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.AverageLoadReduction">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.</span></span><span class="sig-name descname"><span class="pre">AverageLoadReduction</span></span><a class="headerlink" href="#energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.AverageLoadReduction" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="energy_flexibility_kpis.kpi.base.html#energy_flexibility_kpis.kpi.base.KPI" title="energy_flexibility_kpis.kpi.base.KPI"><code class="xref py py-class docutils literal notranslate"><span class="pre">KPI</span></code></a></p>
+<p>Average load reduction during the demand response event (peak load shaving) by number of buildings.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.AverageLoadReduction.CATEGORY">
+<span class="sig-name descname"><span class="pre">CATEGORY</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">(&lt;BaseKPICategory.EF_KPI:</span> <span class="pre">'EF</span> <span class="pre">KPI'&gt;,</span> <span class="pre">'Energy/Average</span> <span class="pre">Power</span> <span class="pre">Load</span> <span class="pre">Shedding')</span></em><a class="headerlink" href="#energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.AverageLoadReduction.CATEGORY" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.AverageLoadReduction.COMPLEXITY">
+<span class="sig-name descname"><span class="pre">COMPLEXITY</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.AverageLoadReduction.COMPLEXITY" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.AverageLoadReduction.DEFINITION">
+<span class="sig-name descname"><span class="pre">DEFINITION</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'Average</span> <span class="pre">load</span> <span class="pre">reduction</span> <span class="pre">during</span> <span class="pre">the</span> <span class="pre">demand</span> <span class="pre">response</span> <span class="pre">event</span> <span class="pre">(peak</span> <span class="pre">load</span> <span class="pre">shaving)</span> <span class="pre">by</span> <span class="pre">number</span> <span class="pre">of</span> <span class="pre">buildings.'</span></em><a class="headerlink" href="#energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.AverageLoadReduction.DEFINITION" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.AverageLoadReduction.DOE_FLEXIBILITY_CATEGORY">
+<span class="sig-name descname"><span class="pre">DOE_FLEXIBILITY_CATEGORY</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[&lt;DOEFlexibilityCategory.LOAD_SHEDDING:</span> <span class="pre">'load</span> <span class="pre">shedding'&gt;]</span></em><a class="headerlink" href="#energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.AverageLoadReduction.DOE_FLEXIBILITY_CATEGORY" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.AverageLoadReduction.NAME">
+<span class="sig-name descname"><span class="pre">NAME</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'average</span> <span class="pre">load</span> <span class="pre">reduction'</span></em><a class="headerlink" href="#energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.AverageLoadReduction.NAME" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.AverageLoadReduction.NEED_BASELINE">
+<span class="sig-name descname"><span class="pre">NEED_BASELINE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">True</span></em><a class="headerlink" href="#energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.AverageLoadReduction.NEED_BASELINE" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.AverageLoadReduction.PERFORMANCE_ASPECT">
+<span class="sig-name descname"><span class="pre">PERFORMANCE_ASPECT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[&lt;PerformanceAspect.POWER:</span> <span class="pre">'power'&gt;]</span></em><a class="headerlink" href="#energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.AverageLoadReduction.PERFORMANCE_ASPECT" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.AverageLoadReduction.RELEVANCE">
+<span class="sig-name descname"><span class="pre">RELEVANCE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3</span></em><a class="headerlink" href="#energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.AverageLoadReduction.RELEVANCE" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.AverageLoadReduction.SPATIAL_RESOLUTION">
+<span class="sig-name descname"><span class="pre">SPATIAL_RESOLUTION</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'building</span> <span class="pre">cluster'</span></em><a class="headerlink" href="#energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.AverageLoadReduction.SPATIAL_RESOLUTION" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.AverageLoadReduction.STAKEHOLDERS">
+<span class="sig-name descname"><span class="pre">STAKEHOLDERS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[&lt;Stakeholder.DISTRIBUTION_SYSTEM_OPERATOR:</span> <span class="pre">'distribution</span> <span class="pre">system</span> <span class="pre">operator'&gt;,</span> <span class="pre">&lt;Stakeholder.TRANSMISSION_SYSTEM_OPERATOR:</span> <span class="pre">'transmisssion</span> <span class="pre">system</span> <span class="pre">operator'&gt;]</span></em><a class="headerlink" href="#energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.AverageLoadReduction.STAKEHOLDERS" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.AverageLoadReduction.TEMPORAL_EVALUATION_WINDOW">
+<span class="sig-name descname"><span class="pre">TEMPORAL_EVALUATION_WINDOW</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'single</span> <span class="pre">event'</span></em><a class="headerlink" href="#energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.AverageLoadReduction.TEMPORAL_EVALUATION_WINDOW" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.AverageLoadReduction.TEMPORAL_RESOLUTION">
+<span class="sig-name descname"><span class="pre">TEMPORAL_RESOLUTION</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'unspecified'</span></em><a class="headerlink" href="#energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.AverageLoadReduction.TEMPORAL_RESOLUTION" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.AverageLoadReduction.UNIT">
+<span class="sig-name descname"><span class="pre">UNIT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;energy_flexibility_kpis.unit.Unit</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.AverageLoadReduction.UNIT" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.AverageLoadReduction.calculate">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">calculate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">baseline_electric_power_profile</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">flexible_electric_power_profile</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timestamps</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">datetime</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">evaluation_start_timestamp</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">datetime</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">evaluation_end_timestamp</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">datetime</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="headerlink" href="#energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.AverageLoadReduction.calculate" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.BuildingEnergyFlexibilityIndex">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.</span></span><span class="sig-name descname"><span class="pre">BuildingEnergyFlexibilityIndex</span></span><a class="headerlink" href="#energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.BuildingEnergyFlexibilityIndex" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="energy_flexibility_kpis.kpi.base.html#energy_flexibility_kpis.kpi.base.KPI" title="energy_flexibility_kpis.kpi.base.KPI"><code class="xref py py-class docutils literal notranslate"><span class="pre">KPI</span></code></a></p>
+<p>Calculating the average power reduction/increase by considering the difference between the energy used by a
+reference load profile (“business as usual”) scenario (Pref) and the energy used in a new, “flexibility” scenario
+(Pflex). Dividing by the duration of the event.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.BuildingEnergyFlexibilityIndex.CATEGORY">
+<span class="sig-name descname"><span class="pre">CATEGORY</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">(&lt;BaseKPICategory.EF_KPI:</span> <span class="pre">'EF</span> <span class="pre">KPI'&gt;,</span> <span class="pre">'Energy/Average</span> <span class="pre">Power</span> <span class="pre">Load</span> <span class="pre">Shedding')</span></em><a class="headerlink" href="#energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.BuildingEnergyFlexibilityIndex.CATEGORY" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.BuildingEnergyFlexibilityIndex.COMPLEXITY">
+<span class="sig-name descname"><span class="pre">COMPLEXITY</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.BuildingEnergyFlexibilityIndex.COMPLEXITY" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.BuildingEnergyFlexibilityIndex.DEFINITION">
+<span class="sig-name descname"><span class="pre">DEFINITION</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'Calculating</span> <span class="pre">the</span> <span class="pre">average</span> <span class="pre">power</span> <span class="pre">reduction/increase</span> <span class="pre">by</span> <span class="pre">considering</span> <span class="pre">the</span> <span class="pre">difference</span> <span class="pre">between</span> <span class="pre">the</span> <span class="pre">energy</span> <span class="pre">used</span> <span class="pre">by</span> <span class="pre">a</span> <span class="pre">\n</span>&#160;&#160;&#160; <span class="pre">reference</span> <span class="pre">load</span> <span class="pre">profile</span> <span class="pre">(“business</span> <span class="pre">as</span> <span class="pre">usual”)</span> <span class="pre">scenario</span> <span class="pre">(Pref)</span> <span class="pre">and</span> <span class="pre">the</span> <span class="pre">energy</span> <span class="pre">used</span> <span class="pre">in</span> <span class="pre">a</span> <span class="pre">new,</span> <span class="pre">“flexibility”</span> <span class="pre">scenario</span> <span class="pre">\n</span>&#160;&#160;&#160; <span class="pre">(Pflex).</span> <span class="pre">Dividing</span> <span class="pre">by</span> <span class="pre">the</span> <span class="pre">duration</span> <span class="pre">of</span> <span class="pre">the</span> <span class="pre">event.'</span></em><a class="headerlink" href="#energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.BuildingEnergyFlexibilityIndex.DEFINITION" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.BuildingEnergyFlexibilityIndex.DOE_FLEXIBILITY_CATEGORY">
+<span class="sig-name descname"><span class="pre">DOE_FLEXIBILITY_CATEGORY</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[&lt;DOEFlexibilityCategory.LOAD_SHEDDING:</span> <span class="pre">'load</span> <span class="pre">shedding'&gt;]</span></em><a class="headerlink" href="#energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.BuildingEnergyFlexibilityIndex.DOE_FLEXIBILITY_CATEGORY" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.BuildingEnergyFlexibilityIndex.NAME">
+<span class="sig-name descname"><span class="pre">NAME</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'building</span> <span class="pre">energy</span> <span class="pre">flexibility</span> <span class="pre">index'</span></em><a class="headerlink" href="#energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.BuildingEnergyFlexibilityIndex.NAME" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.BuildingEnergyFlexibilityIndex.NEED_BASELINE">
+<span class="sig-name descname"><span class="pre">NEED_BASELINE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">True</span></em><a class="headerlink" href="#energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.BuildingEnergyFlexibilityIndex.NEED_BASELINE" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.BuildingEnergyFlexibilityIndex.PERFORMANCE_ASPECT">
+<span class="sig-name descname"><span class="pre">PERFORMANCE_ASPECT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[&lt;PerformanceAspect.POWER:</span> <span class="pre">'power'&gt;]</span></em><a class="headerlink" href="#energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.BuildingEnergyFlexibilityIndex.PERFORMANCE_ASPECT" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.BuildingEnergyFlexibilityIndex.RELEVANCE">
+<span class="sig-name descname"><span class="pre">RELEVANCE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3</span></em><a class="headerlink" href="#energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.BuildingEnergyFlexibilityIndex.RELEVANCE" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.BuildingEnergyFlexibilityIndex.SPATIAL_RESOLUTION">
+<span class="sig-name descname"><span class="pre">SPATIAL_RESOLUTION</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'unspecified'</span></em><a class="headerlink" href="#energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.BuildingEnergyFlexibilityIndex.SPATIAL_RESOLUTION" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.BuildingEnergyFlexibilityIndex.STAKEHOLDERS">
+<span class="sig-name descname"><span class="pre">STAKEHOLDERS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[&lt;Stakeholder.OCCUPANT:</span> <span class="pre">'occupant'&gt;,</span> <span class="pre">&lt;Stakeholder.BUILDING_OWNER:</span> <span class="pre">'building</span> <span class="pre">owner'&gt;]</span></em><a class="headerlink" href="#energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.BuildingEnergyFlexibilityIndex.STAKEHOLDERS" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.BuildingEnergyFlexibilityIndex.TEMPORAL_EVALUATION_WINDOW">
+<span class="sig-name descname"><span class="pre">TEMPORAL_EVALUATION_WINDOW</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'single</span> <span class="pre">event'</span></em><a class="headerlink" href="#energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.BuildingEnergyFlexibilityIndex.TEMPORAL_EVALUATION_WINDOW" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.BuildingEnergyFlexibilityIndex.TEMPORAL_RESOLUTION">
+<span class="sig-name descname"><span class="pre">TEMPORAL_RESOLUTION</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'unspecified'</span></em><a class="headerlink" href="#energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.BuildingEnergyFlexibilityIndex.TEMPORAL_RESOLUTION" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.BuildingEnergyFlexibilityIndex.UNIT">
+<span class="sig-name descname"><span class="pre">UNIT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;energy_flexibility_kpis.unit.Unit</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.BuildingEnergyFlexibilityIndex.UNIT" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.BuildingEnergyFlexibilityIndex.calculate">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">calculate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">baseline_electric_power_profile</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">flexible_electric_power_profile</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timestamps</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">datetime</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">evaluation_start_timestamp</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">datetime</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">evaluation_end_timestamp</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">datetime</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="headerlink" href="#energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.BuildingEnergyFlexibilityIndex.calculate" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.DimensionlessPeakShaving">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.</span></span><span class="sig-name descname"><span class="pre">DimensionlessPeakShaving</span></span><a class="headerlink" href="#energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.DimensionlessPeakShaving" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="energy_flexibility_kpis.kpi.base.html#energy_flexibility_kpis.kpi.base.KPI" title="energy_flexibility_kpis.kpi.base.KPI"><code class="xref py py-class docutils literal notranslate"><span class="pre">KPI</span></code></a></p>
+<p>Represents the energy reduction percentage of the cooling system during the downward flexibility period.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.DimensionlessPeakShaving.CATEGORY">
+<span class="sig-name descname"><span class="pre">CATEGORY</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">(&lt;BaseKPICategory.EF_KPI:</span> <span class="pre">'EF</span> <span class="pre">KPI'&gt;,</span> <span class="pre">'Energy/Average</span> <span class="pre">Power</span> <span class="pre">Load</span> <span class="pre">Shedding')</span></em><a class="headerlink" href="#energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.DimensionlessPeakShaving.CATEGORY" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.DimensionlessPeakShaving.COMPLEXITY">
+<span class="sig-name descname"><span class="pre">COMPLEXITY</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.DimensionlessPeakShaving.COMPLEXITY" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.DimensionlessPeakShaving.DEFINITION">
+<span class="sig-name descname"><span class="pre">DEFINITION</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'Represents</span> <span class="pre">the</span> <span class="pre">energy</span> <span class="pre">reduction</span> <span class="pre">percentage</span> <span class="pre">of</span> <span class="pre">the</span> <span class="pre">cooling</span> <span class="pre">system</span> <span class="pre">during</span> <span class="pre">the</span> <span class="pre">downward</span> <span class="pre">flexibility</span> <span class="pre">period.'</span></em><a class="headerlink" href="#energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.DimensionlessPeakShaving.DEFINITION" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.DimensionlessPeakShaving.DOE_FLEXIBILITY_CATEGORY">
+<span class="sig-name descname"><span class="pre">DOE_FLEXIBILITY_CATEGORY</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[&lt;DOEFlexibilityCategory.LOAD_SHEDDING:</span> <span class="pre">'load</span> <span class="pre">shedding'&gt;]</span></em><a class="headerlink" href="#energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.DimensionlessPeakShaving.DOE_FLEXIBILITY_CATEGORY" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.DimensionlessPeakShaving.NAME">
+<span class="sig-name descname"><span class="pre">NAME</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'dimensionless</span> <span class="pre">peak</span> <span class="pre">shaving'</span></em><a class="headerlink" href="#energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.DimensionlessPeakShaving.NAME" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.DimensionlessPeakShaving.NEED_BASELINE">
+<span class="sig-name descname"><span class="pre">NEED_BASELINE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">True</span></em><a class="headerlink" href="#energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.DimensionlessPeakShaving.NEED_BASELINE" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.DimensionlessPeakShaving.PERFORMANCE_ASPECT">
+<span class="sig-name descname"><span class="pre">PERFORMANCE_ASPECT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[&lt;PerformanceAspect.POWER:</span> <span class="pre">'power'&gt;,</span> <span class="pre">&lt;PerformanceAspect.ENERGY:</span> <span class="pre">'energy'&gt;]</span></em><a class="headerlink" href="#energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.DimensionlessPeakShaving.PERFORMANCE_ASPECT" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.DimensionlessPeakShaving.RELEVANCE">
+<span class="sig-name descname"><span class="pre">RELEVANCE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.DimensionlessPeakShaving.RELEVANCE" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.DimensionlessPeakShaving.SPATIAL_RESOLUTION">
+<span class="sig-name descname"><span class="pre">SPATIAL_RESOLUTION</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'unspecified'</span></em><a class="headerlink" href="#energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.DimensionlessPeakShaving.SPATIAL_RESOLUTION" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.DimensionlessPeakShaving.STAKEHOLDERS">
+<span class="sig-name descname"><span class="pre">STAKEHOLDERS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[&lt;Stakeholder.GRID_OPERATOR:</span> <span class="pre">'grid</span> <span class="pre">operator'&gt;,</span> <span class="pre">&lt;Stakeholder.BUILDING_MANAGER:</span> <span class="pre">'building</span> <span class="pre">manager'&gt;]</span></em><a class="headerlink" href="#energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.DimensionlessPeakShaving.STAKEHOLDERS" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.DimensionlessPeakShaving.TEMPORAL_EVALUATION_WINDOW">
+<span class="sig-name descname"><span class="pre">TEMPORAL_EVALUATION_WINDOW</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'single</span> <span class="pre">event'</span></em><a class="headerlink" href="#energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.DimensionlessPeakShaving.TEMPORAL_EVALUATION_WINDOW" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.DimensionlessPeakShaving.TEMPORAL_RESOLUTION">
+<span class="sig-name descname"><span class="pre">TEMPORAL_RESOLUTION</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'unspecified'</span></em><a class="headerlink" href="#energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.DimensionlessPeakShaving.TEMPORAL_RESOLUTION" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.DimensionlessPeakShaving.UNIT">
+<span class="sig-name descname"><span class="pre">UNIT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;energy_flexibility_kpis.unit.Unit</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.DimensionlessPeakShaving.UNIT" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.DimensionlessPeakShaving.calculate">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">calculate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">baseline_electric_power_profile</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">flexible_electric_power_profile</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timestamps</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">datetime</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">evaluation_start_timestamp</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">datetime</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">evaluation_end_timestamp</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">datetime</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="headerlink" href="#energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.DimensionlessPeakShaving.calculate" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.EnergyDeviationForPeakShaving">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.</span></span><span class="sig-name descname"><span class="pre">EnergyDeviationForPeakShaving</span></span><a class="headerlink" href="#energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.EnergyDeviationForPeakShaving" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="energy_flexibility_kpis.kpi.base.html#energy_flexibility_kpis.kpi.base.KPI" title="energy_flexibility_kpis.kpi.base.KPI"><code class="xref py py-class docutils literal notranslate"><span class="pre">KPI</span></code></a></p>
+<p>Peak-shaving capacity.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.EnergyDeviationForPeakShaving.CATEGORY">
+<span class="sig-name descname"><span class="pre">CATEGORY</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">(&lt;BaseKPICategory.EF_KPI:</span> <span class="pre">'EF</span> <span class="pre">KPI'&gt;,</span> <span class="pre">'Energy/Average</span> <span class="pre">Power</span> <span class="pre">Load</span> <span class="pre">Shedding')</span></em><a class="headerlink" href="#energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.EnergyDeviationForPeakShaving.CATEGORY" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.EnergyDeviationForPeakShaving.COMPLEXITY">
+<span class="sig-name descname"><span class="pre">COMPLEXITY</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.EnergyDeviationForPeakShaving.COMPLEXITY" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.EnergyDeviationForPeakShaving.DEFINITION">
+<span class="sig-name descname"><span class="pre">DEFINITION</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'Peak-shaving</span> <span class="pre">capacity.'</span></em><a class="headerlink" href="#energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.EnergyDeviationForPeakShaving.DEFINITION" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.EnergyDeviationForPeakShaving.DOE_FLEXIBILITY_CATEGORY">
+<span class="sig-name descname"><span class="pre">DOE_FLEXIBILITY_CATEGORY</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[&lt;DOEFlexibilityCategory.LOAD_SHEDDING:</span> <span class="pre">'load</span> <span class="pre">shedding'&gt;]</span></em><a class="headerlink" href="#energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.EnergyDeviationForPeakShaving.DOE_FLEXIBILITY_CATEGORY" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.EnergyDeviationForPeakShaving.NAME">
+<span class="sig-name descname"><span class="pre">NAME</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'energy</span> <span class="pre">deviation</span> <span class="pre">from</span> <span class="pre">peak</span> <span class="pre">shaving'</span></em><a class="headerlink" href="#energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.EnergyDeviationForPeakShaving.NAME" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.EnergyDeviationForPeakShaving.NEED_BASELINE">
+<span class="sig-name descname"><span class="pre">NEED_BASELINE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">True</span></em><a class="headerlink" href="#energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.EnergyDeviationForPeakShaving.NEED_BASELINE" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.EnergyDeviationForPeakShaving.PERFORMANCE_ASPECT">
+<span class="sig-name descname"><span class="pre">PERFORMANCE_ASPECT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[&lt;PerformanceAspect.ENERGY:</span> <span class="pre">'energy'&gt;]</span></em><a class="headerlink" href="#energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.EnergyDeviationForPeakShaving.PERFORMANCE_ASPECT" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.EnergyDeviationForPeakShaving.RELEVANCE">
+<span class="sig-name descname"><span class="pre">RELEVANCE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3</span></em><a class="headerlink" href="#energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.EnergyDeviationForPeakShaving.RELEVANCE" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.EnergyDeviationForPeakShaving.SPATIAL_RESOLUTION">
+<span class="sig-name descname"><span class="pre">SPATIAL_RESOLUTION</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'unspecified'</span></em><a class="headerlink" href="#energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.EnergyDeviationForPeakShaving.SPATIAL_RESOLUTION" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.EnergyDeviationForPeakShaving.STAKEHOLDERS">
+<span class="sig-name descname"><span class="pre">STAKEHOLDERS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[&lt;Stakeholder.BUILDING_OWNER:</span> <span class="pre">'building</span> <span class="pre">owner'&gt;,</span> <span class="pre">&lt;Stakeholder.GRID_OPERATOR:</span> <span class="pre">'grid</span> <span class="pre">operator'&gt;]</span></em><a class="headerlink" href="#energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.EnergyDeviationForPeakShaving.STAKEHOLDERS" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.EnergyDeviationForPeakShaving.TEMPORAL_EVALUATION_WINDOW">
+<span class="sig-name descname"><span class="pre">TEMPORAL_EVALUATION_WINDOW</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'single</span> <span class="pre">event'</span></em><a class="headerlink" href="#energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.EnergyDeviationForPeakShaving.TEMPORAL_EVALUATION_WINDOW" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.EnergyDeviationForPeakShaving.TEMPORAL_RESOLUTION">
+<span class="sig-name descname"><span class="pre">TEMPORAL_RESOLUTION</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'unspecified'</span></em><a class="headerlink" href="#energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.EnergyDeviationForPeakShaving.TEMPORAL_RESOLUTION" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.EnergyDeviationForPeakShaving.UNIT">
+<span class="sig-name descname"><span class="pre">UNIT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;energy_flexibility_kpis.unit.Unit</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.EnergyDeviationForPeakShaving.UNIT" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.EnergyDeviationForPeakShaving.calculate">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">calculate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">baseline_electric_power_profile</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">flexible_electric_power_profile</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timestamps</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">datetime</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">evaluation_start_timestamp</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">datetime</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">evaluation_end_timestamp</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">datetime</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="headerlink" href="#energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.EnergyDeviationForPeakShaving.calculate" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.FlexibilityDensity">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.</span></span><span class="sig-name descname"><span class="pre">FlexibilityDensity</span></span><a class="headerlink" href="#energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.FlexibilityDensity" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="energy_flexibility_kpis.kpi.base.html#energy_flexibility_kpis.kpi.base.KPI" title="energy_flexibility_kpis.kpi.base.KPI"><code class="xref py py-class docutils literal notranslate"><span class="pre">KPI</span></code></a></p>
+<p>Demand response potential of a given spatial area as a function of response potential of batteries, heat pumps,
+thermal energy storages and electric vehicles.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.FlexibilityDensity.CATEGORY">
+<span class="sig-name descname"><span class="pre">CATEGORY</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">(&lt;BaseKPICategory.EF_KPI:</span> <span class="pre">'EF</span> <span class="pre">KPI'&gt;,</span> <span class="pre">'Energy/Average</span> <span class="pre">Power</span> <span class="pre">Load</span> <span class="pre">Shedding')</span></em><a class="headerlink" href="#energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.FlexibilityDensity.CATEGORY" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.FlexibilityDensity.COMPLEXITY">
+<span class="sig-name descname"><span class="pre">COMPLEXITY</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3</span></em><a class="headerlink" href="#energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.FlexibilityDensity.COMPLEXITY" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.FlexibilityDensity.DEFINITION">
+<span class="sig-name descname"><span class="pre">DEFINITION</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'Demand</span> <span class="pre">response</span> <span class="pre">potential</span> <span class="pre">of</span> <span class="pre">a</span> <span class="pre">given</span> <span class="pre">spatial</span> <span class="pre">area</span> <span class="pre">as</span> <span class="pre">a</span> <span class="pre">function</span> <span class="pre">of</span> <span class="pre">response</span> <span class="pre">potential</span> <span class="pre">of</span> <span class="pre">batteries,</span> <span class="pre">heat</span> <span class="pre">pumps,</span> <span class="pre">\n</span>&#160;&#160;&#160; <span class="pre">thermal</span> <span class="pre">energy</span> <span class="pre">storages</span> <span class="pre">and</span> <span class="pre">electric</span> <span class="pre">vehicles.'</span></em><a class="headerlink" href="#energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.FlexibilityDensity.DEFINITION" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.FlexibilityDensity.DOE_FLEXIBILITY_CATEGORY">
+<span class="sig-name descname"><span class="pre">DOE_FLEXIBILITY_CATEGORY</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[&lt;DOEFlexibilityCategory.LOAD_SHEDDING:</span> <span class="pre">'load</span> <span class="pre">shedding'&gt;]</span></em><a class="headerlink" href="#energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.FlexibilityDensity.DOE_FLEXIBILITY_CATEGORY" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.FlexibilityDensity.NAME">
+<span class="sig-name descname"><span class="pre">NAME</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'flexibilty</span> <span class="pre">density'</span></em><a class="headerlink" href="#energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.FlexibilityDensity.NAME" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.FlexibilityDensity.NEED_BASELINE">
+<span class="sig-name descname"><span class="pre">NEED_BASELINE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">True</span></em><a class="headerlink" href="#energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.FlexibilityDensity.NEED_BASELINE" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.FlexibilityDensity.PERFORMANCE_ASPECT">
+<span class="sig-name descname"><span class="pre">PERFORMANCE_ASPECT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[&lt;PerformanceAspect.ENERGY:</span> <span class="pre">'energy'&gt;]</span></em><a class="headerlink" href="#energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.FlexibilityDensity.PERFORMANCE_ASPECT" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.FlexibilityDensity.RELEVANCE">
+<span class="sig-name descname"><span class="pre">RELEVANCE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.FlexibilityDensity.RELEVANCE" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.FlexibilityDensity.SPATIAL_RESOLUTION">
+<span class="sig-name descname"><span class="pre">SPATIAL_RESOLUTION</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'building</span> <span class="pre">cluster'</span></em><a class="headerlink" href="#energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.FlexibilityDensity.SPATIAL_RESOLUTION" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.FlexibilityDensity.STAKEHOLDERS">
+<span class="sig-name descname"><span class="pre">STAKEHOLDERS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[&lt;Stakeholder.POLICYMAKER:</span> <span class="pre">'policymaker'&gt;,</span> <span class="pre">&lt;Stakeholder.DISTRIBUTION_SYSTEM_OPERATOR:</span> <span class="pre">'distribution</span> <span class="pre">system</span> <span class="pre">operator'&gt;,</span> <span class="pre">&lt;Stakeholder.TRANSMISSION_SYSTEM_OPERATOR:</span> <span class="pre">'transmisssion</span> <span class="pre">system</span> <span class="pre">operator'&gt;]</span></em><a class="headerlink" href="#energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.FlexibilityDensity.STAKEHOLDERS" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.FlexibilityDensity.TEMPORAL_EVALUATION_WINDOW">
+<span class="sig-name descname"><span class="pre">TEMPORAL_EVALUATION_WINDOW</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'single</span> <span class="pre">event'</span></em><a class="headerlink" href="#energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.FlexibilityDensity.TEMPORAL_EVALUATION_WINDOW" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.FlexibilityDensity.TEMPORAL_RESOLUTION">
+<span class="sig-name descname"><span class="pre">TEMPORAL_RESOLUTION</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'unspecified'</span></em><a class="headerlink" href="#energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.FlexibilityDensity.TEMPORAL_RESOLUTION" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.FlexibilityDensity.UNIT">
+<span class="sig-name descname"><span class="pre">UNIT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;energy_flexibility_kpis.unit.Unit</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.FlexibilityDensity.UNIT" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.FlexibilityDensity.calculate">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">calculate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">timestamps</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">datetime</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">evaluation_start_timestamp</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">datetime</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">evaluation_end_timestamp</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">datetime</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="headerlink" href="#energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.FlexibilityDensity.calculate" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.FlexibleTimeDuration">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.</span></span><span class="sig-name descname"><span class="pre">FlexibleTimeDuration</span></span><a class="headerlink" href="#energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.FlexibleTimeDuration" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="energy_flexibility_kpis.kpi.base.html#energy_flexibility_kpis.kpi.base.KPI" title="energy_flexibility_kpis.kpi.base.KPI"><code class="xref py py-class docutils literal notranslate"><span class="pre">KPI</span></code></a></p>
+<p>The duration that a building could reduce or increase its power demand without impacting normal operations.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.FlexibleTimeDuration.CATEGORY">
+<span class="sig-name descname"><span class="pre">CATEGORY</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">(&lt;BaseKPICategory.EF_KPI:</span> <span class="pre">'EF</span> <span class="pre">KPI'&gt;,</span> <span class="pre">'Energy/Average</span> <span class="pre">Power</span> <span class="pre">Load</span> <span class="pre">Shedding')</span></em><a class="headerlink" href="#energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.FlexibleTimeDuration.CATEGORY" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.FlexibleTimeDuration.COMPLEXITY">
+<span class="sig-name descname"><span class="pre">COMPLEXITY</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3</span></em><a class="headerlink" href="#energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.FlexibleTimeDuration.COMPLEXITY" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.FlexibleTimeDuration.DEFINITION">
+<span class="sig-name descname"><span class="pre">DEFINITION</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'The</span> <span class="pre">duration</span> <span class="pre">that</span> <span class="pre">a</span> <span class="pre">building</span> <span class="pre">could</span> <span class="pre">reduce</span> <span class="pre">or</span> <span class="pre">increase</span> <span class="pre">its</span> <span class="pre">power</span> <span class="pre">demand</span> <span class="pre">without</span> <span class="pre">impacting</span> <span class="pre">normal</span> <span class="pre">operations.'</span></em><a class="headerlink" href="#energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.FlexibleTimeDuration.DEFINITION" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.FlexibleTimeDuration.DOE_FLEXIBILITY_CATEGORY">
+<span class="sig-name descname"><span class="pre">DOE_FLEXIBILITY_CATEGORY</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[&lt;DOEFlexibilityCategory.LOAD_SHIFTING:</span> <span class="pre">'load</span> <span class="pre">shifting'&gt;,</span> <span class="pre">&lt;DOEFlexibilityCategory.LOAD_SHEDDING:</span> <span class="pre">'load</span> <span class="pre">shedding'&gt;]</span></em><a class="headerlink" href="#energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.FlexibleTimeDuration.DOE_FLEXIBILITY_CATEGORY" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.FlexibleTimeDuration.NAME">
+<span class="sig-name descname"><span class="pre">NAME</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'flexible</span> <span class="pre">time</span> <span class="pre">duration'</span></em><a class="headerlink" href="#energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.FlexibleTimeDuration.NAME" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.FlexibleTimeDuration.NEED_BASELINE">
+<span class="sig-name descname"><span class="pre">NEED_BASELINE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">True</span></em><a class="headerlink" href="#energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.FlexibleTimeDuration.NEED_BASELINE" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.FlexibleTimeDuration.PERFORMANCE_ASPECT">
+<span class="sig-name descname"><span class="pre">PERFORMANCE_ASPECT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[&lt;PerformanceAspect.COMFORT:</span> <span class="pre">'comfort'&gt;]</span></em><a class="headerlink" href="#energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.FlexibleTimeDuration.PERFORMANCE_ASPECT" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.FlexibleTimeDuration.RELEVANCE">
+<span class="sig-name descname"><span class="pre">RELEVANCE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3</span></em><a class="headerlink" href="#energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.FlexibleTimeDuration.RELEVANCE" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.FlexibleTimeDuration.SPATIAL_RESOLUTION">
+<span class="sig-name descname"><span class="pre">SPATIAL_RESOLUTION</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'single</span> <span class="pre">building'</span></em><a class="headerlink" href="#energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.FlexibleTimeDuration.SPATIAL_RESOLUTION" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.FlexibleTimeDuration.STAKEHOLDERS">
+<span class="sig-name descname"><span class="pre">STAKEHOLDERS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[&lt;Stakeholder.GRID_OPERATOR:</span> <span class="pre">'grid</span> <span class="pre">operator'&gt;,</span> <span class="pre">&lt;Stakeholder.DISTRIBUTION_SYSTEM_OPERATOR:</span> <span class="pre">'distribution</span> <span class="pre">system</span> <span class="pre">operator'&gt;]</span></em><a class="headerlink" href="#energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.FlexibleTimeDuration.STAKEHOLDERS" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.FlexibleTimeDuration.TEMPORAL_EVALUATION_WINDOW">
+<span class="sig-name descname"><span class="pre">TEMPORAL_EVALUATION_WINDOW</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'single</span> <span class="pre">event'</span></em><a class="headerlink" href="#energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.FlexibleTimeDuration.TEMPORAL_EVALUATION_WINDOW" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.FlexibleTimeDuration.TEMPORAL_RESOLUTION">
+<span class="sig-name descname"><span class="pre">TEMPORAL_RESOLUTION</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'unspecified'</span></em><a class="headerlink" href="#energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.FlexibleTimeDuration.TEMPORAL_RESOLUTION" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.FlexibleTimeDuration.UNIT">
+<span class="sig-name descname"><span class="pre">UNIT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;energy_flexibility_kpis.unit.Unit</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.FlexibleTimeDuration.UNIT" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.FlexibleTimeDuration.calculate">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">calculate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">timestamps</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">datetime</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">evaluation_start_timestamp</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">datetime</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">evaluation_end_timestamp</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">datetime</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="headerlink" href="#energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.FlexibleTimeDuration.calculate" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.LoadFactor">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.</span></span><span class="sig-name descname"><span class="pre">LoadFactor</span></span><a class="headerlink" href="#energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.LoadFactor" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="energy_flexibility_kpis.kpi.base.html#energy_flexibility_kpis.kpi.base.KPI" title="energy_flexibility_kpis.kpi.base.KPI"><code class="xref py py-class docutils literal notranslate"><span class="pre">KPI</span></code></a></p>
+<p>Dividing the average load to the peak load in a specified period.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.LoadFactor.CATEGORY">
+<span class="sig-name descname"><span class="pre">CATEGORY</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">(&lt;BaseKPICategory.EF_KPI:</span> <span class="pre">'EF</span> <span class="pre">KPI'&gt;,</span> <span class="pre">'Energy/Average</span> <span class="pre">Power</span> <span class="pre">Load</span> <span class="pre">Shedding')</span></em><a class="headerlink" href="#energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.LoadFactor.CATEGORY" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.LoadFactor.COMPLEXITY">
+<span class="sig-name descname"><span class="pre">COMPLEXITY</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.LoadFactor.COMPLEXITY" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.LoadFactor.DEFINITION">
+<span class="sig-name descname"><span class="pre">DEFINITION</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'Dividing</span> <span class="pre">the</span> <span class="pre">average</span> <span class="pre">load</span> <span class="pre">to</span> <span class="pre">the</span> <span class="pre">peak</span> <span class="pre">load</span> <span class="pre">in</span> <span class="pre">a</span> <span class="pre">specified</span> <span class="pre">period.'</span></em><a class="headerlink" href="#energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.LoadFactor.DEFINITION" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.LoadFactor.DOE_FLEXIBILITY_CATEGORY">
+<span class="sig-name descname"><span class="pre">DOE_FLEXIBILITY_CATEGORY</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[&lt;DOEFlexibilityCategory.LOAD_SHEDDING:</span> <span class="pre">'load</span> <span class="pre">shedding'&gt;]</span></em><a class="headerlink" href="#energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.LoadFactor.DOE_FLEXIBILITY_CATEGORY" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.LoadFactor.NAME">
+<span class="sig-name descname"><span class="pre">NAME</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'load</span> <span class="pre">factor'</span></em><a class="headerlink" href="#energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.LoadFactor.NAME" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.LoadFactor.NEED_BASELINE">
+<span class="sig-name descname"><span class="pre">NEED_BASELINE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.LoadFactor.NEED_BASELINE" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.LoadFactor.PERFORMANCE_ASPECT">
+<span class="sig-name descname"><span class="pre">PERFORMANCE_ASPECT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[&lt;PerformanceAspect.POWER:</span> <span class="pre">'power'&gt;,</span> <span class="pre">&lt;PerformanceAspect.ENERGY:</span> <span class="pre">'energy'&gt;]</span></em><a class="headerlink" href="#energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.LoadFactor.PERFORMANCE_ASPECT" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.LoadFactor.RELEVANCE">
+<span class="sig-name descname"><span class="pre">RELEVANCE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.LoadFactor.RELEVANCE" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.LoadFactor.SPATIAL_RESOLUTION">
+<span class="sig-name descname"><span class="pre">SPATIAL_RESOLUTION</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'unspecified'</span></em><a class="headerlink" href="#energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.LoadFactor.SPATIAL_RESOLUTION" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.LoadFactor.STAKEHOLDERS">
+<span class="sig-name descname"><span class="pre">STAKEHOLDERS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[&lt;Stakeholder.BUILDING_OWNER:</span> <span class="pre">'building</span> <span class="pre">owner'&gt;,</span> <span class="pre">&lt;Stakeholder.POWER_SUPPLIER:</span> <span class="pre">'power</span> <span class="pre">supplier'&gt;]</span></em><a class="headerlink" href="#energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.LoadFactor.STAKEHOLDERS" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.LoadFactor.TEMPORAL_EVALUATION_WINDOW">
+<span class="sig-name descname"><span class="pre">TEMPORAL_EVALUATION_WINDOW</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'single</span> <span class="pre">event'</span></em><a class="headerlink" href="#energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.LoadFactor.TEMPORAL_EVALUATION_WINDOW" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.LoadFactor.TEMPORAL_RESOLUTION">
+<span class="sig-name descname"><span class="pre">TEMPORAL_RESOLUTION</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'unspecified'</span></em><a class="headerlink" href="#energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.LoadFactor.TEMPORAL_RESOLUTION" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.LoadFactor.UNIT">
+<span class="sig-name descname"><span class="pre">UNIT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;energy_flexibility_kpis.unit.Unit</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.LoadFactor.UNIT" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.LoadFactor.calculate">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">calculate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">generic_electric_power_profile</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timestamps</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">datetime</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">evaluation_start_timestamp</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">datetime</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">evaluation_end_timestamp</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">datetime</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="headerlink" href="#energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.LoadFactor.calculate" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.PriceResponsiveness">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.</span></span><span class="sig-name descname"><span class="pre">PriceResponsiveness</span></span><a class="headerlink" href="#energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.PriceResponsiveness" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="energy_flexibility_kpis.kpi.base.html#energy_flexibility_kpis.kpi.base.KPI" title="energy_flexibility_kpis.kpi.base.KPI"><code class="xref py py-class docutils literal notranslate"><span class="pre">KPI</span></code></a></p>
+<p>t_test for testing power shaving significance between tested building cluster conducting DR and reference
+building cluster without DR event.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.PriceResponsiveness.CATEGORY">
+<span class="sig-name descname"><span class="pre">CATEGORY</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">(&lt;BaseKPICategory.EF_KPI:</span> <span class="pre">'EF</span> <span class="pre">KPI'&gt;,</span> <span class="pre">'Energy/Average</span> <span class="pre">Power</span> <span class="pre">Load</span> <span class="pre">Shedding')</span></em><a class="headerlink" href="#energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.PriceResponsiveness.CATEGORY" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.PriceResponsiveness.COMPLEXITY">
+<span class="sig-name descname"><span class="pre">COMPLEXITY</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3</span></em><a class="headerlink" href="#energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.PriceResponsiveness.COMPLEXITY" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.PriceResponsiveness.DEFINITION">
+<span class="sig-name descname"><span class="pre">DEFINITION</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'t_test</span> <span class="pre">for</span> <span class="pre">testing</span> <span class="pre">power</span> <span class="pre">shaving</span> <span class="pre">significance</span> <span class="pre">between</span> <span class="pre">tested</span> <span class="pre">building</span> <span class="pre">cluster</span> <span class="pre">conducting</span> <span class="pre">DR</span> <span class="pre">and</span> <span class="pre">reference</span> <span class="pre">\n</span>&#160;&#160;&#160; <span class="pre">building</span> <span class="pre">cluster</span> <span class="pre">without</span> <span class="pre">DR</span> <span class="pre">event.'</span></em><a class="headerlink" href="#energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.PriceResponsiveness.DEFINITION" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.PriceResponsiveness.DOE_FLEXIBILITY_CATEGORY">
+<span class="sig-name descname"><span class="pre">DOE_FLEXIBILITY_CATEGORY</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[&lt;DOEFlexibilityCategory.LOAD_SHIFTING:</span> <span class="pre">'load</span> <span class="pre">shifting'&gt;,</span> <span class="pre">&lt;DOEFlexibilityCategory.LOAD_SHEDDING:</span> <span class="pre">'load</span> <span class="pre">shedding'&gt;]</span></em><a class="headerlink" href="#energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.PriceResponsiveness.DOE_FLEXIBILITY_CATEGORY" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.PriceResponsiveness.NAME">
+<span class="sig-name descname"><span class="pre">NAME</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'price</span> <span class="pre">responsiveness'</span></em><a class="headerlink" href="#energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.PriceResponsiveness.NAME" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.PriceResponsiveness.NEED_BASELINE">
+<span class="sig-name descname"><span class="pre">NEED_BASELINE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">True</span></em><a class="headerlink" href="#energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.PriceResponsiveness.NEED_BASELINE" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.PriceResponsiveness.PERFORMANCE_ASPECT">
+<span class="sig-name descname"><span class="pre">PERFORMANCE_ASPECT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[&lt;PerformanceAspect.POWER:</span> <span class="pre">'power'&gt;,</span> <span class="pre">&lt;PerformanceAspect.COST:</span> <span class="pre">'cost'&gt;]</span></em><a class="headerlink" href="#energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.PriceResponsiveness.PERFORMANCE_ASPECT" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.PriceResponsiveness.RELEVANCE">
+<span class="sig-name descname"><span class="pre">RELEVANCE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.PriceResponsiveness.RELEVANCE" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.PriceResponsiveness.SPATIAL_RESOLUTION">
+<span class="sig-name descname"><span class="pre">SPATIAL_RESOLUTION</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'building</span> <span class="pre">cluster'</span></em><a class="headerlink" href="#energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.PriceResponsiveness.SPATIAL_RESOLUTION" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.PriceResponsiveness.STAKEHOLDERS">
+<span class="sig-name descname"><span class="pre">STAKEHOLDERS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[&lt;Stakeholder.DISTRIBUTION_SYSTEM_OPERATOR:</span> <span class="pre">'distribution</span> <span class="pre">system</span> <span class="pre">operator'&gt;,</span> <span class="pre">&lt;Stakeholder.BUILDING_OWNER:</span> <span class="pre">'building</span> <span class="pre">owner'&gt;]</span></em><a class="headerlink" href="#energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.PriceResponsiveness.STAKEHOLDERS" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.PriceResponsiveness.TEMPORAL_EVALUATION_WINDOW">
+<span class="sig-name descname"><span class="pre">TEMPORAL_EVALUATION_WINDOW</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'single</span> <span class="pre">event'</span></em><a class="headerlink" href="#energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.PriceResponsiveness.TEMPORAL_EVALUATION_WINDOW" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.PriceResponsiveness.TEMPORAL_RESOLUTION">
+<span class="sig-name descname"><span class="pre">TEMPORAL_RESOLUTION</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'unspecified'</span></em><a class="headerlink" href="#energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.PriceResponsiveness.TEMPORAL_RESOLUTION" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.PriceResponsiveness.UNIT">
+<span class="sig-name descname"><span class="pre">UNIT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;energy_flexibility_kpis.unit.Unit</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.PriceResponsiveness.UNIT" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.PriceResponsiveness.calculate">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">calculate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">baseline_electric_power_profile</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">flexible_electric_power_profile</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timestamps</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">datetime</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">evaluation_start_timestamp</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">datetime</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">evaluation_end_timestamp</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">datetime</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="headerlink" href="#energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding.PriceResponsiveness.calculate" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="energy_flexibility_kpis.kpi.energy_flexibility.demand_response_profile_reshaping.html" class="btn btn-neutral float-left" title="energy_flexibility_kpis.kpi.energy_flexibility.demand_response_profile_reshaping module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="energy_flexibility_kpis.kpi.energy_flexibility.energy_storage_capability.html" class="btn btn-neutral float-right" title="energy_flexibility_kpis.kpi.energy_flexibility.energy_storage_capability module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Hicham Johra.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

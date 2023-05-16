@@ -1,0 +1,7 @@
+energy\_flexibility\_kpis.kpi.energy\_flexibility.demand\_response\_energy\_efficiency module
+=============================================================================================
+
+.. automodule:: energy_flexibility_kpis.kpi.energy_flexibility.demand_response_energy_efficiency
+   :members:
+   :undoc-members:
+   :show-inheritance:

@@ -1,0 +1,7 @@
+energy\_flexibility\_kpis.primitive\_type module
+================================================
+
+.. automodule:: energy_flexibility_kpis.primitive_type
+   :members:
+   :undoc-members:
+   :show-inheritance:

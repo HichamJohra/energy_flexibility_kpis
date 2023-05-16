@@ -1,0 +1,7 @@
+energy\_flexibility\_kpis.kpi.energy\_flexibility.grid\_interaction module
+==========================================================================
+
+.. automodule:: energy_flexibility_kpis.kpi.energy_flexibility.grid_interaction
+   :members:
+   :undoc-members:
+   :show-inheritance:

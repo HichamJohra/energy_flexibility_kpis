@@ -12,6 +12,7 @@ Subpackages
 .. toctree::
    :maxdepth: 4
 
+   energy_flexibility_kpis.kpi
    energy_flexibility_kpis.test
 
 Submodules
@@ -20,5 +21,9 @@ Submodules
 .. toctree::
    :maxdepth: 4
 
-   energy_flexibility_kpis.kpi
+   energy_flexibility_kpis.base
+   energy_flexibility_kpis.enumerations
+   energy_flexibility_kpis.primitive_type
+   energy_flexibility_kpis.unit
    energy_flexibility_kpis.utilities
+   energy_flexibility_kpis.variable

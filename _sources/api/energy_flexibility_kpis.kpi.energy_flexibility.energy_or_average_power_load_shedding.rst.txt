@@ -1,0 +1,7 @@
+energy\_flexibility\_kpis.kpi.energy\_flexibility.energy\_or\_average\_power\_load\_shedding module
+===================================================================================================
+
+.. automodule:: energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding
+   :members:
+   :undoc-members:
+   :show-inheritance:

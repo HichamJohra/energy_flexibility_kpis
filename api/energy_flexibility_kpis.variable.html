@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>energy_flexibility_kpis.variable module &mdash; energy_flexibility_kpis 1.4.1 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="References" href="../references.html" />
+    <link rel="prev" title="energy_flexibility_kpis.utilities module" href="energy_flexibility_kpis.utilities.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            energy_flexibility_kpis
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">energy_flexibility_kpis</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="energy_flexibility_kpis.html">energy_flexibility_kpis package</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="energy_flexibility_kpis.html#subpackages">Subpackages</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="energy_flexibility_kpis.html#submodules">Submodules</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="energy_flexibility_kpis.base.html">energy_flexibility_kpis.base module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="energy_flexibility_kpis.enumerations.html">energy_flexibility_kpis.enumerations module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="energy_flexibility_kpis.primitive_type.html">energy_flexibility_kpis.primitive_type module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="energy_flexibility_kpis.unit.html">energy_flexibility_kpis.unit module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="energy_flexibility_kpis.utilities.html">energy_flexibility_kpis.utilities module</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">energy_flexibility_kpis.variable module</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../references.html">References</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">energy_flexibility_kpis</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="modules.html">energy_flexibility_kpis</a></li>
+          <li class="breadcrumb-item"><a href="energy_flexibility_kpis.html">energy_flexibility_kpis package</a></li>
+      <li class="breadcrumb-item active">energy_flexibility_kpis.variable module</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/api/energy_flexibility_kpis.variable.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-energy_flexibility_kpis.variable">
+<span id="energy-flexibility-kpis-variable-module"></span><h1>energy_flexibility_kpis.variable module<a class="headerlink" href="#module-energy_flexibility_kpis.variable" title="Permalink to this heading"></a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.variable.DateTimeVariable">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">energy_flexibility_kpis.variable.</span></span><span class="sig-name descname"><span class="pre">DateTimeVariable</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#energy_flexibility_kpis.variable.DateTimeVariable" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#energy_flexibility_kpis.variable.Variable" title="energy_flexibility_kpis.variable.Variable"><code class="xref py py-class docutils literal notranslate"><span class="pre">Variable</span></code></a></p>
+<dl class="py property">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.variable.DateTimeVariable.value">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">value</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">ndarray</span></em><a class="headerlink" href="#energy_flexibility_kpis.variable.DateTimeVariable.value" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.variable.DefaultVariable">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">energy_flexibility_kpis.variable.</span></span><span class="sig-name descname"><span class="pre">DefaultVariable</span></span><a class="headerlink" href="#energy_flexibility_kpis.variable.DefaultVariable" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.variable.DefaultVariableMetaClass">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">energy_flexibility_kpis.variable.</span></span><span class="sig-name descname"><span class="pre">DefaultVariableMetaClass</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#energy_flexibility_kpis.variable.DefaultVariableMetaClass" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">type</span></code></p>
+<dl class="py property">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.variable.DefaultVariableMetaClass.availability">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">availability</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#energy_flexibility_kpis.variable.Variable" title="energy_flexibility_kpis.variable.Variable"><span class="pre">Variable</span></a></em><a class="headerlink" href="#energy_flexibility_kpis.variable.DefaultVariableMetaClass.availability" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.variable.DefaultVariableMetaClass.baseline_electric_power_profile">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">baseline_electric_power_profile</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#energy_flexibility_kpis.variable.Variable" title="energy_flexibility_kpis.variable.Variable"><span class="pre">Variable</span></a></em><a class="headerlink" href="#energy_flexibility_kpis.variable.DefaultVariableMetaClass.baseline_electric_power_profile" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.variable.DefaultVariableMetaClass.baseline_electricity_consumption_profile">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">baseline_electricity_consumption_profile</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#energy_flexibility_kpis.variable.Variable" title="energy_flexibility_kpis.variable.Variable"><span class="pre">Variable</span></a></em><a class="headerlink" href="#energy_flexibility_kpis.variable.DefaultVariableMetaClass.baseline_electricity_consumption_profile" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.variable.DefaultVariableMetaClass.baseline_natural_gas_consumption_profile">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">baseline_natural_gas_consumption_profile</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#energy_flexibility_kpis.variable.Variable" title="energy_flexibility_kpis.variable.Variable"><span class="pre">Variable</span></a></em><a class="headerlink" href="#energy_flexibility_kpis.variable.DefaultVariableMetaClass.baseline_natural_gas_consumption_profile" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.variable.DefaultVariableMetaClass.evaluation_end_timestamp">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">evaluation_end_timestamp</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#energy_flexibility_kpis.variable.Variable" title="energy_flexibility_kpis.variable.Variable"><span class="pre">Variable</span></a></em><a class="headerlink" href="#energy_flexibility_kpis.variable.DefaultVariableMetaClass.evaluation_end_timestamp" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.variable.DefaultVariableMetaClass.evaluation_start_timestamp">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">evaluation_start_timestamp</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#energy_flexibility_kpis.variable.Variable" title="energy_flexibility_kpis.variable.Variable"><span class="pre">Variable</span></a></em><a class="headerlink" href="#energy_flexibility_kpis.variable.DefaultVariableMetaClass.evaluation_start_timestamp" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.variable.DefaultVariableMetaClass.flexible_electric_power_profile">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">flexible_electric_power_profile</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#energy_flexibility_kpis.variable.Variable" title="energy_flexibility_kpis.variable.Variable"><span class="pre">Variable</span></a></em><a class="headerlink" href="#energy_flexibility_kpis.variable.DefaultVariableMetaClass.flexible_electric_power_profile" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.variable.DefaultVariableMetaClass.flexible_electricity_consumption_profile">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">flexible_electricity_consumption_profile</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#energy_flexibility_kpis.variable.Variable" title="energy_flexibility_kpis.variable.Variable"><span class="pre">Variable</span></a></em><a class="headerlink" href="#energy_flexibility_kpis.variable.DefaultVariableMetaClass.flexible_electricity_consumption_profile" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.variable.DefaultVariableMetaClass.flexible_natural_gas_consumption_profile">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">flexible_natural_gas_consumption_profile</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#energy_flexibility_kpis.variable.Variable" title="energy_flexibility_kpis.variable.Variable"><span class="pre">Variable</span></a></em><a class="headerlink" href="#energy_flexibility_kpis.variable.DefaultVariableMetaClass.flexible_natural_gas_consumption_profile" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.variable.DefaultVariableMetaClass.generic_electric_power_profile">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">generic_electric_power_profile</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#energy_flexibility_kpis.variable.Variable" title="energy_flexibility_kpis.variable.Variable"><span class="pre">Variable</span></a></em><a class="headerlink" href="#energy_flexibility_kpis.variable.DefaultVariableMetaClass.generic_electric_power_profile" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.variable.DefaultVariableMetaClass.generic_electricity_consumption_profile">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">generic_electricity_consumption_profile</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#energy_flexibility_kpis.variable.Variable" title="energy_flexibility_kpis.variable.Variable"><span class="pre">Variable</span></a></em><a class="headerlink" href="#energy_flexibility_kpis.variable.DefaultVariableMetaClass.generic_electricity_consumption_profile" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.variable.DefaultVariableMetaClass.generic_natural_gas_consumption_profile">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">generic_natural_gas_consumption_profile</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#energy_flexibility_kpis.variable.Variable" title="energy_flexibility_kpis.variable.Variable"><span class="pre">Variable</span></a></em><a class="headerlink" href="#energy_flexibility_kpis.variable.DefaultVariableMetaClass.generic_natural_gas_consumption_profile" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.variable.DefaultVariableMetaClass.grid_peak_timestamp">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">grid_peak_timestamp</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#energy_flexibility_kpis.variable.Variable" title="energy_flexibility_kpis.variable.Variable"><span class="pre">Variable</span></a></em><a class="headerlink" href="#energy_flexibility_kpis.variable.DefaultVariableMetaClass.grid_peak_timestamp" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.variable.DefaultVariableMetaClass.high_emission_end_timestamp">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">high_emission_end_timestamp</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#energy_flexibility_kpis.variable.Variable" title="energy_flexibility_kpis.variable.Variable"><span class="pre">Variable</span></a></em><a class="headerlink" href="#energy_flexibility_kpis.variable.DefaultVariableMetaClass.high_emission_end_timestamp" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.variable.DefaultVariableMetaClass.high_emission_start_timestamp">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">high_emission_start_timestamp</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#energy_flexibility_kpis.variable.Variable" title="energy_flexibility_kpis.variable.Variable"><span class="pre">Variable</span></a></em><a class="headerlink" href="#energy_flexibility_kpis.variable.DefaultVariableMetaClass.high_emission_start_timestamp" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.variable.DefaultVariableMetaClass.high_price_end_timestamp">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">high_price_end_timestamp</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#energy_flexibility_kpis.variable.Variable" title="energy_flexibility_kpis.variable.Variable"><span class="pre">Variable</span></a></em><a class="headerlink" href="#energy_flexibility_kpis.variable.DefaultVariableMetaClass.high_price_end_timestamp" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.variable.DefaultVariableMetaClass.high_price_start_timestamp">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">high_price_start_timestamp</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#energy_flexibility_kpis.variable.Variable" title="energy_flexibility_kpis.variable.Variable"><span class="pre">Variable</span></a></em><a class="headerlink" href="#energy_flexibility_kpis.variable.DefaultVariableMetaClass.high_price_start_timestamp" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.variable.DefaultVariableMetaClass.load_profile_peak_timestamp">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">load_profile_peak_timestamp</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#energy_flexibility_kpis.variable.Variable" title="energy_flexibility_kpis.variable.Variable"><span class="pre">Variable</span></a></em><a class="headerlink" href="#energy_flexibility_kpis.variable.DefaultVariableMetaClass.load_profile_peak_timestamp" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.variable.DefaultVariableMetaClass.load_profile_valley_timestamp">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">load_profile_valley_timestamp</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#energy_flexibility_kpis.variable.Variable" title="energy_flexibility_kpis.variable.Variable"><span class="pre">Variable</span></a></em><a class="headerlink" href="#energy_flexibility_kpis.variable.DefaultVariableMetaClass.load_profile_valley_timestamp" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.variable.DefaultVariableMetaClass.timestamps">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">timestamps</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#energy_flexibility_kpis.variable.Variable" title="energy_flexibility_kpis.variable.Variable"><span class="pre">Variable</span></a></em><a class="headerlink" href="#energy_flexibility_kpis.variable.DefaultVariableMetaClass.timestamps" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.variable.Variable">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">energy_flexibility_kpis.variable.</span></span><span class="sig-name descname"><span class="pre">Variable</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">definition</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">primitive_type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="energy_flexibility_kpis.primitive_type.html#energy_flexibility_kpis.primitive_type.PrimitiveType" title="energy_flexibility_kpis.primitive_type.PrimitiveType"><span class="pre">PrimitiveType</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">value_type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="energy_flexibility_kpis.enumerations.html#energy_flexibility_kpis.enumerations.ValueType" title="energy_flexibility_kpis.enumerations.ValueType"><span class="pre">ValueType</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">operation_condition</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="energy_flexibility_kpis.enumerations.html#energy_flexibility_kpis.enumerations.OperationCondition" title="energy_flexibility_kpis.enumerations.OperationCondition"><span class="pre">OperationCondition</span></a><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">bool</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">datetime</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">list</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">ndarray</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unit</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="energy_flexibility_kpis.unit.html#energy_flexibility_kpis.unit.Unit" title="energy_flexibility_kpis.unit.Unit"><span class="pre">Unit</span></a><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">efont_uri</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">brick_uri</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#energy_flexibility_kpis.variable.Variable" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="energy_flexibility_kpis.base.html#energy_flexibility_kpis.base.Definition" title="energy_flexibility_kpis.base.Definition"><code class="xref py py-class docutils literal notranslate"><span class="pre">Definition</span></code></a></p>
+<dl class="py property">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.variable.Variable.operation_condition">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">operation_condition</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="energy_flexibility_kpis.enumerations.html#energy_flexibility_kpis.enumerations.OperationCondition" title="energy_flexibility_kpis.enumerations.OperationCondition"><span class="pre">OperationCondition</span></a></em><a class="headerlink" href="#energy_flexibility_kpis.variable.Variable.operation_condition" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.variable.Variable.snake_case_name">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">snake_case_name</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#energy_flexibility_kpis.variable.Variable.snake_case_name" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.variable.Variable.unit">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">unit</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="energy_flexibility_kpis.unit.html#energy_flexibility_kpis.unit.Unit" title="energy_flexibility_kpis.unit.Unit"><span class="pre">Unit</span></a></em><a class="headerlink" href="#energy_flexibility_kpis.variable.Variable.unit" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.variable.Variable.value">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">value</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">ndarray</span></em><a class="headerlink" href="#energy_flexibility_kpis.variable.Variable.value" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.variable.VariableSet">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">energy_flexibility_kpis.variable.</span></span><span class="sig-name descname"><span class="pre">VariableSet</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">availability</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">bool</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timestamps</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">datetime</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">evaluation_start_timestamp</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">datetime</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">evaluation_end_timestamp</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">datetime</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">baseline_electric_power_profile</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">baseline_electricity_consumption_profile</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">baseline_natural_gas_consumption_profile</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">flexible_electric_power_profile</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">flexible_electricity_consumption_profile</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">flexible_natural_gas_consumption_profile</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">generic_electric_power_profile</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">generic_electricity_consumption_profile</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">generic_natural_gas_consumption_profile</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">load_profile_peak_timestamp</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">datetime</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">load_profile_valley_timestamp</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">datetime</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">grid_peak_timestamp</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">datetime</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">high_price_start_timestamp</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">datetime</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">high_price_end_timestamp</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">datetime</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">high_emission_start_timestamp</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">datetime</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">high_emission_end_timestamp</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">datetime</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#energy_flexibility_kpis.variable.VariableSet" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="energy_flexibility_kpis.base.html#energy_flexibility_kpis.base.Definition" title="energy_flexibility_kpis.base.Definition"><code class="xref py py-class docutils literal notranslate"><span class="pre">Definition</span></code></a></p>
+<dl class="py property">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.variable.VariableSet.availability">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">availability</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#energy_flexibility_kpis.variable.Variable" title="energy_flexibility_kpis.variable.Variable"><span class="pre">Variable</span></a></em><a class="headerlink" href="#energy_flexibility_kpis.variable.VariableSet.availability" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.variable.VariableSet.baseline_electric_power_profile">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">baseline_electric_power_profile</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#energy_flexibility_kpis.variable.Variable" title="energy_flexibility_kpis.variable.Variable"><span class="pre">Variable</span></a></em><a class="headerlink" href="#energy_flexibility_kpis.variable.VariableSet.baseline_electric_power_profile" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.variable.VariableSet.baseline_electricity_consumption_profile">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">baseline_electricity_consumption_profile</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#energy_flexibility_kpis.variable.Variable" title="energy_flexibility_kpis.variable.Variable"><span class="pre">Variable</span></a></em><a class="headerlink" href="#energy_flexibility_kpis.variable.VariableSet.baseline_electricity_consumption_profile" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.variable.VariableSet.baseline_natural_gas_consumption_profile">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">baseline_natural_gas_consumption_profile</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#energy_flexibility_kpis.variable.Variable" title="energy_flexibility_kpis.variable.Variable"><span class="pre">Variable</span></a></em><a class="headerlink" href="#energy_flexibility_kpis.variable.VariableSet.baseline_natural_gas_consumption_profile" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.variable.VariableSet.evaluation_end_timestamp">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">evaluation_end_timestamp</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#energy_flexibility_kpis.variable.DateTimeVariable" title="energy_flexibility_kpis.variable.DateTimeVariable"><span class="pre">DateTimeVariable</span></a></em><a class="headerlink" href="#energy_flexibility_kpis.variable.VariableSet.evaluation_end_timestamp" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.variable.VariableSet.evaluation_mask">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">evaluation_mask</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#energy_flexibility_kpis.variable.VariableSet.evaluation_mask" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.variable.VariableSet.evaluation_start_timestamp">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">evaluation_start_timestamp</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#energy_flexibility_kpis.variable.DateTimeVariable" title="energy_flexibility_kpis.variable.DateTimeVariable"><span class="pre">DateTimeVariable</span></a></em><a class="headerlink" href="#energy_flexibility_kpis.variable.VariableSet.evaluation_start_timestamp" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.variable.VariableSet.flexible_electric_power_profile">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">flexible_electric_power_profile</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#energy_flexibility_kpis.variable.Variable" title="energy_flexibility_kpis.variable.Variable"><span class="pre">Variable</span></a></em><a class="headerlink" href="#energy_flexibility_kpis.variable.VariableSet.flexible_electric_power_profile" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.variable.VariableSet.flexible_electricity_consumption_profile">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">flexible_electricity_consumption_profile</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#energy_flexibility_kpis.variable.Variable" title="energy_flexibility_kpis.variable.Variable"><span class="pre">Variable</span></a></em><a class="headerlink" href="#energy_flexibility_kpis.variable.VariableSet.flexible_electricity_consumption_profile" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.variable.VariableSet.flexible_natural_gas_consumption_profile">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">flexible_natural_gas_consumption_profile</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#energy_flexibility_kpis.variable.Variable" title="energy_flexibility_kpis.variable.Variable"><span class="pre">Variable</span></a></em><a class="headerlink" href="#energy_flexibility_kpis.variable.VariableSet.flexible_natural_gas_consumption_profile" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.variable.VariableSet.generic_electric_power_profile">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">generic_electric_power_profile</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#energy_flexibility_kpis.variable.Variable" title="energy_flexibility_kpis.variable.Variable"><span class="pre">Variable</span></a></em><a class="headerlink" href="#energy_flexibility_kpis.variable.VariableSet.generic_electric_power_profile" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.variable.VariableSet.generic_electricity_consumption_profile">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">generic_electricity_consumption_profile</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#energy_flexibility_kpis.variable.Variable" title="energy_flexibility_kpis.variable.Variable"><span class="pre">Variable</span></a></em><a class="headerlink" href="#energy_flexibility_kpis.variable.VariableSet.generic_electricity_consumption_profile" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.variable.VariableSet.generic_natural_gas_consumption_profile">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">generic_natural_gas_consumption_profile</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#energy_flexibility_kpis.variable.Variable" title="energy_flexibility_kpis.variable.Variable"><span class="pre">Variable</span></a></em><a class="headerlink" href="#energy_flexibility_kpis.variable.VariableSet.generic_natural_gas_consumption_profile" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.variable.VariableSet.grid_peak_timestamp">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">grid_peak_timestamp</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#energy_flexibility_kpis.variable.DateTimeVariable" title="energy_flexibility_kpis.variable.DateTimeVariable"><span class="pre">DateTimeVariable</span></a></em><a class="headerlink" href="#energy_flexibility_kpis.variable.VariableSet.grid_peak_timestamp" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.variable.VariableSet.high_emission_end_timestamp">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">high_emission_end_timestamp</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#energy_flexibility_kpis.variable.DateTimeVariable" title="energy_flexibility_kpis.variable.DateTimeVariable"><span class="pre">DateTimeVariable</span></a></em><a class="headerlink" href="#energy_flexibility_kpis.variable.VariableSet.high_emission_end_timestamp" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.variable.VariableSet.high_emission_start_timestamp">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">high_emission_start_timestamp</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#energy_flexibility_kpis.variable.DateTimeVariable" title="energy_flexibility_kpis.variable.DateTimeVariable"><span class="pre">DateTimeVariable</span></a></em><a class="headerlink" href="#energy_flexibility_kpis.variable.VariableSet.high_emission_start_timestamp" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.variable.VariableSet.high_price_end_timestamp">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">high_price_end_timestamp</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#energy_flexibility_kpis.variable.DateTimeVariable" title="energy_flexibility_kpis.variable.DateTimeVariable"><span class="pre">DateTimeVariable</span></a></em><a class="headerlink" href="#energy_flexibility_kpis.variable.VariableSet.high_price_end_timestamp" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.variable.VariableSet.high_price_start_timestamp">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">high_price_start_timestamp</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#energy_flexibility_kpis.variable.DateTimeVariable" title="energy_flexibility_kpis.variable.DateTimeVariable"><span class="pre">DateTimeVariable</span></a></em><a class="headerlink" href="#energy_flexibility_kpis.variable.VariableSet.high_price_start_timestamp" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.variable.VariableSet.load_profile_peak_timestamp">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">load_profile_peak_timestamp</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#energy_flexibility_kpis.variable.DateTimeVariable" title="energy_flexibility_kpis.variable.DateTimeVariable"><span class="pre">DateTimeVariable</span></a></em><a class="headerlink" href="#energy_flexibility_kpis.variable.VariableSet.load_profile_peak_timestamp" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.variable.VariableSet.load_profile_valley_timestamp">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">load_profile_valley_timestamp</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#energy_flexibility_kpis.variable.DateTimeVariable" title="energy_flexibility_kpis.variable.DateTimeVariable"><span class="pre">DateTimeVariable</span></a></em><a class="headerlink" href="#energy_flexibility_kpis.variable.VariableSet.load_profile_valley_timestamp" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.variable.VariableSet.timestamps">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">timestamps</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#energy_flexibility_kpis.variable.DateTimeVariable" title="energy_flexibility_kpis.variable.DateTimeVariable"><span class="pre">DateTimeVariable</span></a></em><a class="headerlink" href="#energy_flexibility_kpis.variable.VariableSet.timestamps" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.variable.VariableSet.validate_serial_variables">
+<span class="sig-name descname"><span class="pre">validate_serial_variables</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#energy_flexibility_kpis.variable.VariableSet.validate_serial_variables" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="energy_flexibility_kpis.utilities.html" class="btn btn-neutral float-left" title="energy_flexibility_kpis.utilities module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../references.html" class="btn btn-neutral float-right" title="References" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Hicham Johra.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

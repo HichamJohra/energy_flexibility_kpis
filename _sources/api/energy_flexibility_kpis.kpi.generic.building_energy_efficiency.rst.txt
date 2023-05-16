@@ -1,0 +1,7 @@
+energy\_flexibility\_kpis.kpi.generic.building\_energy\_efficiency module
+=========================================================================
+
+.. automodule:: energy_flexibility_kpis.kpi.generic.building_energy_efficiency
+   :members:
+   :undoc-members:
+   :show-inheritance:

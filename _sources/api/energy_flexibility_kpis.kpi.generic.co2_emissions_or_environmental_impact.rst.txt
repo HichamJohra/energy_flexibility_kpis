@@ -1,0 +1,7 @@
+energy\_flexibility\_kpis.kpi.generic.co2\_emissions\_or\_environmental\_impact module
+======================================================================================
+
+.. automodule:: energy_flexibility_kpis.kpi.generic.co2_emissions_or_environmental_impact
+   :members:
+   :undoc-members:
+   :show-inheritance:

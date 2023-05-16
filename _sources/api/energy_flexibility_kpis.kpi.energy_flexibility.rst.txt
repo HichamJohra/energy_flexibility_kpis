@@ -1,0 +1,27 @@
+energy\_flexibility\_kpis.kpi.energy\_flexibility package
+=========================================================
+
+.. automodule:: energy_flexibility_kpis.kpi.energy_flexibility
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Submodules
+----------
+
+.. toctree::
+   :maxdepth: 4
+
+   energy_flexibility_kpis.kpi.energy_flexibility.demand_profile_reshaping
+   energy_flexibility_kpis.kpi.energy_flexibility.demand_response_costs_or_savings
+   energy_flexibility_kpis.kpi.energy_flexibility.demand_response_emission_or_environmental_impact
+   energy_flexibility_kpis.kpi.energy_flexibility.demand_response_energy_efficiency
+   energy_flexibility_kpis.kpi.energy_flexibility.demand_response_profile_reshaping
+   energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding
+   energy_flexibility_kpis.kpi.energy_flexibility.energy_storage_capability
+   energy_flexibility_kpis.kpi.energy_flexibility.grid_interaction
+   energy_flexibility_kpis.kpi.energy_flexibility.impact_on_ieq
+   energy_flexibility_kpis.kpi.energy_flexibility.load_shifting
+   energy_flexibility_kpis.kpi.energy_flexibility.peak_power_or_energy_rebound
+   energy_flexibility_kpis.kpi.energy_flexibility.peak_power_shedding
+   energy_flexibility_kpis.kpi.energy_flexibility.valley_filling

@@ -1,0 +1,7 @@
+energy\_flexibility\_kpis.kpi.energy\_flexibility.demand\_response\_profile\_reshaping module
+=============================================================================================
+
+.. automodule:: energy_flexibility_kpis.kpi.energy_flexibility.demand_response_profile_reshaping
+   :members:
+   :undoc-members:
+   :show-inheritance:

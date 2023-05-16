@@ -1,0 +1,7 @@
+energy\_flexibility\_kpis.kpi.energy\_flexibility.impact\_on\_ieq module
+========================================================================
+
+.. automodule:: energy_flexibility_kpis.kpi.energy_flexibility.impact_on_ieq
+   :members:
+   :undoc-members:
+   :show-inheritance:

@@ -1,0 +1,18 @@
+energy\_flexibility\_kpis.kpi.generic package
+=============================================
+
+.. automodule:: energy_flexibility_kpis.kpi.generic
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Submodules
+----------
+
+.. toctree::
+   :maxdepth: 4
+
+   energy_flexibility_kpis.kpi.generic.building_energy_efficiency
+   energy_flexibility_kpis.kpi.generic.co2_emissions_or_environmental_impact
+   energy_flexibility_kpis.kpi.generic.cost_and_savings
+   energy_flexibility_kpis.kpi.generic.grid_interaction

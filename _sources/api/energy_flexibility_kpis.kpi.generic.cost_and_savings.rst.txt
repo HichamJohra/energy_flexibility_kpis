@@ -1,0 +1,7 @@
+energy\_flexibility\_kpis.kpi.generic.cost\_and\_savings module
+===============================================================
+
+.. automodule:: energy_flexibility_kpis.kpi.generic.cost_and_savings
+   :members:
+   :undoc-members:
+   :show-inheritance:

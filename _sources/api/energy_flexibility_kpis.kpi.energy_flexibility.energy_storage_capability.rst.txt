@@ -1,0 +1,7 @@
+energy\_flexibility\_kpis.kpi.energy\_flexibility.energy\_storage\_capability module
+====================================================================================
+
+.. automodule:: energy_flexibility_kpis.kpi.energy_flexibility.energy_storage_capability
+   :members:
+   :undoc-members:
+   :show-inheritance:

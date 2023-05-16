@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>energy_flexibility_kpis.enumerations module &mdash; energy_flexibility_kpis 1.4.1 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="energy_flexibility_kpis.primitive_type module" href="energy_flexibility_kpis.primitive_type.html" />
+    <link rel="prev" title="energy_flexibility_kpis.base module" href="energy_flexibility_kpis.base.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            energy_flexibility_kpis
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">energy_flexibility_kpis</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="energy_flexibility_kpis.html">energy_flexibility_kpis package</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="energy_flexibility_kpis.html#subpackages">Subpackages</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="energy_flexibility_kpis.html#submodules">Submodules</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="energy_flexibility_kpis.base.html">energy_flexibility_kpis.base module</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">energy_flexibility_kpis.enumerations module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="energy_flexibility_kpis.primitive_type.html">energy_flexibility_kpis.primitive_type module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="energy_flexibility_kpis.unit.html">energy_flexibility_kpis.unit module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="energy_flexibility_kpis.utilities.html">energy_flexibility_kpis.utilities module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="energy_flexibility_kpis.variable.html">energy_flexibility_kpis.variable module</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../references.html">References</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">energy_flexibility_kpis</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="modules.html">energy_flexibility_kpis</a></li>
+          <li class="breadcrumb-item"><a href="energy_flexibility_kpis.html">energy_flexibility_kpis package</a></li>
+      <li class="breadcrumb-item active">energy_flexibility_kpis.enumerations module</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/api/energy_flexibility_kpis.enumerations.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-energy_flexibility_kpis.enumerations">
+<span id="energy-flexibility-kpis-enumerations-module"></span><h1>energy_flexibility_kpis.enumerations module<a class="headerlink" href="#module-energy_flexibility_kpis.enumerations" title="Permalink to this heading"></a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.enumerations.BaseKPICategory">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">energy_flexibility_kpis.enumerations.</span></span><span class="sig-name descname"><span class="pre">BaseKPICategory</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#energy_flexibility_kpis.enumerations.BaseKPICategory" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Enum</span></code></p>
+<p>An enumeration.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.enumerations.BaseKPICategory.EF_KPI">
+<span class="sig-name descname"><span class="pre">EF_KPI</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'EF</span> <span class="pre">KPI'</span></em><a class="headerlink" href="#energy_flexibility_kpis.enumerations.BaseKPICategory.EF_KPI" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.enumerations.BaseKPICategory.GENERIC">
+<span class="sig-name descname"><span class="pre">GENERIC</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'Generic'</span></em><a class="headerlink" href="#energy_flexibility_kpis.enumerations.BaseKPICategory.GENERIC" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.enumerations.BaseUnit">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">energy_flexibility_kpis.enumerations.</span></span><span class="sig-name descname"><span class="pre">BaseUnit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#energy_flexibility_kpis.enumerations.BaseUnit" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Enum</span></code></p>
+<p>An enumeration.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.enumerations.BaseUnit.CELCIUS">
+<span class="sig-name descname"><span class="pre">CELCIUS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('C',</span> <span class="pre">'celcius')</span></em><a class="headerlink" href="#energy_flexibility_kpis.enumerations.BaseUnit.CELCIUS" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.enumerations.BaseUnit.DIMENSIONLESS">
+<span class="sig-name descname"><span class="pre">DIMENSIONLESS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('',</span> <span class="pre">'')</span></em><a class="headerlink" href="#energy_flexibility_kpis.enumerations.BaseUnit.DIMENSIONLESS" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.enumerations.BaseUnit.DOLLAR">
+<span class="sig-name descname"><span class="pre">DOLLAR</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('%',</span> <span class="pre">'dollar')</span></em><a class="headerlink" href="#energy_flexibility_kpis.enumerations.BaseUnit.DOLLAR" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.enumerations.BaseUnit.HOUR">
+<span class="sig-name descname"><span class="pre">HOUR</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('hr',</span> <span class="pre">'hour')</span></em><a class="headerlink" href="#energy_flexibility_kpis.enumerations.BaseUnit.HOUR" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.enumerations.BaseUnit.KELVIN">
+<span class="sig-name descname"><span class="pre">KELVIN</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('K',</span> <span class="pre">'kelvin')</span></em><a class="headerlink" href="#energy_flexibility_kpis.enumerations.BaseUnit.KELVIN" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.enumerations.BaseUnit.KG_OF_CO2">
+<span class="sig-name descname"><span class="pre">KG_OF_CO2</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('kgCO2',</span> <span class="pre">'kilograms-of-CO2')</span></em><a class="headerlink" href="#energy_flexibility_kpis.enumerations.BaseUnit.KG_OF_CO2" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.enumerations.BaseUnit.KW">
+<span class="sig-name descname"><span class="pre">KW</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('kW',</span> <span class="pre">'kilowatt')</span></em><a class="headerlink" href="#energy_flexibility_kpis.enumerations.BaseUnit.KW" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.enumerations.BaseUnit.KWH">
+<span class="sig-name descname"><span class="pre">KWH</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('kWh',</span> <span class="pre">'kilowatt-hour')</span></em><a class="headerlink" href="#energy_flexibility_kpis.enumerations.BaseUnit.KWH" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.enumerations.BaseUnit.PERCENT">
+<span class="sig-name descname"><span class="pre">PERCENT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('%',</span> <span class="pre">'percent')</span></em><a class="headerlink" href="#energy_flexibility_kpis.enumerations.BaseUnit.PERCENT" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.enumerations.BaseUnit.PPM">
+<span class="sig-name descname"><span class="pre">PPM</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('ppm',</span> <span class="pre">'parts-per-million')</span></em><a class="headerlink" href="#energy_flexibility_kpis.enumerations.BaseUnit.PPM" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.enumerations.BaseUnit.SECOND">
+<span class="sig-name descname"><span class="pre">SECOND</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('s',</span> <span class="pre">'second')</span></em><a class="headerlink" href="#energy_flexibility_kpis.enumerations.BaseUnit.SECOND" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.enumerations.BaseUnit.SQUARE_METER">
+<span class="sig-name descname"><span class="pre">SQUARE_METER</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('m^2',</span> <span class="pre">'square-meter')</span></em><a class="headerlink" href="#energy_flexibility_kpis.enumerations.BaseUnit.SQUARE_METER" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.enumerations.BaseUnit.TON">
+<span class="sig-name descname"><span class="pre">TON</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('ton',</span> <span class="pre">'ton')</span></em><a class="headerlink" href="#energy_flexibility_kpis.enumerations.BaseUnit.TON" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.enumerations.Complexity">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">energy_flexibility_kpis.enumerations.</span></span><span class="sig-name descname"><span class="pre">Complexity</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#energy_flexibility_kpis.enumerations.Complexity" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Enum</span></code></p>
+<p>An enumeration.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.enumerations.Complexity.HIGH">
+<span class="sig-name descname"><span class="pre">HIGH</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3</span></em><a class="headerlink" href="#energy_flexibility_kpis.enumerations.Complexity.HIGH" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.enumerations.Complexity.LOW">
+<span class="sig-name descname"><span class="pre">LOW</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#energy_flexibility_kpis.enumerations.Complexity.LOW" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.enumerations.Complexity.MEDIUM">
+<span class="sig-name descname"><span class="pre">MEDIUM</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#energy_flexibility_kpis.enumerations.Complexity.MEDIUM" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.enumerations.DOEFlexibilityCategory">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">energy_flexibility_kpis.enumerations.</span></span><span class="sig-name descname"><span class="pre">DOEFlexibilityCategory</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#energy_flexibility_kpis.enumerations.DOEFlexibilityCategory" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Enum</span></code></p>
+<p>An enumeration.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.enumerations.DOEFlexibilityCategory.EFFICIENCY">
+<span class="sig-name descname"><span class="pre">EFFICIENCY</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'efficiency'</span></em><a class="headerlink" href="#energy_flexibility_kpis.enumerations.DOEFlexibilityCategory.EFFICIENCY" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.enumerations.DOEFlexibilityCategory.GENERATION">
+<span class="sig-name descname"><span class="pre">GENERATION</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'generation'</span></em><a class="headerlink" href="#energy_flexibility_kpis.enumerations.DOEFlexibilityCategory.GENERATION" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.enumerations.DOEFlexibilityCategory.LOAD_SHEDDING">
+<span class="sig-name descname"><span class="pre">LOAD_SHEDDING</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'load</span> <span class="pre">shedding'</span></em><a class="headerlink" href="#energy_flexibility_kpis.enumerations.DOEFlexibilityCategory.LOAD_SHEDDING" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.enumerations.DOEFlexibilityCategory.LOAD_SHIFTING">
+<span class="sig-name descname"><span class="pre">LOAD_SHIFTING</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'load</span> <span class="pre">shifting'</span></em><a class="headerlink" href="#energy_flexibility_kpis.enumerations.DOEFlexibilityCategory.LOAD_SHIFTING" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.enumerations.DOEFlexibilityCategory.MODULATING">
+<span class="sig-name descname"><span class="pre">MODULATING</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'modulating'</span></em><a class="headerlink" href="#energy_flexibility_kpis.enumerations.DOEFlexibilityCategory.MODULATING" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.enumerations.KPICategory">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">energy_flexibility_kpis.enumerations.</span></span><span class="sig-name descname"><span class="pre">KPICategory</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#energy_flexibility_kpis.enumerations.KPICategory" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Enum</span></code></p>
+<p>An enumeration.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.enumerations.KPICategory.EF_DEMAND_PROFILE_RESHAPING">
+<span class="sig-name descname"><span class="pre">EF_DEMAND_PROFILE_RESHAPING</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">(&lt;BaseKPICategory.EF_KPI:</span> <span class="pre">'EF</span> <span class="pre">KPI'&gt;,</span> <span class="pre">'Demand</span> <span class="pre">Profile</span> <span class="pre">Reshaping')</span></em><a class="headerlink" href="#energy_flexibility_kpis.enumerations.KPICategory.EF_DEMAND_PROFILE_RESHAPING" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.enumerations.KPICategory.EF_DEMAND_RESPONSE_COSTS_OR_SAVINGS">
+<span class="sig-name descname"><span class="pre">EF_DEMAND_RESPONSE_COSTS_OR_SAVINGS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">(&lt;BaseKPICategory.EF_KPI:</span> <span class="pre">'EF</span> <span class="pre">KPI'&gt;,</span> <span class="pre">'Demand</span> <span class="pre">Response</span> <span class="pre">Costs/Savings')</span></em><a class="headerlink" href="#energy_flexibility_kpis.enumerations.KPICategory.EF_DEMAND_RESPONSE_COSTS_OR_SAVINGS" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.enumerations.KPICategory.EF_DEMAND_RESPONSE_EMISSION_OR_ENVIRONMENTAL_IMPACT">
+<span class="sig-name descname"><span class="pre">EF_DEMAND_RESPONSE_EMISSION_OR_ENVIRONMENTAL_IMPACT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">(&lt;BaseKPICategory.EF_KPI:</span> <span class="pre">'EF</span> <span class="pre">KPI'&gt;,</span> <span class="pre">'Demand</span> <span class="pre">Response</span> <span class="pre">Emission/Environmental</span> <span class="pre">Impact')</span></em><a class="headerlink" href="#energy_flexibility_kpis.enumerations.KPICategory.EF_DEMAND_RESPONSE_EMISSION_OR_ENVIRONMENTAL_IMPACT" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.enumerations.KPICategory.EF_DEMAND_RESPONSE_ENERGY_EFFICIENCY">
+<span class="sig-name descname"><span class="pre">EF_DEMAND_RESPONSE_ENERGY_EFFICIENCY</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">(&lt;BaseKPICategory.EF_KPI:</span> <span class="pre">'EF</span> <span class="pre">KPI'&gt;,</span> <span class="pre">'Demand</span> <span class="pre">Response</span> <span class="pre">Energy</span> <span class="pre">Efficiency')</span></em><a class="headerlink" href="#energy_flexibility_kpis.enumerations.KPICategory.EF_DEMAND_RESPONSE_ENERGY_EFFICIENCY" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.enumerations.KPICategory.EF_ENERGY_OR_AVERAGE_POWER_LOAD_SHEDDING">
+<span class="sig-name descname"><span class="pre">EF_ENERGY_OR_AVERAGE_POWER_LOAD_SHEDDING</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">(&lt;BaseKPICategory.EF_KPI:</span> <span class="pre">'EF</span> <span class="pre">KPI'&gt;,</span> <span class="pre">'Energy/Average</span> <span class="pre">Power</span> <span class="pre">Load</span> <span class="pre">Shedding')</span></em><a class="headerlink" href="#energy_flexibility_kpis.enumerations.KPICategory.EF_ENERGY_OR_AVERAGE_POWER_LOAD_SHEDDING" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.enumerations.KPICategory.EF_ENERGY_STORAGE_CAPABILITY">
+<span class="sig-name descname"><span class="pre">EF_ENERGY_STORAGE_CAPABILITY</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">(&lt;BaseKPICategory.EF_KPI:</span> <span class="pre">'EF</span> <span class="pre">KPI'&gt;,</span> <span class="pre">'Energy</span> <span class="pre">Storage</span> <span class="pre">Capability')</span></em><a class="headerlink" href="#energy_flexibility_kpis.enumerations.KPICategory.EF_ENERGY_STORAGE_CAPABILITY" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.enumerations.KPICategory.EF_GRID_INTERACTION">
+<span class="sig-name descname"><span class="pre">EF_GRID_INTERACTION</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">(&lt;BaseKPICategory.EF_KPI:</span> <span class="pre">'EF</span> <span class="pre">KPI'&gt;,</span> <span class="pre">'Grid</span> <span class="pre">Interaction')</span></em><a class="headerlink" href="#energy_flexibility_kpis.enumerations.KPICategory.EF_GRID_INTERACTION" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.enumerations.KPICategory.EF_IMPACT_ON_IEQ">
+<span class="sig-name descname"><span class="pre">EF_IMPACT_ON_IEQ</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">(&lt;BaseKPICategory.EF_KPI:</span> <span class="pre">'EF</span> <span class="pre">KPI'&gt;,</span> <span class="pre">'Impact</span> <span class="pre">on</span> <span class="pre">Indoor</span> <span class="pre">Environmental</span> <span class="pre">Quality')</span></em><a class="headerlink" href="#energy_flexibility_kpis.enumerations.KPICategory.EF_IMPACT_ON_IEQ" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.enumerations.KPICategory.EF_LOAD_SHIFTING">
+<span class="sig-name descname"><span class="pre">EF_LOAD_SHIFTING</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">(&lt;BaseKPICategory.EF_KPI:</span> <span class="pre">'EF</span> <span class="pre">KPI'&gt;,</span> <span class="pre">'Load</span> <span class="pre">Shifting')</span></em><a class="headerlink" href="#energy_flexibility_kpis.enumerations.KPICategory.EF_LOAD_SHIFTING" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.enumerations.KPICategory.EF_PEAK_POWER_OR_ENERGY_REBOUND">
+<span class="sig-name descname"><span class="pre">EF_PEAK_POWER_OR_ENERGY_REBOUND</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">(&lt;BaseKPICategory.EF_KPI:</span> <span class="pre">'EF</span> <span class="pre">KPI'&gt;,</span> <span class="pre">'Peak</span> <span class="pre">Power/Energy</span> <span class="pre">Rebound')</span></em><a class="headerlink" href="#energy_flexibility_kpis.enumerations.KPICategory.EF_PEAK_POWER_OR_ENERGY_REBOUND" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.enumerations.KPICategory.EF_PEAK_POWER_SHEDDING">
+<span class="sig-name descname"><span class="pre">EF_PEAK_POWER_SHEDDING</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">(&lt;BaseKPICategory.EF_KPI:</span> <span class="pre">'EF</span> <span class="pre">KPI'&gt;,</span> <span class="pre">'Peak</span> <span class="pre">Power</span> <span class="pre">Shedding')</span></em><a class="headerlink" href="#energy_flexibility_kpis.enumerations.KPICategory.EF_PEAK_POWER_SHEDDING" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.enumerations.KPICategory.EF_VALLEY_FILLING">
+<span class="sig-name descname"><span class="pre">EF_VALLEY_FILLING</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">(&lt;BaseKPICategory.EF_KPI:</span> <span class="pre">'EF</span> <span class="pre">KPI'&gt;,</span> <span class="pre">'Valley</span> <span class="pre">Filling')</span></em><a class="headerlink" href="#energy_flexibility_kpis.enumerations.KPICategory.EF_VALLEY_FILLING" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.enumerations.KPICategory.GN_BUILDING_ENERGY_EFFICIENCY">
+<span class="sig-name descname"><span class="pre">GN_BUILDING_ENERGY_EFFICIENCY</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">(&lt;BaseKPICategory.GENERIC:</span> <span class="pre">'Generic'&gt;,</span> <span class="pre">'Building</span> <span class="pre">Energy</span> <span class="pre">Efficiency')</span></em><a class="headerlink" href="#energy_flexibility_kpis.enumerations.KPICategory.GN_BUILDING_ENERGY_EFFICIENCY" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.enumerations.KPICategory.GN_CO2_EMISSIONS_OR_ENVIRONMENTAL_IMPACT">
+<span class="sig-name descname"><span class="pre">GN_CO2_EMISSIONS_OR_ENVIRONMENTAL_IMPACT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">(&lt;BaseKPICategory.GENERIC:</span> <span class="pre">'Generic'&gt;,</span> <span class="pre">'CO2</span> <span class="pre">Emissions/Environmental</span> <span class="pre">Impact')</span></em><a class="headerlink" href="#energy_flexibility_kpis.enumerations.KPICategory.GN_CO2_EMISSIONS_OR_ENVIRONMENTAL_IMPACT" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.enumerations.KPICategory.GN_COST_AND_SAVINGS">
+<span class="sig-name descname"><span class="pre">GN_COST_AND_SAVINGS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">(&lt;BaseKPICategory.GENERIC:</span> <span class="pre">'Generic'&gt;,</span> <span class="pre">'Cost</span> <span class="pre">and</span> <span class="pre">Savings')</span></em><a class="headerlink" href="#energy_flexibility_kpis.enumerations.KPICategory.GN_COST_AND_SAVINGS" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.enumerations.KPICategory.GN_GRID_INTERACTION">
+<span class="sig-name descname"><span class="pre">GN_GRID_INTERACTION</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">(&lt;BaseKPICategory.GENERIC:</span> <span class="pre">'Generic'&gt;,</span> <span class="pre">'Grid</span> <span class="pre">Interaction')</span></em><a class="headerlink" href="#energy_flexibility_kpis.enumerations.KPICategory.GN_GRID_INTERACTION" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.enumerations.OperationCondition">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">energy_flexibility_kpis.enumerations.</span></span><span class="sig-name descname"><span class="pre">OperationCondition</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#energy_flexibility_kpis.enumerations.OperationCondition" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Enum</span></code></p>
+<p>An enumeration.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.enumerations.OperationCondition.BASELINE">
+<span class="sig-name descname"><span class="pre">BASELINE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'baseline'</span></em><a class="headerlink" href="#energy_flexibility_kpis.enumerations.OperationCondition.BASELINE" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.enumerations.OperationCondition.FLEXIBLE">
+<span class="sig-name descname"><span class="pre">FLEXIBLE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'flexible'</span></em><a class="headerlink" href="#energy_flexibility_kpis.enumerations.OperationCondition.FLEXIBLE" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.enumerations.OperationCondition.GENERIC">
+<span class="sig-name descname"><span class="pre">GENERIC</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'generic'</span></em><a class="headerlink" href="#energy_flexibility_kpis.enumerations.OperationCondition.GENERIC" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.enumerations.PerformanceAspect">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">energy_flexibility_kpis.enumerations.</span></span><span class="sig-name descname"><span class="pre">PerformanceAspect</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#energy_flexibility_kpis.enumerations.PerformanceAspect" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Enum</span></code></p>
+<p>An enumeration.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.enumerations.PerformanceAspect.COMFORT">
+<span class="sig-name descname"><span class="pre">COMFORT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'comfort'</span></em><a class="headerlink" href="#energy_flexibility_kpis.enumerations.PerformanceAspect.COMFORT" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.enumerations.PerformanceAspect.COST">
+<span class="sig-name descname"><span class="pre">COST</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'cost'</span></em><a class="headerlink" href="#energy_flexibility_kpis.enumerations.PerformanceAspect.COST" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.enumerations.PerformanceAspect.EMISSION">
+<span class="sig-name descname"><span class="pre">EMISSION</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'emission'</span></em><a class="headerlink" href="#energy_flexibility_kpis.enumerations.PerformanceAspect.EMISSION" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.enumerations.PerformanceAspect.ENERGY">
+<span class="sig-name descname"><span class="pre">ENERGY</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'energy'</span></em><a class="headerlink" href="#energy_flexibility_kpis.enumerations.PerformanceAspect.ENERGY" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.enumerations.PerformanceAspect.POWER">
+<span class="sig-name descname"><span class="pre">POWER</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'power'</span></em><a class="headerlink" href="#energy_flexibility_kpis.enumerations.PerformanceAspect.POWER" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.enumerations.Relevance">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">energy_flexibility_kpis.enumerations.</span></span><span class="sig-name descname"><span class="pre">Relevance</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#energy_flexibility_kpis.enumerations.Relevance" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">IntEnum</span></code></p>
+<p>An enumeration.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.enumerations.Relevance.HIGH">
+<span class="sig-name descname"><span class="pre">HIGH</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3</span></em><a class="headerlink" href="#energy_flexibility_kpis.enumerations.Relevance.HIGH" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.enumerations.Relevance.LOW">
+<span class="sig-name descname"><span class="pre">LOW</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#energy_flexibility_kpis.enumerations.Relevance.LOW" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.enumerations.Relevance.MEDIUM">
+<span class="sig-name descname"><span class="pre">MEDIUM</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#energy_flexibility_kpis.enumerations.Relevance.MEDIUM" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.enumerations.SpatialResolution">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">energy_flexibility_kpis.enumerations.</span></span><span class="sig-name descname"><span class="pre">SpatialResolution</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#energy_flexibility_kpis.enumerations.SpatialResolution" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Enum</span></code></p>
+<p>An enumeration.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.enumerations.SpatialResolution.BUILDING_CLUSTER">
+<span class="sig-name descname"><span class="pre">BUILDING_CLUSTER</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'building</span> <span class="pre">cluster'</span></em><a class="headerlink" href="#energy_flexibility_kpis.enumerations.SpatialResolution.BUILDING_CLUSTER" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.enumerations.SpatialResolution.SINGLE_BUILDING">
+<span class="sig-name descname"><span class="pre">SINGLE_BUILDING</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'single</span> <span class="pre">building'</span></em><a class="headerlink" href="#energy_flexibility_kpis.enumerations.SpatialResolution.SINGLE_BUILDING" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.enumerations.SpatialResolution.UNSPECIFIED">
+<span class="sig-name descname"><span class="pre">UNSPECIFIED</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'unspecified'</span></em><a class="headerlink" href="#energy_flexibility_kpis.enumerations.SpatialResolution.UNSPECIFIED" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.enumerations.Stakeholder">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">energy_flexibility_kpis.enumerations.</span></span><span class="sig-name descname"><span class="pre">Stakeholder</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#energy_flexibility_kpis.enumerations.Stakeholder" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Enum</span></code></p>
+<p>An enumeration.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.enumerations.Stakeholder.AGGREGATOR">
+<span class="sig-name descname"><span class="pre">AGGREGATOR</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'aggregator'</span></em><a class="headerlink" href="#energy_flexibility_kpis.enumerations.Stakeholder.AGGREGATOR" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.enumerations.Stakeholder.BUILDING_MANAGER">
+<span class="sig-name descname"><span class="pre">BUILDING_MANAGER</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'building</span> <span class="pre">manager'</span></em><a class="headerlink" href="#energy_flexibility_kpis.enumerations.Stakeholder.BUILDING_MANAGER" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.enumerations.Stakeholder.BUILDING_OPERATOR">
+<span class="sig-name descname"><span class="pre">BUILDING_OPERATOR</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'building</span> <span class="pre">operator'</span></em><a class="headerlink" href="#energy_flexibility_kpis.enumerations.Stakeholder.BUILDING_OPERATOR" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.enumerations.Stakeholder.BUILDING_OWNER">
+<span class="sig-name descname"><span class="pre">BUILDING_OWNER</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'building</span> <span class="pre">owner'</span></em><a class="headerlink" href="#energy_flexibility_kpis.enumerations.Stakeholder.BUILDING_OWNER" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.enumerations.Stakeholder.DISTRIBUTION_SYSTEM_OPERATOR">
+<span class="sig-name descname"><span class="pre">DISTRIBUTION_SYSTEM_OPERATOR</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'distribution</span> <span class="pre">system</span> <span class="pre">operator'</span></em><a class="headerlink" href="#energy_flexibility_kpis.enumerations.Stakeholder.DISTRIBUTION_SYSTEM_OPERATOR" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.enumerations.Stakeholder.GRID_OPERATOR">
+<span class="sig-name descname"><span class="pre">GRID_OPERATOR</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'grid</span> <span class="pre">operator'</span></em><a class="headerlink" href="#energy_flexibility_kpis.enumerations.Stakeholder.GRID_OPERATOR" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.enumerations.Stakeholder.OCCUPANT">
+<span class="sig-name descname"><span class="pre">OCCUPANT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'occupant'</span></em><a class="headerlink" href="#energy_flexibility_kpis.enumerations.Stakeholder.OCCUPANT" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.enumerations.Stakeholder.POLICYMAKER">
+<span class="sig-name descname"><span class="pre">POLICYMAKER</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'policymaker'</span></em><a class="headerlink" href="#energy_flexibility_kpis.enumerations.Stakeholder.POLICYMAKER" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.enumerations.Stakeholder.POWER_SUPPLIER">
+<span class="sig-name descname"><span class="pre">POWER_SUPPLIER</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'power</span> <span class="pre">supplier'</span></em><a class="headerlink" href="#energy_flexibility_kpis.enumerations.Stakeholder.POWER_SUPPLIER" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.enumerations.Stakeholder.TRANSMISSION_SYSTEM_OPERATOR">
+<span class="sig-name descname"><span class="pre">TRANSMISSION_SYSTEM_OPERATOR</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'transmisssion</span> <span class="pre">system</span> <span class="pre">operator'</span></em><a class="headerlink" href="#energy_flexibility_kpis.enumerations.Stakeholder.TRANSMISSION_SYSTEM_OPERATOR" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.enumerations.Stakeholder.UTILITY_COMPANY">
+<span class="sig-name descname"><span class="pre">UTILITY_COMPANY</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'utility</span> <span class="pre">company'</span></em><a class="headerlink" href="#energy_flexibility_kpis.enumerations.Stakeholder.UTILITY_COMPANY" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.enumerations.TemporalEvaluationWindow">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">energy_flexibility_kpis.enumerations.</span></span><span class="sig-name descname"><span class="pre">TemporalEvaluationWindow</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#energy_flexibility_kpis.enumerations.TemporalEvaluationWindow" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Enum</span></code></p>
+<p>An enumeration.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.enumerations.TemporalEvaluationWindow.MULTIPLE_EVENTS">
+<span class="sig-name descname"><span class="pre">MULTIPLE_EVENTS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'multiple</span> <span class="pre">events'</span></em><a class="headerlink" href="#energy_flexibility_kpis.enumerations.TemporalEvaluationWindow.MULTIPLE_EVENTS" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.enumerations.TemporalEvaluationWindow.SINGLE_EVENT">
+<span class="sig-name descname"><span class="pre">SINGLE_EVENT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'single</span> <span class="pre">event'</span></em><a class="headerlink" href="#energy_flexibility_kpis.enumerations.TemporalEvaluationWindow.SINGLE_EVENT" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.enumerations.TemporalEvaluationWindow.UNSPECIFIED">
+<span class="sig-name descname"><span class="pre">UNSPECIFIED</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'unspecified'</span></em><a class="headerlink" href="#energy_flexibility_kpis.enumerations.TemporalEvaluationWindow.UNSPECIFIED" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.enumerations.TemporalEvaluationWindow.WHOLE_DAY">
+<span class="sig-name descname"><span class="pre">WHOLE_DAY</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'whole</span> <span class="pre">day'</span></em><a class="headerlink" href="#energy_flexibility_kpis.enumerations.TemporalEvaluationWindow.WHOLE_DAY" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.enumerations.TemporalEvaluationWindow.WHOLE_YEAR">
+<span class="sig-name descname"><span class="pre">WHOLE_YEAR</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'whole</span> <span class="pre">year'</span></em><a class="headerlink" href="#energy_flexibility_kpis.enumerations.TemporalEvaluationWindow.WHOLE_YEAR" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.enumerations.TemporalResolution">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">energy_flexibility_kpis.enumerations.</span></span><span class="sig-name descname"><span class="pre">TemporalResolution</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#energy_flexibility_kpis.enumerations.TemporalResolution" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Enum</span></code></p>
+<p>An enumeration.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.enumerations.TemporalResolution.HOURLY">
+<span class="sig-name descname"><span class="pre">HOURLY</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'hourly'</span></em><a class="headerlink" href="#energy_flexibility_kpis.enumerations.TemporalResolution.HOURLY" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.enumerations.TemporalResolution.UNSPECIFIED">
+<span class="sig-name descname"><span class="pre">UNSPECIFIED</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'unspecified'</span></em><a class="headerlink" href="#energy_flexibility_kpis.enumerations.TemporalResolution.UNSPECIFIED" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.enumerations.TemporalResolution.VARIOUS">
+<span class="sig-name descname"><span class="pre">VARIOUS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'various'</span></em><a class="headerlink" href="#energy_flexibility_kpis.enumerations.TemporalResolution.VARIOUS" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.enumerations.ValueType">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">energy_flexibility_kpis.enumerations.</span></span><span class="sig-name descname"><span class="pre">ValueType</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#energy_flexibility_kpis.enumerations.ValueType" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Enum</span></code></p>
+<p>An enumeration.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.enumerations.ValueType.SERIAL">
+<span class="sig-name descname"><span class="pre">SERIAL</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">(&lt;class</span> <span class="pre">'list'&gt;,)</span></em><a class="headerlink" href="#energy_flexibility_kpis.enumerations.ValueType.SERIAL" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="energy_flexibility_kpis.enumerations.ValueType.SINGLE">
+<span class="sig-name descname"><span class="pre">SINGLE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">(&lt;class</span> <span class="pre">'str'&gt;,</span> <span class="pre">&lt;class</span> <span class="pre">'int'&gt;,</span> <span class="pre">&lt;class</span> <span class="pre">'float'&gt;,</span> <span class="pre">&lt;class</span> <span class="pre">'bool'&gt;)</span></em><a class="headerlink" href="#energy_flexibility_kpis.enumerations.ValueType.SINGLE" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="energy_flexibility_kpis.base.html" class="btn btn-neutral float-left" title="energy_flexibility_kpis.base module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="energy_flexibility_kpis.primitive_type.html" class="btn btn-neutral float-right" title="energy_flexibility_kpis.primitive_type module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Hicham Johra.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
