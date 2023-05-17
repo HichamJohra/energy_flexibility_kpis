@@ -1,6 +1,6 @@
 import datetime
 import math
-from typing import Any, List, Union
+from typing import Any, List, Mapping, Union
 import numpy as np
 import pandas as pd
 from energy_flexibility_kpis.base import Definition
@@ -40,6 +40,19 @@ class Variable(Definition):
     @property
     def snake_case_name(self) -> str:
         return self.name.strip().replace(' ', '_')
+    
+    def info(self) -> Mapping[str, Any]:
+        return {
+            'name': self.name,
+            'snake_case_name': self.snake_case_name,
+            'definition': self.definition,
+            'primitive_type': self.primitive_type.info(),
+            'value_type': self.value_type.value,
+            'unit': str(self.unit),
+            'operation_condition': self.operation_condition.value,
+            'efont_uri': self.efont_uri,
+            'brick_uri': self.brick_uri
+        }
 
     @unit.setter
     def unit(self, value: Unit):
@@ -47,20 +60,21 @@ class Variable(Definition):
 
     @value.setter
     def value(self, value: Union[str, int, float, bool, datetime.datetime, list, np.ndarray]):
-        if value is None:
-            value = np.nan
-        
-        elif (isinstance(value, float) and math.isnan(value)):
+        value_type_error_message = f'The variable {self.snake_case_name} is a {self.value_type}'\
+            f' value type and must be one of the following types: {[v.__name__ for v in self.value_type.value]}.'
+
+        if value is None or isinstance(value, pd._libs.tslibs.nattype.NaTType):
             pass
+        
+        elif (isinstance(value, float) and math.isnan(value)) or isinstance(value, pd._libs.tslibs.nattype.NaTType):
+            value = None
 
         elif self.value_type == ValueType.SINGLE:
-            assert isinstance(value, self.value_type.value),\
-                f'For {self.value_type.value} value type, value variable must be a str, int or float.'
+            assert isinstance(value, tuple(self.value_type.value)), value_type_error_message
             value = np.array(value, dtype=type(value))
         
         elif self.value_type == ValueType.SERIAL:
-            assert isinstance(value, self.value_type.value),\
-                f'For {self.value_type.value} value type, value variable must be a list.'
+            assert isinstance(value, tuple(self.value_type.value)), value_type_error_message
             value = np.array(value, dtype=type(value[0]))
            
         else:
@@ -84,6 +98,12 @@ class DateTimeVariable(Variable):
                 and (not isinstance(value, list) or not isinstance(value[0], int))
             ):
             value = pd.to_datetime(value)
+            
+            try:
+                value = value.tolist()
+            except AttributeError:
+                pass
+
         
         else:
             pass
@@ -419,11 +439,10 @@ class VariableSet(Definition):
         # use timesteps for masking and assume evaluation start timestamp and timestep 
         # are integers that indicate timestep
         timestamps = np.array(range(self.__serial_variable_length), dtype=int)\
-            if (isinstance(self.__timestamps.value, float) and math.isnan(self.__timestamps.value))\
-                else self.__timestamps.value
-        evaluation_start_timestamp = timestamps[0] if math.isnan(self.evaluation_start_timestamp.value)\
+            if self.__timestamps.value is None else self.__timestamps.value
+        evaluation_start_timestamp = timestamps[0] if self.evaluation_start_timestamp.value is None\
             else self.evaluation_start_timestamp.value
-        evaluation_end_timestamp = timestamps[-1] if math.isnan(self.evaluation_end_timestamp.value)\
+        evaluation_end_timestamp = timestamps[-1] if self.evaluation_end_timestamp.value is None\
             else self.evaluation_end_timestamp.value
 
         return (timestamps >= evaluation_start_timestamp) & (timestamps <= evaluation_end_timestamp)
@@ -469,52 +488,48 @@ class VariableSet(Definition):
         self.__generic_natural_gas_consumption_profile = self.__set_variable(DefaultVariable.generic_natural_gas_consumption_profile, value)
     
     @timestamps.setter
-    def timestamps(self, value: Union[Variable, List[int], List[str], List[datetime.datetime]]):
+    def timestamps(self, value: Union[List[int], List[str], List[datetime.datetime]]):
         self.__timestamps = self.__set_variable(DefaultVariable.timestamps, value)
     
     @evaluation_start_timestamp.setter
-    def evaluation_start_timestamp(self, value: Union[Variable, int, str, datetime.datetime]):
+    def evaluation_start_timestamp(self, value: Union[int, str, datetime.datetime]):
         self.__evaluation_start_timestamp = self.__set_variable(DefaultVariable.evaluation_start_timestamp, value)
 
     @evaluation_end_timestamp.setter
-    def evaluation_end_timestamp(self, value: Union[Variable, int, str, datetime.datetime]):
+    def evaluation_end_timestamp(self, value: Union[int, str, datetime.datetime]):
         self.__evaluation_end_timestamp = self.__set_variable(DefaultVariable.evaluation_end_timestamp, value)
 
     @load_profile_peak_timestamp.setter
-    def load_profile_peak_timestamp(self, value: Union[Variable, int, str, datetime.datetime]):
+    def load_profile_peak_timestamp(self, value: Union[int, str, datetime.datetime]):
         self.__load_profile_peak_timestamp = self.__set_variable(DefaultVariable.load_profile_peak_timestamp, value)
 
     @load_profile_valley_timestamp.setter
-    def load_profile_valley_timestamp(self, value: Union[Variable, int, str, datetime.datetime]):
+    def load_profile_valley_timestamp(self, value: Union[int, str, datetime.datetime]):
         self.__load_profile_valley_timestamp = self.__set_variable(DefaultVariable.load_profile_valley_timestamp, value)
 
     @grid_peak_timestamp.setter
-    def grid_peak_timestamp(self, value: Union[Variable, int, str, datetime.datetime]):
+    def grid_peak_timestamp(self, value: Union[int, str, datetime.datetime]):
         self.__grid_peak_timestamp = self.__set_variable(DefaultVariable.grid_peak_timestamp, value)
     
     @high_price_start_timestamp.setter
-    def high_price_start_timestamp(self, value: Union[Variable, int, str, datetime.datetime]):
+    def high_price_start_timestamp(self, value: Union[int, str, datetime.datetime]):
         self.__high_price_start_timestamp = self.__set_variable(DefaultVariable.high_price_start_timestamp, value)
 
     @high_price_end_timestamp.setter
-    def high_price_end_timestamp(self, value: Union[Variable, int, str, datetime.datetime]):
+    def high_price_end_timestamp(self, value: Union[int, str, datetime.datetime]):
         self.__high_price_end_timestamp = self.__set_variable(DefaultVariable.high_price_end_timestamp, value)
     
     @high_emission_start_timestamp.setter
-    def high_emission_start_timestamp(self, value: Union[Variable, int, str, datetime.datetime]):
+    def high_emission_start_timestamp(self, value: Union[int, str, datetime.datetime]):
         self.__high_emission_start_timestamp = self.__set_variable(DefaultVariable.high_emission_start_timestamp, value)
     
     @high_emission_end_timestamp.setter
-    def high_emission_end_timestamp(self, value: Union[Variable, int, str, datetime.datetime]):
+    def high_emission_end_timestamp(self, value: Union[int, str, datetime.datetime]):
         self.__high_emission_end_timestamp = self.__set_variable(DefaultVariable.high_emission_end_timestamp, value)
     
     def __set_variable(self, default: Variable, value: Any) -> Variable:
-        if isinstance(value, Variable):
-            variable = value
-
-        else:
-            variable = default
-            variable.value = value if value is not None else variable.value
+        variable = default
+        variable.value = value
         
         return variable
     

@@ -1,3 +1,4 @@
+from typing import Any, Mapping
 from energy_flexibility_kpis.base import Definition
 from energy_flexibility_kpis.enumerations import BaseUnit
 from energy_flexibility_kpis.unit import Unit
@@ -8,6 +9,13 @@ class PrimitiveType(Definition):
         self.name = name
         self.definition = definition
         self.unit = unit
+
+    def info(self) -> Mapping[str, Any]:
+        return {
+            'name': self.name,
+            'definition': self.definition,
+            'unit': str(self.unit)
+        }
 
 class DefaultPrimitiveTypeMetaClass(type):
     def __init__(cls, *args, **kwargs) -> None:
