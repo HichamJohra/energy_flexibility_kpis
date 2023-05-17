@@ -1,3 +1,4 @@
+from datetime import datetime
 from enum import Enum, IntEnum, unique
 
 @unique
@@ -19,7 +20,7 @@ class BaseUnit(Enum):
 @unique
 class ValueType(Enum):
     SERIAL = (list,)
-    SINGLE = (str, int, float, bool)
+    SINGLE = (str, int, float, bool, datetime)
 
 @unique
 class OperationCondition(Enum):

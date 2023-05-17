@@ -31,7 +31,12 @@ class Unit(Definition):
 
         if len(self.numerator) == 1:
             if self.numerator[0] == BaseUnit.DIMENSIONLESS:
-                numerator = '1'
+                if len(self.denominator) > 1 or self.denominator[0] != BaseUnit.DIMENSIONLESS:
+                    numerator = '1'
+                
+                else:
+                    numerator = ''
+            
             else:
                 numerator = self.numerator[0].value[0]
         

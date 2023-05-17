@@ -54,4 +54,3 @@ class Preprocess:
         df['day_of_year'] = df['timestamp'].dt.day_of_year
 
         return df
-    
