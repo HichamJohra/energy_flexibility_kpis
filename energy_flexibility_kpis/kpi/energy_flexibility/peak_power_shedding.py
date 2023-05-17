@@ -169,7 +169,7 @@ class PowerPaybackRatio(KPI):
         
         data_list = []
 
-        for a, b, f in zip(availability, baseline_electric_power_profile, flexible_electric_power_profile, timestamps):
+        for a, b, f in zip(availability, baseline_electric_power_profile, flexible_electric_power_profile):
             _, vs = super().calculate(
                 availability=a,
                 baseline_electric_power_profile=b,
