@@ -224,8 +224,8 @@ class LoadFactor(KPI):
             evaluation_end_timestamp=evaluation_end_timestamp,
         )
 
-        value = vs.generic_electric_power_profile[vs.evaluation_mask].mean()\
-            /vs.generic_electric_power_profile[vs.evaluation_mask].max()
+        value = vs.generic_electric_power_profile.value[vs.evaluation_mask].mean()\
+            /vs.generic_electric_power_profile.value[vs.evaluation_mask].max()
 
         return value
     
@@ -267,13 +267,13 @@ class AnnualAverageDailyLoadVariation(KPI):
         # get timestamp variables
         data = pd.DataFrame({
             'timestamp': vs.timestamps.value[vs.evaluation_mask],
-            'generic_electric_power_profile': vs.generic_electric_power_profile[vs.evaluation_mask]
+            'generic_electric_power_profile': vs.generic_electric_power_profile.value[vs.evaluation_mask]
         })
         data['year'] = data['timestamp'].dt.year
         data['day_of_year'] = data['timestamp'].dt.day_of_year
         data['hour'] = data['timestamp'].dt.hour
         
-        # calculate annual, daily and hour averge loads
+        # calculate annual, daily and hour average loads
         yearly = data.groupby(['year'])[['generic_electric_power_profile']].mean()
         yearly.columns = ['yearly']
         daily = data.groupby(['year', 'day_of_year'])[['generic_electric_power_profile']].mean()
@@ -336,9 +336,9 @@ class PriceResponsiveness(KPI):
             )
 
             if s == 'baseline':
-                baseline.append(vs.generic_electric_power_profile[vs.evaluation_mask])
+                baseline.append(vs.generic_electric_power_profile.value[vs.evaluation_mask])
             else:
-                flexible.append(vs.generic_electric_power_profile[vs.evaluation_mask])
+                flexible.append(vs.generic_electric_power_profile.value[vs.evaluation_mask])
 
         baseline_count = len(baseline)
         flexible_count = len(flexible)

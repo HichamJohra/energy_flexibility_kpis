@@ -70,6 +70,7 @@ class HourlyRelativePowerDemandReduction(KPI):
 
     @classmethod
     def calculate(
+        cls,
         baseline_electric_power_profile: List[float], 
         flexible_electric_power_profile: List[float],
         timestamps: Union[ List[int], List[datetime.datetime], List[str]] = None,
@@ -113,6 +114,7 @@ class RelativePeakPowerDemandReduction(KPI):
 
     @classmethod
     def calculate(
+        cls,
         baseline_electric_power_profile: List[float], 
         flexible_electric_power_profile: List[float],
         timestamps: Union[List[int], List[datetime.datetime], List[str]] = None,
@@ -156,6 +158,7 @@ class PowerPaybackRatio(KPI):
 
     @classmethod
     def calculate(
+        cls,
         availability: Union[List[List[int]], List[List[bool]]],
         baseline_electric_power_profile: List[List[float]],
         flexible_electric_power_profile: List[List[float]],
