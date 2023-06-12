@@ -1,10 +1,27 @@
 import datetime
 from typing import List, Union
 from energy_flexibility_kpis.kpi.base import KPI
+from energy_flexibility_kpis.enumerations import BaseUnit, Complexity, DOEFlexibilityCategory, KPICategory, PerformanceAspect, Relevance 
+from energy_flexibility_kpis.enumerations import Stakeholder, TemporalEvaluationWindow,TemporalResolution, SpatialResolution
+from energy_flexibility_kpis.unit import Unit
 
 class EnergyShiftFlexibilityFactor(KPI):
     """Measures the capability for shifting the energy consumption between periods: in here 
     from daytime to night time."""
+
+    NAME = 'energy shift flexibility factor'
+    DEFINITION = __doc__
+    UNIT = Unit(numerator=[BaseUnit.DIMENSIONLESS])
+    CATEGORY = KPICategory.EF_LOAD_SHIFTING
+    RELEVANCE = Relevance.HIGH
+    STAKEHOLDERS = [Stakeholder.DISTRIBUTION_SYSTEM_OPERATOR, Stakeholder.TRANSMISSION_SYSTEM_OPERATOR, Stakeholder.BUILDING_OWNER]
+    COMPLEXITY = Complexity.LOW
+    NEED_BASELINE = False
+    TEMPORAL_EVALUATION_WINDOW = TemporalEvaluationWindow.UNSPECIFIED
+    TEMPORAL_RESOLUTION = TemporalResolution.UNSPECIFIED
+    SPATIAL_RESOLUTION = SpatialResolution.UNSPECIFIED
+    DOE_FLEXIBILITY_CATEGORY = [DOEFlexibilityCategory.LOAD_SHIFTING]
+    PERFORMANCE_ASPECT = [PerformanceAspect.ENERGY]
 
     def __init__(self):
         super().__init__()
