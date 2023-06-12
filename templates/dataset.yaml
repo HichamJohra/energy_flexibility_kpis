@@ -1,0 +1,37 @@
+# Use to map custom dataset to an EFont dataset
+---
+dataset:
+    filepath: /filepath/to/dataset # [REQUIRED] Absolute filepath to dataset.
+    resolution:
+        temporal_resolution: 60 # [REQUIRED] Time resolution of dataset in seconds.
+        spatial_resolution:
+            single_resource: true # [REQUIRED] Set to true if the dataset is for a single building or DER otherwise, false.
+    
+    # [OPTIONAL] Use the <variable_name> to map custom dataset variable name to EFont variable name (<>).
+    # Replace the value for the following variable name keys with the custom variable names in your dataset
+    # where applicable. By the default, it is assumed that your custom dataset uses EFont's variable naming
+    # convention. Any other variables in your dataset that cannot be mapped to the EFont variables will be
+    # ignored and cannot be used for calculations at this time.
+    variable_name:
+        resource_id: resource_id
+        availability: availability
+        timestamps: timestamps
+        evaluation_start_timestamp: evaluation_start_timestamp
+        evaluation_end_timestamp: evaluation_end_timestamp
+        baseline_electric_power_profile: baseline_electric_power_profile
+        baseline_electricity_consumption_profile: baseline_electricity_consumption_profile
+        baseline_natural_gas_consumption_profile: baseline_natural_gas_consumption_profile
+        flexible_electric_power_profile: flexible_electric_power_profile
+        flexible_electricity_consumption_profile: flexible_electricity_consumption_profile
+        flexible_natural_gas_consumption_profile: flexible_natural_gas_consumption_profile
+        generic_electric_power_profile: generic_electric_power_profile
+        generic_electricity_consumption_profile: generic_electricity_consumption_profile
+        generic_natural_gas_consumption_profile: generic_natural_gas_consumption_profile
+        load_profile_peak_timestamp: load_profile_peak_timestamp
+        load_profile_valley_timestamp: oad_profile_valley_timestamp
+        grid_peak_timestamp: grid_peak_timestamp
+        high_price_start_timestamp: high_price_start_timestamp
+        high_price_end_timestamp: high_price_end_timestamp
+        high_emission_start_timestamp: high_emission_start_timestamp
+        high_emission_end_timestamp: high_emission_end_timestamp
+...
