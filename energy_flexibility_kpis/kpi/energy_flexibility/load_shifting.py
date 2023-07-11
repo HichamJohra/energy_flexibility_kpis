@@ -45,6 +45,20 @@ class FlexibilityFactor(KPI):
     """Ability to shift a quantity (e.g., energy, cost, emissions) from high-load periods to 
     low-load periods. It ranges between -1 (quantify was only during high-load periods) and 1 
     (quantify was only during low-load periods)."""
+    
+    NAME = 'flexibility factor'
+    DEFINITION = __doc__
+    UNIT = Unit(numerator=[BaseUnit.DIMENSIONLESS])
+    CATEGORY = KPICategory.EF_LOAD_SHIFTING
+    RELEVANCE = Relevance.HIGH
+    STAKEHOLDERS = [Stakeholder.DISTRIBUTION_SYSTEM_OPERATOR, Stakeholder.TRANSMISSION_SYSTEM_OPERATOR, Stakeholder.BUILDING_OWNER]
+    COMPLEXITY = Complexity.LOW
+    NEED_BASELINE = False
+    TEMPORAL_EVALUATION_WINDOW = TemporalEvaluationWindow.UNSPECIFIED
+    TEMPORAL_RESOLUTION = TemporalResolution.UNSPECIFIED
+    SPATIAL_RESOLUTION = SpatialResolution.UNSPECIFIED
+    DOE_FLEXIBILITY_CATEGORY = [DOEFlexibilityCategory.LOAD_SHIFTING]
+    PERFORMANCE_ASPECT = [PerformanceAspect.ENERGY, PerformanceAspect.COST, PerformanceAspect.EMISSION]
 
     def __init__(self):
         super().__init__()
@@ -71,6 +85,20 @@ class FlexibilityIndex(KPI):
     percentiles of the last 2 weeks of energy spot price. If there is no remaining energy 
     usage during the periods of high and medium price, the flexibility index takes the maximum 
     value of 100%."""
+    
+    NAME = 'flexibility index'
+    DEFINITION = __doc__
+    UNIT = Unit(numerator=[BaseUnit.PERCENT])
+    CATEGORY = KPICategory.EF_LOAD_SHIFTING
+    RELEVANCE = Relevance.HIGH
+    STAKEHOLDERS = [Stakeholder.GRID_OPERATOR, Stakeholder.BUILDING_OWNER]
+    COMPLEXITY = Complexity.LOW
+    NEED_BASELINE = True
+    TEMPORAL_EVALUATION_WINDOW = TemporalEvaluationWindow.WHOLE_YEAR
+    TEMPORAL_RESOLUTION = TemporalResolution.UNSPECIFIED
+    SPATIAL_RESOLUTION = SpatialResolution.UNSPECIFIED
+    DOE_FLEXIBILITY_CATEGORY = [DOEFlexibilityCategory.LOAD_SHIFTING]
+    PERFORMANCE_ASPECT = [PerformanceAspect.ENERGY]
 
     def __init__(self):
         super().__init__()
@@ -97,6 +125,20 @@ class FlexibilityClassificationFactor(KPI):
     FC is 0% (=0) when all energy costs are in classes C and D. In this case, unused 
     flexibility potential is available. The higher the flexibility of a building, 
     the higher the FCF value."""
+    
+    NAME = 'flexibility classification factor'
+    DEFINITION = __doc__
+    UNIT = Unit(numerator=[BaseUnit.DIMENSIONLESS])
+    CATEGORY = KPICategory.EF_LOAD_SHIFTING
+    RELEVANCE = Relevance.HIGH
+    STAKEHOLDERS = [Stakeholder.POLICYMAKER, Stakeholder.TRANSMISSION_SYSTEM_OPERATOR, Stakeholder.DISTRIBUTION_SYSTEM_OPERATOR]
+    COMPLEXITY = Complexity.MEDIUM
+    NEED_BASELINE = False
+    TEMPORAL_EVALUATION_WINDOW = TemporalEvaluationWindow.WHOLE_YEAR
+    TEMPORAL_RESOLUTION = TemporalResolution.UNSPECIFIED
+    SPATIAL_RESOLUTION = SpatialResolution.UNSPECIFIED
+    DOE_FLEXIBILITY_CATEGORY = [DOEFlexibilityCategory.LOAD_SHIFTING]
+    PERFORMANCE_ASPECT = [PerformanceAspect.COST, PerformanceAspect.EMISSION]
 
     def __init__(self):
         super().__init__()
@@ -120,6 +162,20 @@ class FlexibilityIndicator(KPI):
     """How much shape modification from reference energy profile to the target profile 
     in the next 24h: evaluation of the energy profile time series distance to reference 
     profile and target profile. Requires optimization."""
+    
+    NAME = 'flexibility indicator'
+    DEFINITION = __doc__
+    UNIT = Unit(numerator=[BaseUnit.DIMENSIONLESS])
+    CATEGORY = KPICategory.EF_LOAD_SHIFTING
+    RELEVANCE = Relevance.HIGH
+    STAKEHOLDERS = [Stakeholder.BUILDING_OWNER, Stakeholder.OCCUPANT, Stakeholder.BUILDING_MANAGER, Stakeholder.AGGREGATOR, Stakeholder.GRID_OPERATOR]
+    COMPLEXITY = Complexity.HIGH
+    NEED_BASELINE = True
+    TEMPORAL_EVALUATION_WINDOW = TemporalEvaluationWindow.WHOLE_DAY
+    TEMPORAL_RESOLUTION = TemporalResolution.HOURLY
+    SPATIAL_RESOLUTION = SpatialResolution.SINGLE_BUILDING
+    DOE_FLEXIBILITY_CATEGORY = [DOEFlexibilityCategory.LOAD_SHIFTING]
+    PERFORMANCE_ASPECT = [PerformanceAspect.ENERGY]
 
     def __init__(self):
         super().__init__()
@@ -145,6 +201,20 @@ class CyclePowerFlexibility(KPI):
     power for each charging (forced) and discharging (delayed) process. The flexibility 
     factor is defined as the ability to shift the energy use from high to low price periods 
     and viceversa."""
+    
+    NAME = 'cycle power flexibility'
+    DEFINITION = __doc__
+    UNIT = Unit(numerator=[BaseUnit.KW])
+    CATEGORY = KPICategory.EF_LOAD_SHIFTING
+    RELEVANCE = Relevance.HIGH
+    STAKEHOLDERS = [Stakeholder.GRID_OPERATOR, Stakeholder.DISTRIBUTION_SYSTEM_OPERATOR, Stakeholder.TRANSMISSION_SYSTEM_OPERATOR]
+    COMPLEXITY = Complexity.MEDIUM
+    NEED_BASELINE = False
+    TEMPORAL_EVALUATION_WINDOW = TemporalEvaluationWindow.SINGLE_EVENT
+    TEMPORAL_RESOLUTION = TemporalResolution.UNSPECIFIED
+    SPATIAL_RESOLUTION = SpatialResolution.UNSPECIFIED
+    DOE_FLEXIBILITY_CATEGORY = [DOEFlexibilityCategory.LOAD_SHIFTING]
+    PERFORMANCE_ASPECT = [PerformanceAspect.POWER]
 
     def __init__(self):
         super().__init__()
