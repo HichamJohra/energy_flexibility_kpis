@@ -395,7 +395,7 @@ class FlexibleTimeDuration(KPI):
             evaluation_end_timestamp=evaluation_end_timestamp,
         )
         
-        raise NotImplementedError
+        raise NotImplementedError('KPI definition is not clear and paper is behind paywall.')
     
 class FlexibilityDensity(KPI):
     """Demand response potential of a given spatial area as a function of response potential of batteries, heat pumps, 
@@ -431,7 +431,7 @@ class FlexibilityDensity(KPI):
             evaluation_end_timestamp=evaluation_end_timestamp,
         )
         
-        raise NotImplementedError
+        raise NotImplementedError('Complicated calculation. To be addressed later.')
     
 class AverageDownwardPowerDeviation(KPI):
     """Average power deviation during the downward modulation period."""
@@ -456,14 +456,23 @@ class AverageDownwardPowerDeviation(KPI):
     @classmethod
     def calculate(
         cls,
+        baseline_electric_power_profile: List[float], 
+        flexible_electric_power_profile: List[float],
         timestamps: Union[List[int], List[datetime.datetime], List[str]] = None,
         evaluation_start_timestamp: Union[int, datetime.datetime, str] = None,
         evaluation_end_timestamp: Union[int, datetime.datetime, str] = None,
     ) -> float:
         _, vs = super().calculate(
             timestamps=timestamps,
+            baseline_electric_power_profile=baseline_electric_power_profile,
+            flexible_electric_power_profile=flexible_electric_power_profile,
             evaluation_start_timestamp=evaluation_start_timestamp,
             evaluation_end_timestamp=evaluation_end_timestamp,
         )
         
-        raise NotImplementedError
+        value = (
+            vs.baseline_electric_power_profile.value[vs.evaluation_mask] 
+                - vs.flexible_electric_power_profile.value[vs.evaluation_mask]
+        ).sum()/len(vs.evaluation_mask)
+
+        return value

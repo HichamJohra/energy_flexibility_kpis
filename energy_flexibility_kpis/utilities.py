@@ -1,9 +1,47 @@
 # import native python modules
 import datetime
+from pathlib import Path
 from typing import Union
 
 # import installed python modules
 import pandas as pd
+import yaml
+
+class FileHandler:
+    @staticmethod
+    def read_yaml(filepath: Union[str, Path]):
+        """Return YAML document as dictionary.
+        
+        Parameters
+        ----------
+        filepath: Union[str, Path]
+            pathname of YAML document.
+        
+        Returns
+        -------
+        dict
+            YAML document converted to dictionary.
+        """
+
+        with open(filepath, 'r') as f:
+            data = yaml.safe_load(f)
+
+        return data
+
+    @staticmethod
+    def write_yaml(data: dict, filepath: Union[str, Path]):
+        """Write dict to YAML document. 
+        
+        Parameters
+        ----------
+        data: dict
+            dict to convert to YAML.
+        filepath: Union[str, Path]
+            pathname for YAML document.    
+        """
+
+        with open(filepath, 'w') as f:
+            yaml.dump(data, f)
 
 class Preprocess:
     @staticmethod
