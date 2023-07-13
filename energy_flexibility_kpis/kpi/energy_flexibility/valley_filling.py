@@ -45,7 +45,7 @@ class EnergyDeviationForValleyFilling(KPI):
         value = (
             vs.flexible_electric_power_profile.value[vs.evaluation_mask]
                 - vs.baseline_electric_power_profile.value[vs.evaluation_mask] 
-        ).mean()*len(vs.evaluation_mask)
+        ).mean()*vs.evaluation_length
 
         return value
     
@@ -89,6 +89,6 @@ class AveragePowerDeviation(KPI):
         value = (
             vs.flexible_electric_power_profile.value[vs.evaluation_mask]
                 - vs.baseline_electric_power_profile.value[vs.evaluation_mask] 
-        ).mean()*len(vs.evaluation_mask)
+        ).mean()*vs.evaluation_length
 
         return value

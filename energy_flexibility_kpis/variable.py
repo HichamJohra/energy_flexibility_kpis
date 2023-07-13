@@ -435,6 +435,10 @@ class VariableSet(Definition):
         return self.__high_emission_end_timestamp
     
     @property
+    def evaluation_length(self) -> int:
+        return self.evaluation_mask[self.evaluation_mask].shape[0]
+    
+    @property
     def evaluation_mask(self) -> np.ndarray:
         # use timesteps for masking and assume evaluation start timestamp and timestep 
         # are integers that indicate timestep
