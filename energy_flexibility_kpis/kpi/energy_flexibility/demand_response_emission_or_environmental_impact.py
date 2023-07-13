@@ -11,6 +11,7 @@ class RelativeCO2EmissionsReduction(KPI):
     @classmethod
     def calculate(
         cls,
+        #test
         timestamps: Union[List[int], List[datetime.datetime], List[str]] = None,
         evaluation_start_timestamp: Union[int, datetime.datetime, str] = None,
         evaluation_end_timestamp: Union[int, datetime.datetime, str] = None,
