@@ -142,10 +142,10 @@ class ReboundEnergy(KPI):
 
         pre_event_value = (
             pre_event_flexible_electric_power_profile - pre_event_baseline_electric_power_profile
-        ).mean()*len(pre_event_timestamp_mask)
+        ).mean()*pre_event_timestamp_mask[pre_event_timestamp_mask].shape[0]
         post_event_value = (
             post_event_flexible_electric_power_profile - post_event_baseline_electric_power_profile
-        ).mean()*len(post_event_timestamp_mask)
+        ).mean()*post_event_timestamp_mask[post_event_timestamp_mask].shape[0]
 
         value = pre_event_value + post_event_value
 

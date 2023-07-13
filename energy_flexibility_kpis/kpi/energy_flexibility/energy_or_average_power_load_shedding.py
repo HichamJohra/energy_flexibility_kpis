@@ -47,7 +47,7 @@ class EnergyDeviationForPeakShaving(KPI):
         value = (
             vs.flexible_electric_power_profile.value[vs.evaluation_mask] 
                 - vs.baseline_electric_power_profile.value[vs.evaluation_mask]
-        ).mean()*len(vs.evaluation_mask)
+        ).mean()*vs.evaluation_length
 
         return value
     
@@ -88,12 +88,12 @@ class AverageLoadReduction(KPI):
             evaluation_end_timestamp=evaluation_end_timestamp,
         )
         
-        assert len(vs.evaluation_mask) > 1, 'The evaluation period must be > 1 timestep'
+        assert vs.evaluation_length > 1, 'The evaluation period must be > 1 timestep'
         resource_count = len(baseline_electric_power_profile)
         value = (
             vs.baseline_electric_power_profile.value[vs.evaluation_mask] 
                 - vs.flexible_electric_power_profile.value[vs.evaluation_mask]
-        )[1:].sum()/(resource_count*(len(vs.evaluation_mask) - 1))
+        )[1:].sum()/(resource_count*(vs.evaluation_length - 1))
 
         return value
     
@@ -135,11 +135,10 @@ class BuildingEnergyFlexibilityIndex(KPI):
             evaluation_start_timestamp=evaluation_start_timestamp,
             evaluation_end_timestamp=evaluation_end_timestamp,
         )
-        
         value = (
             vs.baseline_electric_power_profile.value[vs.evaluation_mask] 
                 - vs.flexible_electric_power_profile.value[vs.evaluation_mask]
-        ).sum()/len(vs.evaluation_mask)
+        ).sum()/vs.evaluation_length
 
         return value
     
@@ -183,8 +182,8 @@ class DimensionlessPeakShaving(KPI):
         delta_p_downward = (
             vs.baseline_electric_power_profile.value[vs.evaluation_mask]
                 - vs.flexible_electric_power_profile.value[vs.evaluation_mask]
-        ).sum()/len(vs.evaluation_mask)
-        q_peak_shaving = delta_p_downward*len(vs.evaluation_mask)
+        ).sum()/vs.evaluation_length
+        q_peak_shaving = delta_p_downward*vs.evaluation_length
         value = q_peak_shaving/vs.baseline_electric_power_profile.value[vs.evaluation_mask].sum()
 
         return value
@@ -473,6 +472,6 @@ class AverageDownwardPowerDeviation(KPI):
         value = (
             vs.baseline_electric_power_profile.value[vs.evaluation_mask] 
                 - vs.flexible_electric_power_profile.value[vs.evaluation_mask]
-        ).sum()/len(vs.evaluation_mask)
+        ).sum()/vs.evaluation_length
 
         return value
