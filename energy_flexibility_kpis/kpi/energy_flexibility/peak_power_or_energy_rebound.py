@@ -147,8 +147,8 @@ class ReboundEnergy(KPI):
         post_event_profile = post_event_flexible_electric_power_profile - post_event_baseline_electric_power_profile
         pre_event_dx = vs.get_temporal_resolution(BaseUnit.HOUR, value=vs.timestamps.value[pre_event_timestamp_mask])
         post_event_dx = vs.get_temporal_resolution(BaseUnit.HOUR, value=vs.timestamps.value[post_event_timestamp_mask])
-        pre_event_value = integrate.simps(pre_event_profile, dx=pre_event_dx)
-        post_event_value = integrate.simps(post_event_profile, dx=post_event_dx)
+        pre_event_value = integrate.simpson(pre_event_profile, dx=pre_event_dx)
+        post_event_value = integrate.simpson(post_event_profile, dx=post_event_dx)
         value = pre_event_value + post_event_value
 
         return value

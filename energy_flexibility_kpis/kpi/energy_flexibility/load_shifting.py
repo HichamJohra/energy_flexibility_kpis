@@ -56,8 +56,8 @@ class FlexibilityFactor(KPI):
         low_generic_signal_profile = vs.generic_electric_power_profile.value[low_generic_signal_mask]
         high_generic_dx = vs.get_temporal_resolution(BaseUnit.HOUR, value=vs.timestamps.value[high_generic_signal_mask])
         low_generic_dx = vs.get_temporal_resolution(BaseUnit.HOUR, value=vs.timestamps.value[low_generic_signal_mask])
-        low_generic_signal_value = integrate.simps(low_generic_signal_profile, dx=low_generic_dx)
-        high_generic_signal_value = integrate.simps(high_generic_signal_profile, dx=high_generic_dx)
+        low_generic_signal_value = integrate.simpson(low_generic_signal_profile, dx=low_generic_dx)
+        high_generic_signal_value = integrate.simpson(high_generic_signal_profile, dx=high_generic_dx)
         value = (low_generic_signal_value - high_generic_signal_value)/(low_generic_signal_value + high_generic_signal_value)
 
         return value

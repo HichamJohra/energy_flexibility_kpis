@@ -91,6 +91,6 @@ class AveragePowerDeviation(KPI):
         
         profile = vs.flexible_electric_power_profile.value[vs.evaluation_mask] - vs.baseline_electric_power_profile.value[vs.evaluation_mask]
         dx = vs.get_temporal_resolution(BaseUnit.HOUR, value=vs.timestamps.value[vs.evaluation_mask])
-        value = integrate.simps(profile, dx=dx)/(dx*vs.evaluation_length)
+        value = integrate.simpson(profile, dx=dx)/(dx*vs.evaluation_length)
 
         return value

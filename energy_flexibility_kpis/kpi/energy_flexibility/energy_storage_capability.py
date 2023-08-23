@@ -48,7 +48,7 @@ class CapacityOfADR(KPI):
         
         profile = vs.flexible_electric_power_profile.value[vs.evaluation_mask] - vs.baseline_electric_power_profile.value[vs.evaluation_mask]
         dx = vs.get_temporal_resolution(BaseUnit.HOUR, value=vs.timestamps.value[vs.evaluation_mask])
-        value = integrate.simps(profile, dx=dx)
+        value = integrate.simpson(profile, dx=dx)
 
         return value
     
@@ -103,7 +103,7 @@ class EnergyEfficiencyOfDemandResponseAction(KPI):
         adr_profile = vs.flexible_electric_power_profile.value[adr_mask] - vs.baseline_electric_power_profile.value[adr_mask]
         dx = vs.get_temporal_resolution(BaseUnit.HOUR, vs.timestamps.value[vs.evaluation_mask])
         adr_dx = vs.get_temporal_resolution(BaseUnit.HOUR, vs.timestamps.value[adr_mask])
-        value = 1 - (integrate.simps(profile, dx=dx)/integrate.simps(adr_profile, dx=adr_dx))
+        value = 1 - (integrate.simpson(profile, dx=dx)/integrate.simpson(adr_profile, dx=adr_dx))
 
         return value
     

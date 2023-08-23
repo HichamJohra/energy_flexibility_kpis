@@ -139,8 +139,8 @@ class BuildingEnergyFlexibilityIndex(KPI):
             evaluation_end_timestamp=evaluation_end_timestamp,
         )
         dx = vs.get_temporal_resolution(BaseUnit.HOUR, value=vs.timestamps.value[vs.evaluation_mask])
-        baseline_value = integrate.simps(vs.baseline_electric_power_profile.value[vs.evaluation_mask], dx=dx)
-        flexible_value = integrate.simps(vs.flexible_electric_power_profile.value[vs.evaluation_mask], dx=dx)
+        baseline_value = integrate.simpson(vs.baseline_electric_power_profile.value[vs.evaluation_mask], dx=dx)
+        flexible_value = integrate.simpson(vs.flexible_electric_power_profile.value[vs.evaluation_mask], dx=dx)
         value = (baseline_value - flexible_value)/(dx*vs.evaluation_length)
 
         return value
@@ -192,7 +192,7 @@ class DimensionlessPeakShaving(KPI):
         )
         profile = vs.baseline_electric_power_profile.value[vs.evaluation_mask]
         dx = vs.get_temporal_resolution(BaseUnit.HOUR, value=vs.timestamps.value[vs.evaluation_mask])
-        value = q_peak_shaving/integrate.simps(profile, dx=dx)
+        value = q_peak_shaving/integrate.simpson(profile, dx=dx)
 
         return value
     
@@ -481,6 +481,6 @@ class AverageDownwardPowerDeviation(KPI):
         
         profile = vs.baseline_electric_power_profile.value[vs.evaluation_mask] - vs.flexible_electric_power_profile.value[vs.evaluation_mask]
         dx = vs.get_temporal_resolution(BaseUnit.HOUR, value=vs.timestamps.value[vs.evaluation_mask])
-        value = integrate.simps(profile, dx=dx)/(dx*vs.evaluation_length)
+        value = integrate.simpson(profile, dx=dx)/(dx*vs.evaluation_length)
 
         return value
