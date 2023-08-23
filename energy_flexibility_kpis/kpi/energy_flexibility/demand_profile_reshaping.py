@@ -3,7 +3,7 @@ from typing import List, Union
 from energy_flexibility_kpis.kpi.base import KPI
 
 class DeviationDecreaseFromTheFlatDemandProfile(KPI):
-    """This index evaluate the ability of lighting power flexibility in the modification of 
+    """This index evaluate the ability of power flexibility in the modification of 
     a building demand profile focusing on the variance of the demand profile (y values)."""
 
     def __init__(self):

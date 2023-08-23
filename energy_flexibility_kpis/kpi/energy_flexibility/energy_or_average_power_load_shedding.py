@@ -8,7 +8,7 @@ from energy_flexibility_kpis.enumerations import Stakeholder, TemporalEvaluation
 from energy_flexibility_kpis.unit import Unit
 
 class EnergyDeviationForPeakShaving(KPI):
-    """Peak-shaving capacity."""
+    """Peak-shaving capacity. The evaluation period should be set to the downward modulation period."""
 
     NAME = 'energy deviation from peak shaving'
     DEFINITION = __doc__
@@ -143,7 +143,7 @@ class BuildingEnergyFlexibilityIndex(KPI):
         return value
     
 class DimensionlessPeakShaving(KPI):
-    """Represents the energy reduction percentage of the cooling system during the downward flexibility period."""
+    """Represents the energy reduction percentage of the cooling system during the downward flexibility period. The evaluation period should consider the downward flexibility period."""
 
     NAME = 'dimensionless peak shaving'
     DEFINITION = __doc__

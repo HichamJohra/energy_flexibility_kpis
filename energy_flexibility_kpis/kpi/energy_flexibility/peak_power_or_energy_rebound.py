@@ -6,7 +6,7 @@ from energy_flexibility_kpis.enumerations import Stakeholder, TemporalEvaluation
 from energy_flexibility_kpis.unit import Unit
 
 class PeakPowerRebound(KPI):
-    """Power demand increase during peak hour after flexible operation (rebound effect)."""
+    """Power demand increase during peak hour after flexible operation (rebound effect). The evaluation window should be set to the rebound period."""
 
     NAME = 'peak power rebound'
     DEFINITION = __doc__
@@ -47,7 +47,7 @@ class PeakPowerRebound(KPI):
         return value
     
 class AveragePowerRebound(KPI):
-    """Average power rebound after DR event compared to baseline."""
+    """Average power rebound after DR event compared to baseline. The evaluation window should be set to the rebound period."""
 
     NAME = 'average power rebound'
     DEFINITION = __doc__
@@ -92,7 +92,7 @@ class AveragePowerRebound(KPI):
     
 class ReboundEnergy(KPI):
     """Size of consumption deviation prior / following an DR event. Important to grid 
-    operation to ensure stability / balance outside DR period."""
+    operation to ensure stability / balance outside DR period. The evaluation window should be set to the rebound period."""
 
     NAME = 'rebound energy'
     DEFINITION = __doc__
