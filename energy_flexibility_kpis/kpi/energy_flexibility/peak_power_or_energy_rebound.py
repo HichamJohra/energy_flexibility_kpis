@@ -1,12 +1,13 @@
 import datetime
 from typing import List, Union
+from scipy import integrate
 from energy_flexibility_kpis.kpi.base import KPI
 from energy_flexibility_kpis.enumerations import BaseUnit, Complexity, DOEFlexibilityCategory, KPICategory, PerformanceAspect, Relevance 
 from energy_flexibility_kpis.enumerations import Stakeholder, TemporalEvaluationWindow,TemporalResolution, SpatialResolution
 from energy_flexibility_kpis.unit import Unit
 
 class PeakPowerRebound(KPI):
-    """Power demand increase during peak hour after flexible operation (rebound effect)."""
+    """Power demand increase during peak hour after flexible operation (rebound effect). The evaluation window should be set to the rebound period."""
 
     NAME = 'peak power rebound'
     DEFINITION = __doc__
@@ -47,7 +48,7 @@ class PeakPowerRebound(KPI):
         return value
     
 class AveragePowerRebound(KPI):
-    """Average power rebound after DR event compared to baseline."""
+    """Average power rebound after DR event compared to baseline. The evaluation window should be set to the rebound period."""
 
     NAME = 'average power rebound'
     DEFINITION = __doc__
@@ -92,7 +93,7 @@ class AveragePowerRebound(KPI):
     
 class ReboundEnergy(KPI):
     """Size of consumption deviation prior / following an DR event. Important to grid 
-    operation to ensure stability / balance outside DR period."""
+    operation to ensure stability / balance outside DR period. The evaluation window should be set to the rebound period."""
 
     NAME = 'rebound energy'
     DEFINITION = __doc__
@@ -122,6 +123,8 @@ class ReboundEnergy(KPI):
         evaluation_start_timestamp: Union[int, datetime.datetime, str] = None,
         evaluation_end_timestamp: Union[int, datetime.datetime, str] = None,
     ) -> float:
+        """Assumes timestamps are datetime values."""
+        
         _, vs = super().calculate(
             timestamps=timestamps,
             baseline_electric_power_profile=baseline_electric_power_profile,
@@ -140,13 +143,12 @@ class ReboundEnergy(KPI):
         pre_event_baseline_electric_power_profile = vs.baseline_electric_power_profile.value[pre_event_timestamp_mask]
         post_event_baseline_electric_power_profile = vs.baseline_electric_power_profile.value[post_event_timestamp_mask]
 
-        pre_event_value = (
-            pre_event_flexible_electric_power_profile - pre_event_baseline_electric_power_profile
-        ).mean()*pre_event_timestamp_mask[pre_event_timestamp_mask].shape[0]
-        post_event_value = (
-            post_event_flexible_electric_power_profile - post_event_baseline_electric_power_profile
-        ).mean()*post_event_timestamp_mask[post_event_timestamp_mask].shape[0]
-
+        pre_event_profile = pre_event_flexible_electric_power_profile - pre_event_baseline_electric_power_profile
+        post_event_profile = post_event_flexible_electric_power_profile - post_event_baseline_electric_power_profile
+        pre_event_dx = vs.get_temporal_resolution(BaseUnit.HOUR, value=vs.timestamps.value[pre_event_timestamp_mask])
+        post_event_dx = vs.get_temporal_resolution(BaseUnit.HOUR, value=vs.timestamps.value[post_event_timestamp_mask])
+        pre_event_value = integrate.simpson(pre_event_profile, dx=pre_event_dx)
+        post_event_value = integrate.simpson(post_event_profile, dx=post_event_dx)
         value = pre_event_value + post_event_value
 
         return value

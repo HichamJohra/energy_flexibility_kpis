@@ -2,13 +2,14 @@ import datetime
 from typing import List, Union
 import numpy as np
 import pandas as pd
+from scipy import integrate
 from energy_flexibility_kpis.kpi.base import KPI
 from energy_flexibility_kpis.enumerations import BaseUnit, Complexity, DOEFlexibilityCategory, KPICategory, PerformanceAspect, Relevance 
 from energy_flexibility_kpis.enumerations import Stakeholder, TemporalEvaluationWindow,TemporalResolution, SpatialResolution
 from energy_flexibility_kpis.unit import Unit
 
 class EnergyDeviationForPeakShaving(KPI):
-    """Peak-shaving capacity."""
+    """Peak-shaving capacity. The evaluation period should be set to the downward modulation period."""
 
     NAME = 'energy deviation from peak shaving'
     DEFINITION = __doc__
@@ -124,10 +125,12 @@ class BuildingEnergyFlexibilityIndex(KPI):
         cls,
         baseline_electric_power_profile: List[float], 
         flexible_electric_power_profile: List[float],
-        timestamps: Union[List[int], List[datetime.datetime], List[str]] = None,
+        timestamps: Union[List[int], List[datetime.datetime], List[str]],
         evaluation_start_timestamp: Union[int, datetime.datetime, str] = None,
         evaluation_end_timestamp: Union[int, datetime.datetime, str] = None,
     ) -> float:
+        """Assumes timestamps are datetime values."""
+
         _, vs = super().calculate(
             baseline_electric_power_profile=baseline_electric_power_profile,
             flexible_electric_power_profile=flexible_electric_power_profile,
@@ -135,15 +138,15 @@ class BuildingEnergyFlexibilityIndex(KPI):
             evaluation_start_timestamp=evaluation_start_timestamp,
             evaluation_end_timestamp=evaluation_end_timestamp,
         )
-        value = (
-            vs.baseline_electric_power_profile.value[vs.evaluation_mask] 
-                - vs.flexible_electric_power_profile.value[vs.evaluation_mask]
-        ).sum()/vs.evaluation_length
+        dx = vs.get_temporal_resolution(BaseUnit.HOUR, value=vs.timestamps.value[vs.evaluation_mask])
+        baseline_value = integrate.simpson(vs.baseline_electric_power_profile.value[vs.evaluation_mask], dx=dx)
+        flexible_value = integrate.simpson(vs.flexible_electric_power_profile.value[vs.evaluation_mask], dx=dx)
+        value = (baseline_value - flexible_value)/(dx*vs.evaluation_length)
 
         return value
     
 class DimensionlessPeakShaving(KPI):
-    """Represents the energy reduction percentage of the cooling system during the downward flexibility period."""
+    """Represents the energy reduction percentage of the cooling system during the downward flexibility period. The evaluation period should consider the downward flexibility period."""
 
     NAME = 'dimensionless peak shaving'
     DEFINITION = __doc__
@@ -167,10 +170,12 @@ class DimensionlessPeakShaving(KPI):
         cls,
         baseline_electric_power_profile: List[float], 
         flexible_electric_power_profile: List[float],
-        timestamps: Union[List[int], List[datetime.datetime], List[str]] = None,
+        timestamps: Union[List[int], List[datetime.datetime], List[str]],
         evaluation_start_timestamp: Union[int, datetime.datetime, str] = None,
         evaluation_end_timestamp: Union[int, datetime.datetime, str] = None,
     ) -> float:
+        """Assumes timestamps are datetime values."""
+
         _, vs = super().calculate(
             baseline_electric_power_profile=baseline_electric_power_profile,
             flexible_electric_power_profile=flexible_electric_power_profile,
@@ -178,13 +183,16 @@ class DimensionlessPeakShaving(KPI):
             evaluation_start_timestamp=evaluation_start_timestamp,
             evaluation_end_timestamp=evaluation_end_timestamp,
         )
-
-        delta_p_downward = (
-            vs.baseline_electric_power_profile.value[vs.evaluation_mask]
-                - vs.flexible_electric_power_profile.value[vs.evaluation_mask]
-        ).sum()/vs.evaluation_length
-        q_peak_shaving = delta_p_downward*vs.evaluation_length
-        value = q_peak_shaving/vs.baseline_electric_power_profile.value[vs.evaluation_mask].sum()
+        q_peak_shaving = EnergyDeviationForPeakShaving().calculate(
+            baseline_electric_power_profile,
+            flexible_electric_power_profile,
+            timestamps=timestamps,
+            evaluation_start_timestamp=evaluation_start_timestamp,
+            evaluation_end_timestamp=evaluation_end_timestamp
+        )
+        profile = vs.baseline_electric_power_profile.value[vs.evaluation_mask]
+        dx = vs.get_temporal_resolution(BaseUnit.HOUR, value=vs.timestamps.value[vs.evaluation_mask])
+        value = q_peak_shaving/integrate.simpson(profile, dx=dx)
 
         return value
     
@@ -457,10 +465,12 @@ class AverageDownwardPowerDeviation(KPI):
         cls,
         baseline_electric_power_profile: List[float], 
         flexible_electric_power_profile: List[float],
-        timestamps: Union[List[int], List[datetime.datetime], List[str]] = None,
+        timestamps: Union[List[int], List[datetime.datetime], List[str]],
         evaluation_start_timestamp: Union[int, datetime.datetime, str] = None,
         evaluation_end_timestamp: Union[int, datetime.datetime, str] = None,
     ) -> float:
+        """Assumes timestamps are datetime values."""
+
         _, vs = super().calculate(
             timestamps=timestamps,
             baseline_electric_power_profile=baseline_electric_power_profile,
@@ -469,9 +479,8 @@ class AverageDownwardPowerDeviation(KPI):
             evaluation_end_timestamp=evaluation_end_timestamp,
         )
         
-        value = (
-            vs.baseline_electric_power_profile.value[vs.evaluation_mask] 
-                - vs.flexible_electric_power_profile.value[vs.evaluation_mask]
-        ).sum()/vs.evaluation_length
+        profile = vs.baseline_electric_power_profile.value[vs.evaluation_mask] - vs.flexible_electric_power_profile.value[vs.evaluation_mask]
+        dx = vs.get_temporal_resolution(BaseUnit.HOUR, value=vs.timestamps.value[vs.evaluation_mask])
+        value = integrate.simpson(profile, dx=dx)/(dx*vs.evaluation_length)
 
         return value

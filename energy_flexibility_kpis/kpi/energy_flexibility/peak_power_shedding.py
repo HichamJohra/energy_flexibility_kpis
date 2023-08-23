@@ -7,7 +7,7 @@ from energy_flexibility_kpis.enumerations import Stakeholder, TemporalEvaluation
 from energy_flexibility_kpis.unit import Unit
 
 class PeakPowerReduction(KPI):
-    """Reduced power demand during peak hour due to flexible operation."""
+    """Reduced power demand during peak hour due to flexible operation. The evaluation window should consider the peak hour after the fleible operation."""
 
     NAME = 'peak power reduction'
     DEFINITION = __doc__

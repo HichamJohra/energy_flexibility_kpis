@@ -1,3 +1,4 @@
+import datetime
 import inspect
 from typing import Any, List, Mapping, Tuple, Union
 import numpy as np
@@ -59,8 +60,66 @@ class KPI(Definition):
         return info
     
     @classmethod
-    def calculate(cls, **kwargs) -> Tuple[Union[float, List[float]], VariableSet]:
-        vs = VariableSet(**kwargs)
-        vs.validate_serial_variables()
+    def calculate(
+        cls,
+        availability: Union[List[int], List[bool]] = None,
+        timestamps: Union[List[int], List[datetime.datetime], List[str]] = None,
+        evaluation_start_timestamp: Union[int, datetime.datetime, str] = None,
+        evaluation_end_timestamp: Union[int, datetime.datetime, str] = None,
+        baseline_electric_power_profile: List[float] = None,
+        baseline_electricity_consumption_profile: List[float] = None,
+        baseline_natural_gas_consumption_profile: List[float] = None,
+        flexible_electric_power_profile: List[float] = None,
+        flexible_electricity_consumption_profile: List[float] = None,
+        flexible_natural_gas_consumption_profile: List[float] = None,
+        generic_electric_power_profile: List[float] = None,
+        generic_electricity_consumption_profile: List[float] = None,
+        generic_natural_gas_consumption_profile: List[float] = None,
+        load_profile_peak_timestamp: Union[int, datetime.datetime, str] = None,
+        load_profile_valley_timestamp: Union[int, datetime.datetime, str] = None,
+        grid_peak_timestamp: Union[int, datetime.datetime, str] = None,
+        generic_signal_start_timestamp: Union[int, datetime.datetime, str] = None,
+        generic_signal_end_timestamp: Union[int, datetime.datetime, str] = None,
+        low_generic_signal_start_timestamp: Union[int, datetime.datetime, str] = None,
+        low_generic_signal_end_timestamp: Union[int, datetime.datetime, str] = None,
+        medium_generic_signal_start_timestamp: Union[int, datetime.datetime, str] = None,
+        medium_generic_signal_end_timestamp: Union[int, datetime.datetime, str] = None,
+        high_generic_signal_start_timestamp: Union[int, datetime.datetime, str] = None,
+        high_generic_signal_end_timestamp: Union[int, datetime.datetime, str] = None,
+        high_price_start_timestamp: Union[int, datetime.datetime, str] = None,
+        high_price_end_timestamp: Union[int, datetime.datetime, str] = None,
+        high_emission_start_timestamp: Union[int, datetime.datetime, str] = None,
+        high_emission_end_timestamp: Union[int, datetime.datetime, str] = None,
+    ) -> Tuple[Union[float, List[float]], VariableSet]:
+        vs = VariableSet(
+            availability=availability,
+            timestamps=timestamps,
+            evaluation_start_timestamp=evaluation_start_timestamp,
+            evaluation_end_timestamp=evaluation_end_timestamp,
+            baseline_electric_power_profile=baseline_electric_power_profile,
+            baseline_electricity_consumption_profile=baseline_electricity_consumption_profile,
+            baseline_natural_gas_consumption_profile=baseline_natural_gas_consumption_profile,
+            flexible_electric_power_profile=flexible_electric_power_profile,
+            flexible_electricity_consumption_profile=flexible_electricity_consumption_profile,
+            flexible_natural_gas_consumption_profile=flexible_natural_gas_consumption_profile,
+            generic_electric_power_profile=generic_electric_power_profile,
+            generic_electricity_consumption_profile=generic_electricity_consumption_profile,
+            generic_natural_gas_consumption_profile=generic_natural_gas_consumption_profile,
+            load_profile_peak_timestamp=load_profile_peak_timestamp,
+            load_profile_valley_timestamp=load_profile_valley_timestamp,
+            grid_peak_timestamp=grid_peak_timestamp,
+            generic_signal_start_timestamp=generic_signal_start_timestamp,
+            generic_signal_end_timestamp=generic_signal_end_timestamp,
+            low_generic_signal_start_timestamp=low_generic_signal_start_timestamp,
+            low_generic_signal_end_timestamp=low_generic_signal_end_timestamp,
+            medium_generic_signal_start_timestamp=medium_generic_signal_start_timestamp,
+            medium_generic_signal_end_timestamp=medium_generic_signal_end_timestamp,
+            high_generic_signal_start_timestamp=high_generic_signal_start_timestamp,
+            high_generic_signal_end_timestamp=high_generic_signal_end_timestamp,
+            high_price_start_timestamp=high_price_start_timestamp,
+            high_price_end_timestamp=high_price_end_timestamp,
+            high_emission_start_timestamp=high_emission_start_timestamp,
+            high_emission_end_timestamp=high_emission_end_timestamp,
+        )
         
         return np.nan, vs
