@@ -79,7 +79,7 @@ class AveragePowerDeviation(KPI):
         evaluation_start_timestamp: Union[int, datetime.datetime, str] = None,
         evaluation_end_timestamp: Union[int, datetime.datetime, str] = None,
     ) -> float:
-        """Assumes timestamps is in hours when calculating integral."""
+        """Assumes timestamps are datetime values."""
 
         _, vs = super().calculate(
             timestamps=timestamps,
@@ -90,7 +90,7 @@ class AveragePowerDeviation(KPI):
         )
         
         profile = vs.flexible_electric_power_profile.value[vs.evaluation_mask] - vs.baseline_electric_power_profile.value[vs.evaluation_mask]
-        timestamps = vs.timestamps.value[vs.evaluation_mask]
-        value = integrate.simps(profile, timestamps)/timestamps[-1]
+        dx = vs.get_temporal_resolution(BaseUnit.HOUR, value=vs.timestamps.value[vs.evaluation_mask])
+        value = integrate.simps(profile, dx=dx)/(dx*vs.evaluation_length)
 
         return value

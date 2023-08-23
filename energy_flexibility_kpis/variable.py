@@ -4,7 +4,7 @@ from typing import Any, List, Mapping, Union
 import numpy as np
 import pandas as pd
 from energy_flexibility_kpis.base import Definition
-from energy_flexibility_kpis.enumerations import OperationCondition, ValueType
+from energy_flexibility_kpis.enumerations import BaseUnit, OperationCondition, ValueType
 from energy_flexibility_kpis.primitive_type import DefaultPrimitiveType, PrimitiveType
 from energy_flexibility_kpis.unit import Unit
 
@@ -103,12 +103,45 @@ class DateTimeVariable(Variable):
                 value = value.tolist()
             except AttributeError:
                 pass
-
         
         else:
             pass
         
         Variable.value.fset(self, value)
+
+    def get_resolution(self, unit: BaseUnit, value: List[datetime.datetime] = None) -> float:
+        """Estimates time step resolution in specified time unit."""
+
+        assert isinstance(self.value[0], datetime.datetime),\
+            'Cannot infer resolution of non-datetime timestamps'
+        
+        resolution = None
+        value = self.value if value is None else value
+        timestamps = pd.to_datetime(value)
+        resolutions = timestamps.to_series().diff()
+        minimum_resolution = resolutions.min().total_seconds()
+        maximum_resolution = resolutions.max().total_seconds()
+
+        assert minimum_resolution == maximum_resolution,\
+            f'Discontinuous time series. Minimum time interval ({minimum_resolution}s)'\
+                f'and maximum time interval ({maximum_resolution}s) are not equal.'
+        
+        if unit == BaseUnit.MILLISECOND:
+            resolution = minimum_resolution*1000.0
+        
+        elif unit == BaseUnit.SECOND:
+            resolution = minimum_resolution
+
+        elif unit == BaseUnit.MINUTE:
+            resolution = minimum_resolution/60.0
+
+        elif unit == BaseUnit.HOUR:
+            resolution = minimum_resolution/3600.0
+
+        else:
+            raise Exception(f'Unknown unit: {unit}')
+
+        return resolution
 
 class DefaultVariableMetaClass(type):
     def __init__(cls, *args, **kwargs) -> None:
@@ -212,7 +245,7 @@ class DefaultVariableMetaClass(type):
         )
     
     @property
-    def timestamps(cls) -> Variable:
+    def timestamps(cls) -> DateTimeVariable:
         return DateTimeVariable(
             name='timestamps',
             definition='Profile timestamps.',
@@ -221,7 +254,7 @@ class DefaultVariableMetaClass(type):
         )
     
     @property
-    def evaluation_start_timestamp(cls) -> Variable:
+    def evaluation_start_timestamp(cls) -> DateTimeVariable:
         return DateTimeVariable(
             name='evaluation start timestamp',
             definition='The starting timestamp of an user specified evaluation window.',
@@ -230,7 +263,7 @@ class DefaultVariableMetaClass(type):
         )
     
     @property
-    def evaluation_end_timestamp(cls) -> Variable:
+    def evaluation_end_timestamp(cls) -> DateTimeVariable:
         return DateTimeVariable(
             name='evaluation end timestamp',
             definition='The starting timestamp of an user specified evaluation window.',
@@ -239,8 +272,8 @@ class DefaultVariableMetaClass(type):
         )
     
     @property
-    def load_profile_peak_timestamp(cls) -> Variable:
-        return Variable(
+    def load_profile_peak_timestamp(cls) -> DateTimeVariable:
+        return DateTimeVariable(
             name='load profile peak timestamp',
             definition='The timestamp of the maximum value of a given load profile.',
             primitive_type=DefaultPrimitiveType.timestamp,
@@ -248,7 +281,7 @@ class DefaultVariableMetaClass(type):
         )
     
     @property
-    def load_profile_valley_timestamp(cls) -> Variable:
+    def load_profile_valley_timestamp(cls) -> DateTimeVariable:
         return DateTimeVariable(
             name='load profile valley timestamp',
             definition='The timestamp of the minimum value of a given load profile.',
@@ -257,7 +290,7 @@ class DefaultVariableMetaClass(type):
         )
     
     @property
-    def grid_peak_timestamp(cls) -> Variable:
+    def grid_peak_timestamp(cls) -> DateTimeVariable:
         return DateTimeVariable(
             name='grid peak timestamp',
             definition='The timestamp of the maximum load of the connected grid.',
@@ -266,49 +299,63 @@ class DefaultVariableMetaClass(type):
         )
     
     @property
-    def low_generic_signal_start_timestamp(cls) -> Variable:
+    def generic_signal_start_timestamp(cls) -> DateTimeVariable:
+        return DateTimeVariable(
+            name='generic_signal_start_timestamp',
+            definition='The starting timestamp of a signal e.g. price, emissions, e.t.c.'
+        )
+    
+    @property
+    def generic_signal_end_timestamp(cls) -> DateTimeVariable:
+        return DateTimeVariable(
+            name='generic_signal_end_timestamp',
+            definition='The ending timestamp of a signal e.g. price, emissions, e.t.c..'
+        )
+    
+    @property
+    def low_generic_signal_start_timestamp(cls) -> DateTimeVariable:
         return DateTimeVariable(
             name='low_generic_signal_start_timestamp',
             definition='The starting timestamp of a period when a signal e.g. price, emissions, e.t.c. is low.'
         )
     
     @property
-    def low_generic_signal_end_timestamp(cls) -> Variable:
+    def low_generic_signal_end_timestamp(cls) -> DateTimeVariable:
         return DateTimeVariable(
             name='low_generic_signal_end_timestamp',
             definition='The ending timestamp of a period when a signal e.g. price, emissions, e.t.c. is low.'
         )
     
     @property
-    def medium_generic_signal_start_timestamp(cls) -> Variable:
+    def medium_generic_signal_start_timestamp(cls) -> DateTimeVariable:
         return DateTimeVariable(
             name='medium_generic_signal_start_timestamp',
             definition='The starting timestamp of a period when a signal e.g. price, emissions, e.t.c. is medium.'
         )
     
     @property
-    def medium_generic_signal_end_timestamp(cls) -> Variable:
+    def medium_generic_signal_end_timestamp(cls) -> DateTimeVariable:
         return DateTimeVariable(
             name='medium_generic_signal_end_timestamp',
             definition='The ending timestamp of a period when a signal e.g. price, emissions, e.t.c. is medium.'
         )
     
     @property
-    def high_generic_signal_start_timestamp(cls) -> Variable:
+    def high_generic_signal_start_timestamp(cls) -> DateTimeVariable:
         return DateTimeVariable(
             name='high_generic_signal_start_timestamp',
             definition='The starting timestamp of a period when a signal e.g. price, emissions, e.t.c. is high.'
         )
     
     @property
-    def high_generic_signal_end_timestamp(cls) -> Variable:
+    def high_generic_signal_end_timestamp(cls) -> DateTimeVariable:
         return DateTimeVariable(
             name='high_generic_signal_end_timestamp',
             definition='The ending timestamp of a period when a signal e.g. price, emissions, e.t.c. is high.'
         )
     
     @property
-    def high_price_start_timestamp(cls) -> Variable:
+    def high_price_start_timestamp(cls) -> DateTimeVariable:
         return DateTimeVariable(
             name='high price start timestamp',
             definition='The starting timestamp of a period when the grid price is high.',
@@ -317,7 +364,7 @@ class DefaultVariableMetaClass(type):
         )
     
     @property
-    def high_price_end_timestamp(cls) -> Variable:
+    def high_price_end_timestamp(cls) -> DateTimeVariable:
         return DateTimeVariable(
             name='high price end timestamp',
             definition='The ending timestamp of a period when the grid price is high.',
@@ -326,7 +373,7 @@ class DefaultVariableMetaClass(type):
         )
     
     @property
-    def high_emission_start_timestamp(cls) -> Variable:
+    def high_emission_start_timestamp(cls) -> DateTimeVariable:
         return DateTimeVariable(
             name='high emission start timestamp',
             definition='The starting timestamp of a period when the grid emission factor is high.',
@@ -335,7 +382,7 @@ class DefaultVariableMetaClass(type):
         )
     
     @property
-    def high_emission_end_timestamp(cls) -> Variable:
+    def high_emission_end_timestamp(cls) -> DateTimeVariable:
         return DateTimeVariable(
             name='high emission end timestamp',
             definition='The ending timestamp of a period when the grid emission factor is high.',
@@ -365,6 +412,8 @@ class VariableSet(Definition):
             load_profile_peak_timestamp: Union[int, datetime.datetime, str] = None,
             load_profile_valley_timestamp: Union[int, datetime.datetime, str] = None,
             grid_peak_timestamp: Union[int, datetime.datetime, str] = None,
+            generic_signal_start_timestamp: Union[int, datetime.datetime, str] = None,
+            generic_signal_end_timestamp: Union[int, datetime.datetime, str] = None,
             low_generic_signal_start_timestamp: Union[int, datetime.datetime, str] = None,
             low_generic_signal_end_timestamp: Union[int, datetime.datetime, str] = None,
             medium_generic_signal_start_timestamp: Union[int, datetime.datetime, str] = None,
@@ -388,12 +437,14 @@ class VariableSet(Definition):
         self.generic_electric_power_profile = self.__set_variable(DefaultVariable.generic_electric_power_profile, generic_electric_power_profile)
         self.generic_electricity_consumption_profile = self.__set_variable(DefaultVariable.generic_electricity_consumption_profile, generic_electricity_consumption_profile)
         self.generic_natural_gas_consumption_profile = self.__set_variable(DefaultVariable.generic_natural_gas_consumption_profile, generic_natural_gas_consumption_profile)
-        self.timestamps = self.__set_variable(DefaultVariable.timestamps, timestamps)
+        self.timestamps: DateTimeVariable = self.__set_variable(DefaultVariable.timestamps, timestamps)
         self.evaluation_start_timestamp = self.__set_variable(DefaultVariable.evaluation_start_timestamp, evaluation_start_timestamp)
         self.evaluation_end_timestamp = self.__set_variable(DefaultVariable.evaluation_end_timestamp, evaluation_end_timestamp)
         self.load_profile_peak_timestamp = self.__set_variable(DefaultVariable.load_profile_peak_timestamp, load_profile_peak_timestamp)
         self.load_profile_valley_timestamp = self.__set_variable(DefaultVariable.load_profile_valley_timestamp, load_profile_valley_timestamp)
         self.grid_peak_timestamp = self.__set_variable(DefaultVariable.grid_peak_timestamp, grid_peak_timestamp)
+        self.generic_signal_start_timestamp = self.__set_variable(DefaultVariable.generic_signal_start_timestamp, generic_signal_start_timestamp)
+        self.generic_signal_end_timestamp = self.__set_variable(DefaultVariable.generic_signal_end_timestamp, generic_signal_end_timestamp)
         self.low_generic_signal_start_timestamp = self.__set_variable(DefaultVariable.low_generic_signal_start_timestamp, low_generic_signal_start_timestamp)
         self.low_generic_signal_end_timestamp = self.__set_variable(DefaultVariable.low_generic_signal_end_timestamp, low_generic_signal_end_timestamp)
         self.medium_generic_signal_start_timestamp = self.__set_variable(DefaultVariable.medium_generic_signal_start_timestamp, medium_generic_signal_start_timestamp)
@@ -423,11 +474,8 @@ class VariableSet(Definition):
 
         return (timestamps >= evaluation_start_timestamp) & (timestamps <= evaluation_end_timestamp)
     
-    def __set_variable(self, default: Variable, value: Any) -> Variable:
-        variable = default
-        variable.value = value
-        
-        return variable
+    def get_temporal_resolution(self, unit: BaseUnit, value: List[datetime.datetime] = None):
+        return self.timestamps.get_resolution(unit, value=value)
     
     def validate_serial_variables(self):
         # check that serial variables are of equal length
@@ -449,3 +497,9 @@ class VariableSet(Definition):
         return isinstance(variable, Variable)\
             and  variable.value_type == ValueType.SERIAL\
                 and isinstance(variable.value, np.ndarray)
+    
+    def __set_variable(self, default: Variable, value: Any) -> Variable:
+        variable = default
+        variable.value = value
+        
+        return variable

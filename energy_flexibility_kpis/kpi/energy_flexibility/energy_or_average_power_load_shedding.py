@@ -129,7 +129,7 @@ class BuildingEnergyFlexibilityIndex(KPI):
         evaluation_start_timestamp: Union[int, datetime.datetime, str] = None,
         evaluation_end_timestamp: Union[int, datetime.datetime, str] = None,
     ) -> float:
-        """Assumes timestamps is in hours when calculating integral."""
+        """Assumes timestamps are datetime values."""
 
         _, vs = super().calculate(
             baseline_electric_power_profile=baseline_electric_power_profile,
@@ -138,10 +138,10 @@ class BuildingEnergyFlexibilityIndex(KPI):
             evaluation_start_timestamp=evaluation_start_timestamp,
             evaluation_end_timestamp=evaluation_end_timestamp,
         )
-        timestamps = vs.timestamps.value[vs.evaluation_mask]
-        baseline_value = integrate.simps(vs.baseline_electric_power_profile.value[vs.evaluation_mask], timestamps)
-        flexible_value = integrate.simps(vs.flexible_electric_power_profile.value[vs.evaluation_mask], timestamps)
-        value = (baseline_value - flexible_value)/timestamps[-1]
+        dx = vs.get_temporal_resolution(BaseUnit.HOUR, value=vs.timestamps.value[vs.evaluation_mask])
+        baseline_value = integrate.simps(vs.baseline_electric_power_profile.value[vs.evaluation_mask], dx=dx)
+        flexible_value = integrate.simps(vs.flexible_electric_power_profile.value[vs.evaluation_mask], dx=dx)
+        value = (baseline_value - flexible_value)/(dx*vs.evaluation_length)
 
         return value
     
@@ -174,7 +174,7 @@ class DimensionlessPeakShaving(KPI):
         evaluation_start_timestamp: Union[int, datetime.datetime, str] = None,
         evaluation_end_timestamp: Union[int, datetime.datetime, str] = None,
     ) -> float:
-        """Assumes timestamps is in hours when calculating integral."""
+        """Assumes timestamps are datetime values."""
 
         _, vs = super().calculate(
             baseline_electric_power_profile=baseline_electric_power_profile,
@@ -191,8 +191,8 @@ class DimensionlessPeakShaving(KPI):
             evaluation_end_timestamp=evaluation_end_timestamp
         )
         profile = vs.baseline_electric_power_profile.value[vs.evaluation_mask]
-        timestamps = vs.timestamps.value[vs.evaluation_mask]
-        value = q_peak_shaving/integrate.simps(profile, timestamps)
+        dx = vs.get_temporal_resolution(BaseUnit.HOUR, value=vs.timestamps.value[vs.evaluation_mask])
+        value = q_peak_shaving/integrate.simps(profile, dx=dx)
 
         return value
     
@@ -469,7 +469,7 @@ class AverageDownwardPowerDeviation(KPI):
         evaluation_start_timestamp: Union[int, datetime.datetime, str] = None,
         evaluation_end_timestamp: Union[int, datetime.datetime, str] = None,
     ) -> float:
-        """Assumes timestamps is in hours when calculating integral."""
+        """Assumes timestamps are datetime values."""
 
         _, vs = super().calculate(
             timestamps=timestamps,
@@ -480,7 +480,7 @@ class AverageDownwardPowerDeviation(KPI):
         )
         
         profile = vs.baseline_electric_power_profile.value[vs.evaluation_mask] - vs.flexible_electric_power_profile.value[vs.evaluation_mask]
-        timestamps = vs.timestamps.value[vs.evaluation_mask]
-        value = integrate.simps(profile, timestamps)/timestamps[-1]
+        dx = vs.get_temporal_resolution(BaseUnit.HOUR, value=vs.timestamps.value[vs.evaluation_mask])
+        value = integrate.simps(profile, dx=dx)/(dx*vs.evaluation_length)
 
         return value
