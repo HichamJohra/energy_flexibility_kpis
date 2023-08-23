@@ -1,5 +1,6 @@
 import datetime
 from typing import List, Union
+from scipy import integrate
 from energy_flexibility_kpis.kpi.base import KPI
 from energy_flexibility_kpis.enumerations import BaseUnit, Complexity, DOEFlexibilityCategory, KPICategory, PerformanceAspect, Relevance 
 from energy_flexibility_kpis.enumerations import Stakeholder, TemporalEvaluationWindow,TemporalResolution, SpatialResolution
@@ -122,6 +123,8 @@ class ReboundEnergy(KPI):
         evaluation_start_timestamp: Union[int, datetime.datetime, str] = None,
         evaluation_end_timestamp: Union[int, datetime.datetime, str] = None,
     ) -> float:
+        """Assumes timestamps is in hours when calculating integral."""
+        
         _, vs = super().calculate(
             timestamps=timestamps,
             baseline_electric_power_profile=baseline_electric_power_profile,
@@ -140,13 +143,12 @@ class ReboundEnergy(KPI):
         pre_event_baseline_electric_power_profile = vs.baseline_electric_power_profile.value[pre_event_timestamp_mask]
         post_event_baseline_electric_power_profile = vs.baseline_electric_power_profile.value[post_event_timestamp_mask]
 
-        pre_event_value = (
-            pre_event_flexible_electric_power_profile - pre_event_baseline_electric_power_profile
-        ).mean()*pre_event_timestamp_mask[pre_event_timestamp_mask].shape[0]
-        post_event_value = (
-            post_event_flexible_electric_power_profile - post_event_baseline_electric_power_profile
-        ).mean()*post_event_timestamp_mask[post_event_timestamp_mask].shape[0]
-
+        pre_event_profile = pre_event_flexible_electric_power_profile - pre_event_baseline_electric_power_profile
+        post_event_profile = post_event_flexible_electric_power_profile - post_event_baseline_electric_power_profile
+        pre_event_timestamps = vs.timestamps.value[pre_event_timestamp_mask]
+        post_event_timestamps = vs.timestamps.value[post_event_timestamp_mask]
+        pre_event_value = integrate.simps(pre_event_profile, pre_event_timestamps)
+        post_event_value = integrate.simps(post_event_profile, post_event_timestamps)
         value = pre_event_value + post_event_value
 
         return value

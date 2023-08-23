@@ -1,9 +1,67 @@
 import datetime
 from typing import List, Union
+from scipy import integrate
 from energy_flexibility_kpis.kpi.base import KPI
 from energy_flexibility_kpis.enumerations import BaseUnit, Complexity, DOEFlexibilityCategory, KPICategory, PerformanceAspect, Relevance 
 from energy_flexibility_kpis.enumerations import Stakeholder, TemporalEvaluationWindow,TemporalResolution, SpatialResolution
 from energy_flexibility_kpis.unit import Unit
+
+class FlexibilityFactor(KPI):
+    """Ability to shift a quantity (e.g., energy, cost, emissions) from high-load periods to 
+    low-load periods. It ranges between -1 (quantify was only during high-load periods) and 1 
+    (quantify was only during low-load periods)."""
+
+    NAME = 'flexibility factor'
+    DEFINITION = __doc__
+    UNIT = Unit(numerator=[BaseUnit.DIMENSIONLESS])
+    CATEGORY = KPICategory.EF_LOAD_SHIFTING
+    RELEVANCE = Relevance.HIGH
+    STAKEHOLDERS = [Stakeholder.DISTRIBUTION_SYSTEM_OPERATOR, Stakeholder.TRANSMISSION_SYSTEM_OPERATOR, Stakeholder.BUILDING_OWNER]
+    COMPLEXITY = Complexity.LOW
+    NEED_BASELINE = False
+    TEMPORAL_EVALUATION_WINDOW = TemporalEvaluationWindow.UNSPECIFIED
+    TEMPORAL_RESOLUTION = TemporalResolution.UNSPECIFIED
+    SPATIAL_RESOLUTION = SpatialResolution.UNSPECIFIED
+    DOE_FLEXIBILITY_CATEGORY = [DOEFlexibilityCategory.LOAD_SHIFTING]
+    PERFORMANCE_ASPECT = [PerformanceAspect.ENERGY, PerformanceAspect.COST, PerformanceAspect.EMISSION]
+
+    def __init__(self):
+        super().__init__()
+
+    @classmethod
+    def calculate(
+        cls,
+        generic_electric_power_profile: List[float],
+        high_generic_signal_start_timestamp: Union[int,datetime.datetime, str],
+        high_generic_signal_end_timestamp: Union[int,datetime.datetime, str],
+        timestamps: Union[List[int], List[datetime.datetime], List[str]],
+        evaluation_start_timestamp: Union[int, datetime.datetime, str] = None,
+        evaluation_end_timestamp: Union[int, datetime.datetime, str] = None,
+    ) -> float:
+        """Assumes timestamps is in hours when calculating integral. 
+        Might not work properly if high and low price are sandwiched between each other."""
+
+        _, vs = super().calculate(
+            generic_electric_power_profile=generic_electric_power_profile,
+            high_generic_signal_start_timestamp=high_generic_signal_start_timestamp,
+            high_generic_signal_end_timestamp=high_generic_signal_end_timestamp,
+            timestamps=timestamps,
+            evaluation_start_timestamp=evaluation_start_timestamp,
+            evaluation_end_timestamp=evaluation_end_timestamp,
+        )
+        high_generic_signal_mask = vs.evaluation_mask\
+            & (vs.timestamps.value >= vs.high_price_start_timestamp.value)\
+                & (vs.timestamps.value <= vs.high_price_end_timestamp.value)
+        low_generic_signal_mask = vs.evaluation_mask & (~high_generic_signal_mask)
+        high_generic_signal_profile = vs.generic_electric_power_profile.value[high_generic_signal_mask]
+        high_generic_signal_timestamps = vs.timestamps.value[high_generic_signal_mask]
+        low_generic_signal_profile = vs.generic_electric_power_profile.value[low_generic_signal_mask]
+        low_generic_signal_timestamps = vs.timestamps.value[low_generic_signal_mask]
+        low_generic_signal_value = integrate.simps(low_generic_signal_profile, low_generic_signal_timestamps)
+        high_generic_signal_value = integrate.simps(high_generic_signal_profile, high_generic_signal_timestamps)
+        value = (low_generic_signal_value - high_generic_signal_value)/(low_generic_signal_value + high_generic_signal_value)
+
+        return value
 
 class EnergyShiftFlexibilityFactor(KPI):
     """Measures the capability for shifting the energy consumption between periods: in here 
@@ -36,67 +94,17 @@ class EnergyShiftFlexibilityFactor(KPI):
         evaluation_start_timestamp: Union[int, datetime.datetime, str] = None,
         evaluation_end_timestamp: Union[int, datetime.datetime, str] = None,
     ) -> float:
-        _, vs = super().calculate(
-            generic_electric_power_profile=generic_electric_power_profile,
-            high_price_start_timestamp=high_price_start_timestamp,
-            high_price_end_timestamp=high_price_end_timestamp,
-            timestamps=timestamps,
+        """Assumes timestamps is in hours when calculating integral. 
+        Might not work properly if high and low price are sandwiched between each other."""
+
+        value = FlexibilityFactor().calculate(
+            generic_electric_power_profile,
+            high_price_start_timestamp,
+            high_price_end_timestamp,
+            timestamps,
             evaluation_start_timestamp=evaluation_start_timestamp,
-            evaluation_end_timestamp=evaluation_end_timestamp,
+            evaluation_end_timestamp=evaluation_end_timestamp
         )
-        high_price_mask = vs.evaluation_mask & (vs.timestamps.value >= vs.high_price_start_timestamp.value) & (vs.timestamps.value <= vs.high_price_end_timestamp.value)
-        low_price_mask = vs.evaluation_mask & (~high_price_mask)
-        low_price_value = vs.generic_electric_power_profile.value[low_price_mask].mean()*len(low_price_mask)
-        high_price_value = vs.generic_electric_power_profile[high_price_mask].mean()*len(high_price_mask)
-        value = (low_price_value - high_price_value)/(low_price_value + high_price_value)
-
-        return value
-    
-class FlexibilityFactor(KPI):
-    """Ability to shift a quantity (e.g., energy, cost, emissions) from high-load periods to 
-    low-load periods. It ranges between -1 (quantify was only during high-load periods) and 1 
-    (quantify was only during low-load periods)."""
-
-    NAME = 'flexibility factor'
-    DEFINITION = __doc__
-    UNIT = Unit(numerator=[BaseUnit.DIMENSIONLESS])
-    CATEGORY = KPICategory.EF_LOAD_SHIFTING
-    RELEVANCE = Relevance.HIGH
-    STAKEHOLDERS = [Stakeholder.DISTRIBUTION_SYSTEM_OPERATOR, Stakeholder.TRANSMISSION_SYSTEM_OPERATOR, Stakeholder.BUILDING_OWNER]
-    COMPLEXITY = Complexity.LOW
-    NEED_BASELINE = False
-    TEMPORAL_EVALUATION_WINDOW = TemporalEvaluationWindow.UNSPECIFIED
-    TEMPORAL_RESOLUTION = TemporalResolution.UNSPECIFIED
-    SPATIAL_RESOLUTION = SpatialResolution.UNSPECIFIED
-    DOE_FLEXIBILITY_CATEGORY = [DOEFlexibilityCategory.LOAD_SHIFTING]
-    PERFORMANCE_ASPECT = [PerformanceAspect.ENERGY, PerformanceAspect.COST, PerformanceAspect.EMISSION]
-
-    def __init__(self):
-        super().__init__()
-
-    @classmethod
-    def calculate(
-        cls,
-        generic_electric_power_profile: List[float],
-        high_price_start_timestamp: Union[int,datetime.datetime, str],
-        high_price_end_timestamp: Union[int,datetime.datetime, str],
-        timestamps: Union[List[int], List[datetime.datetime], List[str]],
-        evaluation_start_timestamp: Union[int, datetime.datetime, str] = None,
-        evaluation_end_timestamp: Union[int, datetime.datetime, str] = None,
-    ) -> float:
-        _, vs = super().calculate(
-            generic_electric_power_profile=generic_electric_power_profile,
-            high_price_start_timestamp=high_price_start_timestamp,
-            high_price_end_timestamp=high_price_end_timestamp,
-            timestamps=timestamps,
-            evaluation_start_timestamp=evaluation_start_timestamp,
-            evaluation_end_timestamp=evaluation_end_timestamp,
-        )
-        high_price_mask = vs.evaluation_mask & (vs.timestamps.value >= vs.high_price_start_timestamp.value) & (vs.timestamps.value <= vs.high_price_end_timestamp.value)
-        low_price_mask = vs.evaluation_mask & (~high_price_mask)
-        low_price_value = vs.generic_electric_power_profile.value[low_price_mask].mean()*len(low_price_mask)
-        high_price_value = vs.generic_electric_power_profile[high_price_mask].mean()*len(high_price_mask)
-        value = (low_price_value - high_price_value)/(low_price_value + high_price_value)
 
         return value
     
