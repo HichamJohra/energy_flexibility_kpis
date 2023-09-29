@@ -94,8 +94,8 @@ class AverageLoadReduction(KPI):
         )
         
         mask = vs.evaluation_mask\
-            & (vs.timestamps.value >= vs.generic_signal_start_timestamp)\
-                & (vs.timestamps <= vs.generic_signal_end_timestamp)
+            & (vs.timestamps.value >= vs.generic_signal_start_timestamp.value)\
+                & (vs.timestamps.value <= vs.generic_signal_end_timestamp.value)
         mask_length = mask[mask].shape[0]
         resource_count = len(baseline_electric_power_profile)
         value = (
