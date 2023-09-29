@@ -46,8 +46,8 @@ class EnergyDeviationForPeakShaving(KPI):
         )
 
         value = (
-            vs.flexible_electric_power_profile.value[vs.evaluation_mask] 
-                - vs.baseline_electric_power_profile.value[vs.evaluation_mask]
+            vs.baseline_electric_power_profile.value[vs.evaluation_mask] 
+                - vs.flexible_electric_power_profile.value[vs.evaluation_mask]
         ).mean()*vs.evaluation_length
 
         return value
@@ -77,6 +77,8 @@ class AverageLoadReduction(KPI):
         cls,
         baseline_electric_power_profile: List[List[float]], 
         flexible_electric_power_profile: List[List[float]],
+        generic_signal_start_timestamp: Union[int, datetime.datetime, str],
+        generic_signal_end_timestamp: Union[int, datetime.datetime, str],
         timestamps: Union[List[int], List[datetime.datetime], List[str]] = None,
         evaluation_start_timestamp: Union[int, datetime.datetime, str] = None,
         evaluation_end_timestamp: Union[int, datetime.datetime, str] = None,
@@ -84,17 +86,22 @@ class AverageLoadReduction(KPI):
         _, vs = super().calculate(
             baseline_electric_power_profile=baseline_electric_power_profile,
             flexible_electric_power_profile=flexible_electric_power_profile,
+            generic_signal_start_timestamp=generic_signal_start_timestamp,
+            generic_signal_end_timestamp=generic_signal_end_timestamp,
             timestamps=timestamps,
             evaluation_start_timestamp=evaluation_start_timestamp,
             evaluation_end_timestamp=evaluation_end_timestamp,
         )
         
-        assert vs.evaluation_length > 1, 'The evaluation period must be > 1 timestep'
+        mask = vs.evaluation_mask\
+            & (vs.timestamps.value >= vs.generic_signal_start_timestamp.value)\
+                & (vs.timestamps.value <= vs.generic_signal_end_timestamp.value)
+        mask_length = mask[mask].shape[0]
         resource_count = len(baseline_electric_power_profile)
         value = (
-            vs.baseline_electric_power_profile.value[vs.evaluation_mask] 
-                - vs.flexible_electric_power_profile.value[vs.evaluation_mask]
-        )[1:].sum()/(resource_count*(vs.evaluation_length - 1))
+            vs.baseline_electric_power_profile.value[mask] 
+                - vs.flexible_electric_power_profile.value[mask]
+        )[1:].sum()/(resource_count*(mask_length - 1))
 
         return value
     

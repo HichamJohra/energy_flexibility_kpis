@@ -154,7 +154,6 @@ class DefaultVariableMetaClass(type):
             definition='Equipment availability mask.',
             primitive_type=DefaultPrimitiveType.unspecified,
             value_type=ValueType.SERIAL,
-            operation_condition=OperationCondition.GENERIC,
         )
 
     @property
@@ -302,56 +301,72 @@ class DefaultVariableMetaClass(type):
     def generic_signal_start_timestamp(cls) -> DateTimeVariable:
         return DateTimeVariable(
             name='generic_signal_start_timestamp',
-            definition='The starting timestamp of a signal e.g. price, emissions, e.t.c.'
+            definition='The starting timestamp of a signal e.g. price, emissions, e.t.c.',
+            primitive_type=DefaultPrimitiveType.timestamp,
+            value_type=ValueType.SINGLE
         )
     
     @property
     def generic_signal_end_timestamp(cls) -> DateTimeVariable:
         return DateTimeVariable(
             name='generic_signal_end_timestamp',
-            definition='The ending timestamp of a signal e.g. price, emissions, e.t.c..'
+            definition='The ending timestamp of a signal e.g. price, emissions, e.t.c..',
+            primitive_type=DefaultPrimitiveType.timestamp,
+            value_type=ValueType.SINGLE
         )
     
     @property
     def low_generic_signal_start_timestamp(cls) -> DateTimeVariable:
         return DateTimeVariable(
             name='low_generic_signal_start_timestamp',
-            definition='The starting timestamp of a period when a signal e.g. price, emissions, e.t.c. is low.'
+            definition='The starting timestamp of a period when a signal e.g. price, emissions, e.t.c. is low.',
+            primitive_type=DefaultPrimitiveType.timestamp,
+            value_type=ValueType.SINGLE
         )
     
     @property
     def low_generic_signal_end_timestamp(cls) -> DateTimeVariable:
         return DateTimeVariable(
             name='low_generic_signal_end_timestamp',
-            definition='The ending timestamp of a period when a signal e.g. price, emissions, e.t.c. is low.'
+            definition='The ending timestamp of a period when a signal e.g. price, emissions, e.t.c. is low.',
+            primitive_type=DefaultPrimitiveType.timestamp,
+            value_type=ValueType.SINGLE
         )
     
     @property
     def medium_generic_signal_start_timestamp(cls) -> DateTimeVariable:
         return DateTimeVariable(
             name='medium_generic_signal_start_timestamp',
-            definition='The starting timestamp of a period when a signal e.g. price, emissions, e.t.c. is medium.'
+            definition='The starting timestamp of a period when a signal e.g. price, emissions, e.t.c. is medium.',
+            primitive_type=DefaultPrimitiveType.timestamp,
+            value_type=ValueType.SINGLE
         )
     
     @property
     def medium_generic_signal_end_timestamp(cls) -> DateTimeVariable:
         return DateTimeVariable(
             name='medium_generic_signal_end_timestamp',
-            definition='The ending timestamp of a period when a signal e.g. price, emissions, e.t.c. is medium.'
+            definition='The ending timestamp of a period when a signal e.g. price, emissions, e.t.c. is medium.',
+            primitive_type=DefaultPrimitiveType.timestamp,
+            value_type=ValueType.SINGLE
         )
     
     @property
     def high_generic_signal_start_timestamp(cls) -> DateTimeVariable:
         return DateTimeVariable(
             name='high_generic_signal_start_timestamp',
-            definition='The starting timestamp of a period when a signal e.g. price, emissions, e.t.c. is high.'
+            definition='The starting timestamp of a period when a signal e.g. price, emissions, e.t.c. is high.',
+            primitive_type=DefaultPrimitiveType.timestamp,
+            value_type=ValueType.SINGLE
         )
     
     @property
     def high_generic_signal_end_timestamp(cls) -> DateTimeVariable:
         return DateTimeVariable(
             name='high_generic_signal_end_timestamp',
-            definition='The ending timestamp of a period when a signal e.g. price, emissions, e.t.c. is high.'
+            definition='The ending timestamp of a period when a signal e.g. price, emissions, e.t.c. is high.',
+            primitive_type=DefaultPrimitiveType.timestamp,
+            value_type=ValueType.SINGLE
         )
     
     @property
