@@ -16,7 +16,6 @@ Submodules
    energy_flexibility_kpis.kpi.energy_flexibility.demand_response_costs_or_savings
    energy_flexibility_kpis.kpi.energy_flexibility.demand_response_emission_or_environmental_impact
    energy_flexibility_kpis.kpi.energy_flexibility.demand_response_energy_efficiency
-   energy_flexibility_kpis.kpi.energy_flexibility.demand_response_profile_reshaping
    energy_flexibility_kpis.kpi.energy_flexibility.energy_or_average_power_load_shedding
    energy_flexibility_kpis.kpi.energy_flexibility.energy_storage_capability
    energy_flexibility_kpis.kpi.energy_flexibility.grid_interaction
