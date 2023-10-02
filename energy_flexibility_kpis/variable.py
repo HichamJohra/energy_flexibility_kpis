@@ -187,6 +187,46 @@ class DefaultVariableMetaClass(type):
         )
     
     @property
+    def baseline_cost_profile(cls) -> Variable:
+        return Variable(
+            name='baseline cost profile',
+            definition='A time series data points of energy cost acquired in baseline operation scenario.',
+            primitive_type=DefaultPrimitiveType.operation_cost,
+            value_type=ValueType.SERIAL,
+            operation_condition=OperationCondition.BASELINE,
+        )
+    
+    @property
+    def baseline_carbon_emissions_profile(cls) -> Variable:
+        return Variable(
+            name='baseline carbon emissions profile',
+            definition='A time series data points of energy carbon emissions acquired in baseline operation scenario.',
+            primitive_type=DefaultPrimitiveType.carbon_emission,
+            value_type=ValueType.SERIAL,
+            operation_condition=OperationCondition.BASELINE,
+        )
+    
+    @property
+    def baseline_carbon_intensity_profile(cls) -> Variable:
+        return Variable(
+            name='baseline carbon intensity profile',
+            definition='A time series data points of energy carbon intensity acquired in baseline operation scenario.',
+            primitive_type=DefaultPrimitiveType.carbon_emission_factor,
+            value_type=ValueType.SERIAL,
+            operation_condition=OperationCondition.BASELINE,
+        )
+    
+    @property
+    def baseline_self_production_profile(cls) -> Variable:
+        return Variable(
+            name='baseline self production profile',
+            definition='A time series data points of self-produced acquired in baseline operation scenario.',
+            primitive_type=DefaultPrimitiveType.power_demand,
+            value_type=ValueType.SERIAL,
+            operation_condition=OperationCondition.BASELINE,
+        )
+    
+    @property
     def flexible_electric_power_profile(cls) -> Variable:
         return Variable(
             name='flexible electric power profile',
@@ -217,6 +257,46 @@ class DefaultVariableMetaClass(type):
         )
     
     @property
+    def flexible_cost_profile(cls) -> Variable:
+        return Variable(
+            name='flexible cost profile',
+            definition='A time series data points of energy cost acquired in flexible operation scenario.',
+            primitive_type=DefaultPrimitiveType.operation_cost,
+            value_type=ValueType.SERIAL,
+            operation_condition=OperationCondition.FLEXIBLE,
+        )
+    
+    @property
+    def flexible_carbon_emissions_profile(cls) -> Variable:
+        return Variable(
+            name='flexible carbon emissions profile',
+            definition='A time series data points of energy carbon emissions acquired in flexible operation scenario.',
+            primitive_type=DefaultPrimitiveType.carbon_emission,
+            value_type=ValueType.SERIAL,
+            operation_condition=OperationCondition.FLEXIBLE,
+        )
+    
+    @property
+    def flexible_carbon_intensity_profile(cls) -> Variable:
+        return Variable(
+            name='flexible carbon intensity profile',
+            definition='A time series data points of energy carbon intensity acquired in flexible operation scenario.',
+            primitive_type=DefaultPrimitiveType.carbon_emission_factor,
+            value_type=ValueType.SERIAL,
+            operation_condition=OperationCondition.FLEXIBLE,
+        )
+    
+    @property
+    def flexible_self_production_profile(cls) -> Variable:
+        return Variable(
+            name='flexible self production profile',
+            definition='A time series data points of self-produced acquired in flexible operation scenario.',
+            primitive_type=DefaultPrimitiveType.power_demand,
+            value_type=ValueType.SERIAL,
+            operation_condition=OperationCondition.FLEXIBLE,
+        )
+    
+    @property
     def generic_electric_power_profile(cls) -> Variable:
         return Variable(
             name='generic electric power profile',
@@ -241,6 +321,46 @@ class DefaultVariableMetaClass(type):
             definition='A time series data points of natural gas consumption acquired in unspecified operation scenario.',
             primitive_type=DefaultPrimitiveType.energy_consumption,
             value_type=ValueType.SERIAL,
+        )
+    
+    @property
+    def generic_cost_profile(cls) -> Variable:
+        return Variable(
+            name='generic cost profile',
+            definition='A time series data points of energy cost acquired in generic operation scenario.',
+            primitive_type=DefaultPrimitiveType.operation_cost,
+            value_type=ValueType.SERIAL,
+            operation_condition=OperationCondition.GENERIC,
+        )
+    
+    @property
+    def generic_carbon_emissions_profile(cls) -> Variable:
+        return Variable(
+            name='generic carbon emissions profile',
+            definition='A time series data points of energy carbon emissions acquired in generic operation scenario.',
+            primitive_type=DefaultPrimitiveType.carbon_emission,
+            value_type=ValueType.SERIAL,
+            operation_condition=OperationCondition.GENERIC,
+        )
+    
+    @property
+    def generic_carbon_intensity_profile(cls) -> Variable:
+        return Variable(
+            name='generic carbon intensity profile',
+            definition='A time series data points of energy carbon intensity acquired in generic operation scenario.',
+            primitive_type=DefaultPrimitiveType.carbon_emission_factor,
+            value_type=ValueType.SERIAL,
+            operation_condition=OperationCondition.GENERIC,
+        )
+    
+    @property
+    def generic_self_production_profile(cls) -> Variable:
+        return Variable(
+            name='generic self production profile',
+            definition='A time series data points of self-produced acquired in generic operation scenario.',
+            primitive_type=DefaultPrimitiveType.power_demand,
+            value_type=ValueType.SERIAL,
+            operation_condition=OperationCondition.GENERIC,
         )
     
     @property
@@ -418,12 +538,24 @@ class VariableSet(Definition):
             baseline_electric_power_profile: List[float] = None,
             baseline_electricity_consumption_profile: List[float] = None,
             baseline_natural_gas_consumption_profile: List[float] = None,
+            baseline_cost_profile: List[float] = None,
+            baseline_carbon_emissions_profile: List[float] = None,
+            baseline_carbon_intensity_profile: List[float] = None,
+            baseline_self_production_profile: List[float] = None,
             flexible_electric_power_profile: List[float] = None,
             flexible_electricity_consumption_profile: List[float] = None,
             flexible_natural_gas_consumption_profile: List[float] = None,
+            flexible_cost_profile: List[float] = None,
+            flexible_carbon_emissions_profile: List[float] = None,
+            flexible_carbon_intensity_profile: List[float] = None,
+            flexible_self_production_profile: List[float] = None,
             generic_electric_power_profile: List[float] = None,
             generic_electricity_consumption_profile: List[float] = None,
             generic_natural_gas_consumption_profile: List[float] = None,
+            generic_cost_profile: List[float] = None,
+            generic_carbon_emissions_profile: List[float] = None,
+            generic_carbon_intensity_profile: List[float] = None,
+            generic_self_production_profile: List[float] = None,
             load_profile_peak_timestamp: Union[int, datetime.datetime, str] = None,
             load_profile_valley_timestamp: Union[int, datetime.datetime, str] = None,
             grid_peak_timestamp: Union[int, datetime.datetime, str] = None,
@@ -446,12 +578,24 @@ class VariableSet(Definition):
         self.baseline_electric_power_profile = self.__set_variable(DefaultVariable.baseline_electric_power_profile, baseline_electric_power_profile)
         self.baseline_electricity_consumption_profile = self.__set_variable(DefaultVariable.baseline_electricity_consumption_profile, baseline_electricity_consumption_profile)
         self.baseline_natural_gas_consumption_profile = self.__set_variable(DefaultVariable.baseline_natural_gas_consumption_profile, baseline_natural_gas_consumption_profile)
+        self.baseline_cost_profile = self.__set_variable(DefaultVariable.baseline_cost_profile, baseline_cost_profile)
+        self.baseline_carbon_emissions_profile = self.__set_variable(DefaultVariable.baseline_carbon_emissions_profile, baseline_carbon_emissions_profile)
+        self.baseline_carbon_intensity_profile = self.__set_variable(DefaultVariable.baseline_carbon_intensity_profile, baseline_carbon_intensity_profile)
+        self.baseline_self_production_profile = self.__set_variable(DefaultVariable.baseline_self_production_profile, baseline_self_production_profile)
         self.flexible_electric_power_profile = self.__set_variable(DefaultVariable.flexible_electric_power_profile, flexible_electric_power_profile)
         self.flexible_electricity_consumption_profile = self.__set_variable(DefaultVariable.flexible_electricity_consumption_profile, flexible_electricity_consumption_profile)
         self.flexible_natural_gas_consumption_profile = self.__set_variable(DefaultVariable.flexible_natural_gas_consumption_profile, flexible_natural_gas_consumption_profile)
+        self.flexible_cost_profile = self.__set_variable(DefaultVariable.flexible_cost_profile, flexible_cost_profile)
+        self.flexible_carbon_emissions_profile = self.__set_variable(DefaultVariable.flexible_carbon_emissions_profile, flexible_carbon_emissions_profile)
+        self.flexible_carbon_intensity_profile = self.__set_variable(DefaultVariable.flexible_carbon_intensity_profile, flexible_carbon_intensity_profile)
+        self.flexible_self_production_profile = self.__set_variable(DefaultVariable.flexible_self_production_profile, flexible_self_production_profile)
         self.generic_electric_power_profile = self.__set_variable(DefaultVariable.generic_electric_power_profile, generic_electric_power_profile)
         self.generic_electricity_consumption_profile = self.__set_variable(DefaultVariable.generic_electricity_consumption_profile, generic_electricity_consumption_profile)
         self.generic_natural_gas_consumption_profile = self.__set_variable(DefaultVariable.generic_natural_gas_consumption_profile, generic_natural_gas_consumption_profile)
+        self.generic_cost_profile = self.__set_variable(DefaultVariable.generic_cost_profile, generic_cost_profile)
+        self.generic_carbon_emissions_profile = self.__set_variable(DefaultVariable.generic_carbon_emissions_profile, generic_carbon_emissions_profile)
+        self.generic_carbon_intensity_profile = self.__set_variable(DefaultVariable.generic_carbon_intensity_profile, generic_carbon_intensity_profile)
+        self.generic_self_production_profile = self.__set_variable(DefaultVariable.generic_self_production_profile, generic_self_production_profile)
         self.timestamps: DateTimeVariable = self.__set_variable(DefaultVariable.timestamps, timestamps)
         self.evaluation_start_timestamp = self.__set_variable(DefaultVariable.evaluation_start_timestamp, evaluation_start_timestamp)
         self.evaluation_end_timestamp = self.__set_variable(DefaultVariable.evaluation_end_timestamp, evaluation_end_timestamp)

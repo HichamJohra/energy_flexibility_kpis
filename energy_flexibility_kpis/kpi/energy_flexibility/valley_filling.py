@@ -11,7 +11,7 @@ class EnergyDeviationForValleyFilling(KPI):
 
     NAME = 'energy deviation for valley filling'
     DEFINITION = __doc__
-    UNIT = Unit(numerator=[BaseUnit.KWH])
+    UNIT = Unit(numerator=[BaseUnit.KW, BaseUnit.HOUR])
     CATEGORY = KPICategory.EF_VALLEY_FILLING
     RELEVANCE = Relevance.HIGH
     STAKEHOLDERS = [Stakeholder.GRID_OPERATOR, Stakeholder.DISTRIBUTION_SYSTEM_OPERATOR]

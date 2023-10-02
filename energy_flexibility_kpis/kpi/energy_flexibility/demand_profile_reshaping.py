@@ -57,7 +57,7 @@ class FlexibilityMap(KPI):
 
     NAME = 'flexibility map'
     DEFINITION = __doc__
-    UNIT = Unit(numerator=[BaseUnit.KWH])
+    UNIT = Unit(numerator=[BaseUnit.KW, BaseUnit.HOUR])
     CATEGORY = KPICategory.EF_DEMAND_PROFILE_RESHAPING
     RELEVANCE = Relevance.MEDIUM
     STAKEHOLDERS = [Stakeholder.GRID_OPERATOR, Stakeholder.BUILDING_OPERATOR]

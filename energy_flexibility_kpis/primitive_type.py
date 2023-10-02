@@ -38,7 +38,7 @@ class DefaultPrimitiveTypeMetaClass(type):
         return PrimitiveType(
             name='energy consumption',
             definition='The energy consumption of an entiry during a certain period.',
-            unit=Unit(numerator=[BaseUnit.KWH])
+            unit=Unit(numerator=[BaseUnit.KW, BaseUnit.HOUR])
         )
     
     @property
@@ -58,7 +58,7 @@ class DefaultPrimitiveTypeMetaClass(type):
         return PrimitiveType(
             name='energy price',
             definition='The price of energy per unit.',
-            unit=Unit(numerator=[BaseUnit.DOLLAR], denominator=[BaseUnit.KWH])
+            unit=Unit(numerator=[BaseUnit.DOLLAR], denominator=[BaseUnit.KW, BaseUnit.HOUR])
         )
     
     @property
@@ -68,7 +68,7 @@ class DefaultPrimitiveTypeMetaClass(type):
         return PrimitiveType(
             name='carbon emission',
             definition='The carbon emission of an entiry during a certain period.',
-            unit=Unit(numerator=[BaseUnit.TON])
+            unit=Unit(numerator=[BaseUnit.KG_OF_CO2])
         )
     
     @property
@@ -78,7 +78,7 @@ class DefaultPrimitiveTypeMetaClass(type):
         return PrimitiveType(
             name='carbon emission factor',
             definition='The carbon emission factor of an entiry during a certain period.',
-            unit=Unit(numerator=[BaseUnit.TON], denominator=[BaseUnit.KWH])
+            unit=Unit(numerator=[BaseUnit.KG_OF_CO2], denominator=[BaseUnit.KW, BaseUnit.HOUR])
         )
     
     @property

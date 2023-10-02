@@ -8,7 +8,7 @@ class BaseUnit(Enum):
     KWH = ('kWh', 'kilowatt-hour')
     KW = ('kW', 'kilowatt')
     DOLLAR = ('%', 'dollar')
-    HOUR = ('hr', 'hour')
+    HOUR = ('h', 'hour')
     MINUTE = ('min', 'minute')
     SECOND = ('s', 'second')
     MILLISECOND = ('ms', 'millisecond')

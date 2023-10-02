@@ -97,7 +97,7 @@ class ReboundEnergy(KPI):
 
     NAME = 'rebound energy'
     DEFINITION = __doc__
-    UNIT = Unit(numerator=[BaseUnit.KWH])
+    UNIT = Unit(numerator=[BaseUnit.KW, BaseUnit.HOUR])
     CATEGORY = KPICategory.EF_PEAK_POWER_OR_ENERGY_REBOUND
     RELEVANCE = Relevance.HIGH
     STAKEHOLDERS = [Stakeholder.BUILDING_OWNER, Stakeholder.AGGREGATOR, Stakeholder.GRID_OPERATOR]
