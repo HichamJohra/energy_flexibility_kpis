@@ -13,7 +13,7 @@ class EnergyDeviationForPeakShaving(KPI):
 
     NAME = 'energy deviation from peak shaving'
     DEFINITION = __doc__
-    UNIT = Unit(numerator=[BaseUnit.KWH])
+    UNIT = Unit(numerator=[BaseUnit.KW, BaseUnit.HOUR])
     CATEGORY = KPICategory.EF_ENERGY_OR_AVERAGE_POWER_LOAD_SHEDDING
     RELEVANCE = Relevance.HIGH
     STAKEHOLDERS = [Stakeholder.BUILDING_OWNER, Stakeholder.GRID_OPERATOR]

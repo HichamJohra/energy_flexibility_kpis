@@ -12,7 +12,7 @@ class EnergySavingsOfDemandResponse(KPI):
 
     NAME = 'energy savings of demand response'
     DEFINITION = __doc__
-    UNIT = Unit(numerator=[BaseUnit.KWH])
+    UNIT = Unit(numerator=[BaseUnit.KW, BaseUnit.HOUR])
     CATEGORY = KPICategory.EF_DEMAND_RESPONSE_ENERGY_EFFICIENCY
     RELEVANCE = Relevance.MEDIUM
     STAKEHOLDERS = [Stakeholder.BUILDING_OWNER, Stakeholder.BUILDING_OPERATOR]
@@ -175,4 +175,4 @@ class ConsistencyWithEnergySavings(KPI):
             evaluation_end_timestamp=evaluation_end_timestamp,
         )
         
-        raise NotImplementedError('Variable are unclear')
+        raise NotImplementedError('Variables are unclear')

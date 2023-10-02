@@ -12,7 +12,7 @@ class CapacityOfADR(KPI):
 
     NAME = 'capacity of ADR'
     DEFINITION = __doc__
-    UNIT = Unit(numerator=[BaseUnit.KWH])
+    UNIT = Unit(numerator=[BaseUnit.KW, BaseUnit.HOUR])
     CATEGORY = KPICategory.EF_ENERGY_STORAGE_CAPABILITY
     RELEVANCE = Relevance.HIGH
     STAKEHOLDERS = [Stakeholder.BUILDING_OPERATOR, Stakeholder.TRANSMISSION_SYSTEM_OPERATOR]
@@ -113,7 +113,7 @@ class AvailableFlexibleEnergy(KPI):
 
     NAME = 'available flexible energy'
     DEFINITION = __doc__
-    UNIT = Unit(numerator=[BaseUnit.KWH])
+    UNIT = Unit(numerator=[BaseUnit.KW, BaseUnit.HOUR])
     CATEGORY = KPICategory.EF_ENERGY_STORAGE_CAPABILITY
     RELEVANCE = Relevance.MEDIUM
     STAKEHOLDERS = [Stakeholder.DISTRIBUTION_SYSTEM_OPERATOR, Stakeholder.TRANSMISSION_SYSTEM_OPERATOR]
