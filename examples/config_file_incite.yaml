@@ -1,0 +1,23 @@
+
+# Define path and file names
+path_to_dataset: '../data/incite_dataset'
+database_file_name: 'demo_kpi_validation_calculation.db'
+brick_model_file_name: "incite.ttl"
+updated_brick_model_file_name: "incite_with_data.ttl"
+
+# Define the scenarios (csv file names) to analyse as baseline and flexible scenarios
+baseline_scenario: 'Ref_Cool'
+flexible_scenario: 'RBC_Cost_Cool'
+
+# Define a start and end time for the evaluation period 
+evaluation_timestamps:
+    start: '2016-08-07 00:00:00'
+    end: '2016-10-07 23:59:59'
+
+# Define input parameters not available in the Brick model
+price_signal_file_name: "Ref_Cool.csv"
+timestamp_identifier: 'Timestamp'
+price_signal_identifier: 'Price'
+shift_window: 2  # Set the number of hours for shift period
+rebound_window: 2  # Set the number of hours for rebound period
+
