@@ -44,7 +44,7 @@ class FlexibilitySavingsIndex(KPI):
             evaluation_end_timestamp=evaluation_end_timestamp,
         )
         
-        value = 1 - (vs.flexible_cost_profile.value[vs.evaluation_mask]/vs.baseline_cost_profile.value[vs.evaluation_mask])
+        value = 1 - (vs.flexible_cost_profile.value[vs.evaluation_mask].sum()/vs.baseline_cost_profile.value[vs.evaluation_mask].sum())
 
         return value
     

@@ -525,6 +525,15 @@ class DefaultVariableMetaClass(type):
             value_type=ValueType.SINGLE
         )
     
+    @property
+    def floor_area(cls) -> Variable:
+        return Variable(
+            name='floor area',
+            definition='Floor area.',
+            primitive_type=DefaultPrimitiveType.area,
+            value_type=ValueType.SINGLE,
+        )
+    
 class DefaultVariable(metaclass=DefaultVariableMetaClass):
     pass
 
@@ -571,6 +580,7 @@ class VariableSet(Definition):
             high_price_end_timestamp: Union[int, datetime.datetime, str] = None,
             high_emission_start_timestamp: Union[int, datetime.datetime, str] = None,
             high_emission_end_timestamp: Union[int, datetime.datetime, str] = None,
+            floor_area: Union[int,str] = None,
         ) -> None:
 
         # variables
@@ -614,6 +624,7 @@ class VariableSet(Definition):
         self.high_price_end_timestamp = self.__set_variable(DefaultVariable.high_price_end_timestamp, high_price_end_timestamp)
         self.high_emission_start_timestamp = self.__set_variable(DefaultVariable.high_emission_start_timestamp, high_emission_start_timestamp)
         self.high_emission_end_timestamp = self.__set_variable(DefaultVariable.high_emission_end_timestamp, high_emission_end_timestamp)
+        self.floor_area = self.__set_variable(DefaultVariable.floor_area, floor_area)
         self.validate_serial_variables()
     
     @property

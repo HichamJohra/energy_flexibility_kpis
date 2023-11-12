@@ -31,21 +31,24 @@ class PeakPowerRebound(KPI):
         cls,
         baseline_electric_power_profile: List[float], 
         flexible_electric_power_profile: List[float],
+        generic_signal_start_timestamp: Union[int, datetime.datetime, str],
+        generic_signal_end_timestamp: Union[int, datetime.datetime, str],
         timestamps: Union[List[int], List[datetime.datetime], List[str]] = None,
-        evaluation_start_timestamp: Union[int, datetime.datetime, str] = None,
-        evaluation_end_timestamp: Union[int, datetime.datetime, str] = None,
-    ) -> Union[float, List[float]]:
+    ) -> float:
         _, vs = super().calculate(
-            timestamps=timestamps,
             baseline_electric_power_profile=baseline_electric_power_profile, 
             flexible_electric_power_profile=flexible_electric_power_profile,
-            evaluation_start_timestamp=evaluation_start_timestamp,
-            evaluation_end_timestamp=evaluation_end_timestamp,
+            generic_signal_start_timestamp=generic_signal_start_timestamp,
+            generic_signal_end_timestamp=generic_signal_end_timestamp,
+            timestamps=timestamps,
         )
         
-        value = vs.baseline_electric_power_profile.value[vs.evaluation_mask] - vs.flexible_electric_power_profile.value[vs.evaluation_mask]
-
+        mask = vs.evaluation_mask\
+            & (vs.timestamps.value >= vs.generic_signal_start_timestamp.value)\
+                & (vs.timestamps.value <= vs.generic_signal_end_timestamp.value)
+        value = vs.baseline_electric_power_profile.value[mask] - vs.flexible_electric_power_profile.value[mask]
         return value
+
     
 class AveragePowerRebound(KPI):
     """Average power rebound after DR event compared to baseline. The evaluation window should be set to the rebound period."""
@@ -72,23 +75,69 @@ class AveragePowerRebound(KPI):
         cls,
         baseline_electric_power_profile: List[float], 
         flexible_electric_power_profile: List[float],
+        generic_signal_start_timestamp: Union[int, datetime.datetime, str],
+        generic_signal_end_timestamp: Union[int, datetime.datetime, str],
         timestamps: Union[List[int], List[datetime.datetime], List[str]] = None,
-        evaluation_start_timestamp: Union[int, datetime.datetime, str] = None,
-        evaluation_end_timestamp: Union[int, datetime.datetime, str] = None,
     ) -> float:
         _, vs = super().calculate(
-            timestamps=timestamps,
-            baseline_electric_power_profile=baseline_electric_power_profile,
+            baseline_electric_power_profile=baseline_electric_power_profile, 
             flexible_electric_power_profile=flexible_electric_power_profile,
-            evaluation_start_timestamp=evaluation_start_timestamp,
-            evaluation_end_timestamp=evaluation_end_timestamp,
+            generic_signal_start_timestamp=generic_signal_start_timestamp,
+            generic_signal_end_timestamp=generic_signal_end_timestamp,
+            timestamps=timestamps,
         )
         
-        value = (
-            vs.baseline_electric_power_profile.value[vs.evaluation_mask] 
-                - vs.flexible_electric_power_profile.value[vs.evaluation_mask]
-        ).mean()
+        mask = vs.evaluation_mask\
+            & (vs.timestamps.value >= vs.generic_signal_start_timestamp.value)\
+                & (vs.timestamps.value <= vs.generic_signal_end_timestamp.value)
+        value = (vs.flexible_electric_power_profile.value[mask] - vs.baseline_electric_power_profile.value[mask]).mean()
+        
+        return value
+    
 
+    
+class AveragePowerReboundIndex(KPI):
+    """Average power rebound index after DR event compared to baseline. The evaluation window should be set to the rebound period."""
+
+    NAME = 'average power rebound index'
+    DEFINITION = __doc__
+    UNIT = Unit(numerator=[BaseUnit.DIMENSIONLESS])
+    CATEGORY = KPICategory.EF_PEAK_POWER_OR_ENERGY_REBOUND
+    RELEVANCE = Relevance.HIGH
+    STAKEHOLDERS = [Stakeholder.DISTRIBUTION_SYSTEM_OPERATOR, Stakeholder.TRANSMISSION_SYSTEM_OPERATOR]
+    COMPLEXITY = Complexity.LOW
+    NEED_BASELINE = True
+    TEMPORAL_EVALUATION_WINDOW = TemporalEvaluationWindow.SINGLE_EVENT
+    TEMPORAL_RESOLUTION = TemporalResolution.UNSPECIFIED
+    SPATIAL_RESOLUTION = SpatialResolution.SINGLE_BUILDING
+    DOE_FLEXIBILITY_CATEGORY = [DOEFlexibilityCategory.LOAD_SHIFTING, DOEFlexibilityCategory.LOAD_SHEDDING]
+    PERFORMANCE_ASPECT = [PerformanceAspect.POWER]
+
+    def __init__(self):
+        super().__init__()
+
+    @classmethod
+    def calculate(
+        cls,
+        baseline_electric_power_profile: List[float], 
+        flexible_electric_power_profile: List[float],
+        generic_signal_start_timestamp: Union[int, datetime.datetime, str],
+        generic_signal_end_timestamp: Union[int, datetime.datetime, str],
+        timestamps: Union[List[int], List[datetime.datetime], List[str]] = None,
+    ) -> float:
+        _, vs = super().calculate(
+            baseline_electric_power_profile=baseline_electric_power_profile, 
+            flexible_electric_power_profile=flexible_electric_power_profile,
+            generic_signal_start_timestamp=generic_signal_start_timestamp,
+            generic_signal_end_timestamp=generic_signal_end_timestamp,
+            timestamps=timestamps,
+        )
+        
+        mask = vs.evaluation_mask\
+            & (vs.timestamps.value >= vs.generic_signal_start_timestamp.value)\
+                & (vs.timestamps.value <= vs.generic_signal_end_timestamp.value)
+        value = vs.flexible_electric_power_profile.value[mask].mean()/vs.baseline_electric_power_profile.value[mask].mean() - 1
+        
         return value
     
 class ReboundEnergy(KPI):

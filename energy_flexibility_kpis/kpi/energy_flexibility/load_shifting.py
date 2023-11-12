@@ -49,15 +49,20 @@ class FlexibilityFactor(KPI):
             evaluation_end_timestamp=evaluation_end_timestamp,
         )
         high_generic_signal_mask = vs.evaluation_mask\
-            & (vs.timestamps.value >= vs.high_price_start_timestamp.value)\
-                & (vs.timestamps.value <= vs.high_price_end_timestamp.value)
+            & (vs.timestamps.value >= vs.high_generic_signal_start_timestamp.value)\
+                & (vs.timestamps.value <= vs.high_generic_signal_end_timestamp.value)
+        
         low_generic_signal_mask = vs.evaluation_mask & (~high_generic_signal_mask)
+        
         high_generic_signal_profile = vs.generic_electric_power_profile.value[high_generic_signal_mask]
         low_generic_signal_profile = vs.generic_electric_power_profile.value[low_generic_signal_mask]
+        
         high_generic_dx = vs.get_temporal_resolution(BaseUnit.HOUR, value=vs.timestamps.value[high_generic_signal_mask])
         low_generic_dx = vs.get_temporal_resolution(BaseUnit.HOUR, value=vs.timestamps.value[low_generic_signal_mask])
+        
         low_generic_signal_value = integrate.simpson(low_generic_signal_profile, dx=low_generic_dx)
         high_generic_signal_value = integrate.simpson(high_generic_signal_profile, dx=high_generic_dx)
+        
         value = (low_generic_signal_value - high_generic_signal_value)/(low_generic_signal_value + high_generic_signal_value)
 
         return value
@@ -287,3 +292,148 @@ class CyclePowerFlexibility(KPI):
         )
         
         raise NotImplementedError('Complex equation')
+    
+
+
+    
+class AverageDemandIncrease(KPI):
+    """Average demand increase during a shift event."""
+
+    NAME = 'average demand increase'
+    DEFINITION = __doc__
+    UNIT = Unit(numerator=[BaseUnit.KW])
+    CATEGORY = KPICategory.EF_LOAD_SHIFTING
+    RELEVANCE = Relevance.HIGH
+    STAKEHOLDERS = [Stakeholder.DISTRIBUTION_SYSTEM_OPERATOR, Stakeholder.TRANSMISSION_SYSTEM_OPERATOR]
+    COMPLEXITY = Complexity.LOW
+    NEED_BASELINE = True
+    TEMPORAL_EVALUATION_WINDOW = TemporalEvaluationWindow.SINGLE_EVENT
+    TEMPORAL_RESOLUTION = TemporalResolution.UNSPECIFIED
+    SPATIAL_RESOLUTION = SpatialResolution.BUILDING_CLUSTER
+    DOE_FLEXIBILITY_CATEGORY = [DOEFlexibilityCategory.LOAD_SHIFTING]
+    PERFORMANCE_ASPECT = [PerformanceAspect.POWER]
+
+    def __init__(self):
+        super().__init__()
+
+    @classmethod
+    def calculate(
+        cls,
+        baseline_electric_power_profile: List[List[float]], 
+        flexible_electric_power_profile: List[List[float]],
+        generic_signal_start_timestamp: Union[int, datetime.datetime, str],
+        generic_signal_end_timestamp: Union[int, datetime.datetime, str],
+        timestamps: Union[List[int], List[datetime.datetime], List[str]] = None,
+    ) -> float:
+        _, vs = super().calculate(
+            baseline_electric_power_profile=baseline_electric_power_profile,
+            flexible_electric_power_profile=flexible_electric_power_profile,
+            generic_signal_start_timestamp=generic_signal_start_timestamp,
+            generic_signal_end_timestamp=generic_signal_end_timestamp,
+            timestamps=timestamps,
+        )
+        
+        mask = vs.evaluation_mask\
+            & (vs.timestamps.value >= vs.generic_signal_start_timestamp.value)\
+                & (vs.timestamps.value <= vs.generic_signal_end_timestamp.value)
+        value = (
+            vs.flexible_electric_power_profile.value[mask] - vs.baseline_electric_power_profile.value[mask]
+        ).mean()
+
+        return value
+    
+ 
+class AverageDemandIncreaseIntensity(KPI):
+    """Average demand increase per floor area during a shift event."""
+
+    NAME = 'average demand increase intensity'
+    DEFINITION = __doc__
+    UNIT = Unit(numerator=[BaseUnit.KW], denominator=[BaseUnit.SQUARE_METER])
+    CATEGORY = KPICategory.EF_LOAD_SHIFTING
+    RELEVANCE = Relevance.HIGH
+    STAKEHOLDERS = [Stakeholder.DISTRIBUTION_SYSTEM_OPERATOR, Stakeholder.TRANSMISSION_SYSTEM_OPERATOR]
+    COMPLEXITY = Complexity.LOW
+    NEED_BASELINE = True
+    TEMPORAL_EVALUATION_WINDOW = TemporalEvaluationWindow.SINGLE_EVENT
+    TEMPORAL_RESOLUTION = TemporalResolution.UNSPECIFIED
+    SPATIAL_RESOLUTION = SpatialResolution.BUILDING_CLUSTER
+    DOE_FLEXIBILITY_CATEGORY = [DOEFlexibilityCategory.LOAD_SHIFTING]
+    PERFORMANCE_ASPECT = [PerformanceAspect.POWER]
+
+    def __init__(self):
+        super().__init__()
+
+    @classmethod
+    def calculate(
+        cls,
+        baseline_electric_power_profile: List[List[float]], 
+        flexible_electric_power_profile: List[List[float]],
+        generic_signal_start_timestamp: Union[int, datetime.datetime, str],
+        generic_signal_end_timestamp: Union[int, datetime.datetime, str],
+        timestamps: Union[List[int], List[datetime.datetime], List[str]] = None,
+       # floor_area: Union[int,str] = None,
+    ) -> float:
+        _, vs = super().calculate(
+            baseline_electric_power_profile=baseline_electric_power_profile,
+            flexible_electric_power_profile=flexible_electric_power_profile,
+            generic_signal_start_timestamp=generic_signal_start_timestamp,
+            generic_signal_end_timestamp=generic_signal_end_timestamp,
+            timestamps=timestamps,
+           # floor_area=floor_area,
+        )
+        
+        mask = vs.evaluation_mask\
+            & (vs.timestamps.value >= vs.generic_signal_start_timestamp.value)\
+                & (vs.timestamps.value <= vs.generic_signal_end_timestamp.value)
+        demand_increase = (
+             vs.flexible_electric_power_profile.value[mask] - vs.baseline_electric_power_profile.value[mask] 
+        ).mean()
+        value = demand_increase / 48 #to be updated with the floor_area (check with Kingsley)
+        return value
+    
+
+
+class AverageDemandIncreaseIndex(KPI):
+    """Average demand increase index per baseline average demand area during a shift event."""
+
+    NAME = 'average demand increase index'
+    DEFINITION = __doc__
+    UNIT = Unit(numerator=[BaseUnit.DIMENSIONLESS])
+    CATEGORY = KPICategory.EF_LOAD_SHIFTING
+    RELEVANCE = Relevance.HIGH
+    STAKEHOLDERS = [Stakeholder.DISTRIBUTION_SYSTEM_OPERATOR, Stakeholder.TRANSMISSION_SYSTEM_OPERATOR]
+    COMPLEXITY = Complexity.LOW
+    NEED_BASELINE = True
+    TEMPORAL_EVALUATION_WINDOW = TemporalEvaluationWindow.SINGLE_EVENT
+    TEMPORAL_RESOLUTION = TemporalResolution.UNSPECIFIED
+    SPATIAL_RESOLUTION = SpatialResolution.BUILDING_CLUSTER
+    DOE_FLEXIBILITY_CATEGORY = [DOEFlexibilityCategory.LOAD_SHIFTING]
+    PERFORMANCE_ASPECT = [PerformanceAspect.POWER]
+
+    def __init__(self):
+        super().__init__()
+
+    @classmethod
+    def calculate(
+        cls,
+        baseline_electric_power_profile: List[List[float]], 
+        flexible_electric_power_profile: List[List[float]],
+        generic_signal_start_timestamp: Union[int, datetime.datetime, str],
+        generic_signal_end_timestamp: Union[int, datetime.datetime, str],
+        timestamps: Union[List[int], List[datetime.datetime], List[str]] = None,
+    ) -> float:
+        _, vs = super().calculate(
+            baseline_electric_power_profile=baseline_electric_power_profile,
+            flexible_electric_power_profile=flexible_electric_power_profile,
+            generic_signal_start_timestamp=generic_signal_start_timestamp,
+            generic_signal_end_timestamp=generic_signal_end_timestamp,
+            timestamps=timestamps,
+        )
+        
+        mask = vs.evaluation_mask\
+            & (vs.timestamps.value >= vs.generic_signal_start_timestamp.value)\
+                & (vs.timestamps.value <= vs.generic_signal_end_timestamp.value)
+        
+        value = vs.flexible_electric_power_profile.value[mask].mean()/vs.baseline_electric_power_profile.value[mask].mean() - 1
+        
+        return value

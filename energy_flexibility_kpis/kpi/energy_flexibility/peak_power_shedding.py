@@ -43,8 +43,8 @@ class PeakPowerReduction(KPI):
             evaluation_end_timestamp=evaluation_end_timestamp,
         )
 
-        value = vs.baseline_electric_power_profile.value[vs.evaluation_mask]\
-            - vs.flexible_electric_power_profile.value[vs.evaluation_mask]
+        value = vs.baseline_electric_power_profile.value[vs.evaluation_mask].max()\
+            - vs.flexible_electric_power_profile.value[vs.evaluation_mask].max()
 
         return value
     

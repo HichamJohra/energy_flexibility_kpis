@@ -491,3 +491,149 @@ class AverageDownwardPowerDeviation(KPI):
         value = integrate.simpson(profile, dx=dx)/(dx*vs.evaluation_length)
 
         return value
+    
+
+    
+class AverageDemandDecrease(KPI):
+    """Average demand decrease during a shed event."""
+
+    NAME = 'average demand decrease'
+    DEFINITION = __doc__
+    UNIT = Unit(numerator=[BaseUnit.KW], denominator=[BaseUnit.SQUARE_METER])
+    CATEGORY = KPICategory.EF_ENERGY_OR_AVERAGE_POWER_LOAD_SHEDDING
+    RELEVANCE = Relevance.HIGH
+    STAKEHOLDERS = [Stakeholder.DISTRIBUTION_SYSTEM_OPERATOR, Stakeholder.TRANSMISSION_SYSTEM_OPERATOR]
+    COMPLEXITY = Complexity.LOW
+    NEED_BASELINE = True
+    TEMPORAL_EVALUATION_WINDOW = TemporalEvaluationWindow.SINGLE_EVENT
+    TEMPORAL_RESOLUTION = TemporalResolution.UNSPECIFIED
+    SPATIAL_RESOLUTION = SpatialResolution.BUILDING_CLUSTER
+    DOE_FLEXIBILITY_CATEGORY = [DOEFlexibilityCategory.LOAD_SHEDDING]
+    PERFORMANCE_ASPECT = [PerformanceAspect.POWER]
+
+    def __init__(self):
+        super().__init__()
+
+    @classmethod
+    def calculate(
+        cls,
+        baseline_electric_power_profile: List[List[float]], 
+        flexible_electric_power_profile: List[List[float]],
+        generic_signal_start_timestamp: Union[int, datetime.datetime, str],
+        generic_signal_end_timestamp: Union[int, datetime.datetime, str],
+        timestamps: Union[List[int], List[datetime.datetime], List[str]] = None,
+    ) -> float:
+        _, vs = super().calculate(
+            baseline_electric_power_profile=baseline_electric_power_profile,
+            flexible_electric_power_profile=flexible_electric_power_profile,
+            generic_signal_start_timestamp=generic_signal_start_timestamp,
+            generic_signal_end_timestamp=generic_signal_end_timestamp,
+            timestamps=timestamps,
+        )
+        
+        mask = vs.evaluation_mask\
+            & (vs.timestamps.value >= vs.generic_signal_start_timestamp.value)\
+                & (vs.timestamps.value <= vs.generic_signal_end_timestamp.value)
+        value = (
+            vs.baseline_electric_power_profile.value[mask] 
+                - vs.flexible_electric_power_profile.value[mask]
+        ).mean()
+
+        return value
+    
+ 
+class AverageDemandDecreaseIntensity(KPI):
+    """Average demand decrease per floor area during a shed event."""
+
+    NAME = 'average demand decrease intensity'
+    DEFINITION = __doc__
+    UNIT = Unit(numerator=[BaseUnit.KW])
+    CATEGORY = KPICategory.EF_ENERGY_OR_AVERAGE_POWER_LOAD_SHEDDING
+    RELEVANCE = Relevance.HIGH
+    STAKEHOLDERS = [Stakeholder.DISTRIBUTION_SYSTEM_OPERATOR, Stakeholder.TRANSMISSION_SYSTEM_OPERATOR]
+    COMPLEXITY = Complexity.LOW
+    NEED_BASELINE = True
+    TEMPORAL_EVALUATION_WINDOW = TemporalEvaluationWindow.SINGLE_EVENT
+    TEMPORAL_RESOLUTION = TemporalResolution.UNSPECIFIED
+    SPATIAL_RESOLUTION = SpatialResolution.BUILDING_CLUSTER
+    DOE_FLEXIBILITY_CATEGORY = [DOEFlexibilityCategory.LOAD_SHEDDING]
+    PERFORMANCE_ASPECT = [PerformanceAspect.POWER]
+
+    def __init__(self):
+        super().__init__()
+
+    @classmethod
+    def calculate(
+        cls,
+        baseline_electric_power_profile: List[List[float]], 
+        flexible_electric_power_profile: List[List[float]],
+        generic_signal_start_timestamp: Union[int, datetime.datetime, str],
+        generic_signal_end_timestamp: Union[int, datetime.datetime, str],
+        timestamps: Union[List[int], List[datetime.datetime], List[str]] = None,
+       # floor_area: Union[int,str] = None,
+    ) -> float:
+        _, vs = super().calculate(
+            baseline_electric_power_profile=baseline_electric_power_profile,
+            flexible_electric_power_profile=flexible_electric_power_profile,
+            generic_signal_start_timestamp=generic_signal_start_timestamp,
+            generic_signal_end_timestamp=generic_signal_end_timestamp,
+            timestamps=timestamps,
+           # floor_area=floor_area,
+        )
+        
+        mask = vs.evaluation_mask\
+            & (vs.timestamps.value >= vs.generic_signal_start_timestamp.value)\
+                & (vs.timestamps.value <= vs.generic_signal_end_timestamp.value)
+        demand_decrease = (
+            vs.baseline_electric_power_profile.value[mask] 
+                - vs.flexible_electric_power_profile.value[mask]
+        ).mean()
+        value = demand_decrease / 48 #to be updated with the floor_area (check with Kingsley)
+        return value
+    
+
+
+class AverageDemandDecreaseIndex(KPI):
+    """Average demand decrease index per baseline average demand area during a shed event."""
+
+    NAME = 'average demand decrease index'
+    DEFINITION = __doc__
+    UNIT = Unit(numerator=[BaseUnit.DIMENSIONLESS])
+    CATEGORY = KPICategory.EF_ENERGY_OR_AVERAGE_POWER_LOAD_SHEDDING
+    RELEVANCE = Relevance.HIGH
+    STAKEHOLDERS = [Stakeholder.DISTRIBUTION_SYSTEM_OPERATOR, Stakeholder.TRANSMISSION_SYSTEM_OPERATOR]
+    COMPLEXITY = Complexity.LOW
+    NEED_BASELINE = True
+    TEMPORAL_EVALUATION_WINDOW = TemporalEvaluationWindow.SINGLE_EVENT
+    TEMPORAL_RESOLUTION = TemporalResolution.UNSPECIFIED
+    SPATIAL_RESOLUTION = SpatialResolution.BUILDING_CLUSTER
+    DOE_FLEXIBILITY_CATEGORY = [DOEFlexibilityCategory.LOAD_SHEDDING]
+    PERFORMANCE_ASPECT = [PerformanceAspect.POWER]
+
+    def __init__(self):
+        super().__init__()
+
+    @classmethod
+    def calculate(
+        cls,
+        baseline_electric_power_profile: List[List[float]], 
+        flexible_electric_power_profile: List[List[float]],
+        generic_signal_start_timestamp: Union[int, datetime.datetime, str],
+        generic_signal_end_timestamp: Union[int, datetime.datetime, str],
+        timestamps: Union[List[int], List[datetime.datetime], List[str]] = None,
+    ) -> float:
+        _, vs = super().calculate(
+            baseline_electric_power_profile=baseline_electric_power_profile,
+            flexible_electric_power_profile=flexible_electric_power_profile,
+            generic_signal_start_timestamp=generic_signal_start_timestamp,
+            generic_signal_end_timestamp=generic_signal_end_timestamp,
+            timestamps=timestamps,
+        )
+        
+        mask = vs.evaluation_mask\
+            & (vs.timestamps.value >= vs.generic_signal_start_timestamp.value)\
+                & (vs.timestamps.value <= vs.generic_signal_end_timestamp.value)
+               
+        value = 1 - vs.flexible_electric_power_profile.value[mask].mean()/vs.baseline_electric_power_profile.value[mask].mean()
+
+        return value

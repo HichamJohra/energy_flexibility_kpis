@@ -44,7 +44,7 @@ class EnergySavingsOfDemandResponse(KPI):
             evaluation_end_timestamp=evaluation_end_timestamp,
         )
         
-        profile = vs.flexible_electric_power_profile.value[vs.evaluation_mask] - vs.baseline_electric_power_profile.value[vs.evaluation_mask]
+        profile = vs.baseline_electric_power_profile.value[vs.evaluation_mask] - vs.flexible_electric_power_profile.value[vs.evaluation_mask]
         dx = vs.get_temporal_resolution(BaseUnit.HOUR, value=vs.timestamps.value[vs.evaluation_mask])
         value = integrate.simpson(profile, dx=dx)
 
@@ -176,3 +176,50 @@ class ConsistencyWithEnergySavings(KPI):
         )
         
         raise NotImplementedError('Variables are unclear')
+    
+
+
+class NetBuildingConsumptionChangePercentage(KPI):
+    """Difference between reference energy usage without demand response and and the energy 
+    usage with demand response over the next 24h over the baseline daily consumption."""
+
+    NAME = 'net building consumption change percentage'
+    DEFINITION = __doc__
+    UNIT = Unit(numerator=[BaseUnit.DIMENSIONLESS])
+    CATEGORY = KPICategory.EF_DEMAND_RESPONSE_ENERGY_EFFICIENCY
+    RELEVANCE = Relevance.MEDIUM
+    STAKEHOLDERS = [Stakeholder.BUILDING_OWNER, Stakeholder.BUILDING_OPERATOR]
+    COMPLEXITY = Complexity.LOW
+    NEED_BASELINE = True
+    TEMPORAL_EVALUATION_WINDOW = TemporalEvaluationWindow.WHOLE_DAY
+    TEMPORAL_RESOLUTION = TemporalResolution.HOURLY
+    SPATIAL_RESOLUTION = SpatialResolution.UNSPECIFIED
+    DOE_FLEXIBILITY_CATEGORY = [DOEFlexibilityCategory.EFFICIENCY]
+    PERFORMANCE_ASPECT = [PerformanceAspect.ENERGY]
+
+    def __init__(self):
+        super().__init__()
+
+    @classmethod
+    def calculate(
+        cls,
+        baseline_electric_power_profile: List[float],
+        flexible_electric_power_profile: List[float],
+        timestamps: Union[List[int], List[datetime.datetime], List[str]],
+        evaluation_start_timestamp: Union[int, datetime.datetime, str] = None,
+        evaluation_end_timestamp: Union[int, datetime.datetime, str] = None,
+    ) -> float:
+        _, vs = super().calculate(
+            baseline_electric_power_profile=baseline_electric_power_profile,
+            flexible_electric_power_profile=flexible_electric_power_profile,
+            timestamps=timestamps,
+            evaluation_start_timestamp=evaluation_start_timestamp,
+            evaluation_end_timestamp=evaluation_end_timestamp,
+        )
+        
+        profile = vs.flexible_electric_power_profile.value[vs.evaluation_mask] - vs.baseline_electric_power_profile.value[vs.evaluation_mask]
+        dx = vs.get_temporal_resolution(BaseUnit.HOUR, value=vs.timestamps.value[vs.evaluation_mask])
+        baseline_energy = integrate.simpson(vs.baseline_electric_power_profile.value[vs.evaluation_mask], dx=dx)
+        value = integrate.simpson(profile, dx=dx) /  baseline_energy * 100
+
+        return value
