@@ -1,0 +1,115 @@
+@prefix bacnet: <http://data.ashrae.org/bacnet/2020#> .
+@prefix brick: <https://brickschema.org/schema/Brick#> .
+@prefix bsh: <https://brickschema.org/schema/BrickShape#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix qudtqk: <http://qudt.org/vocab/quantitykind/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix ref: <https://brickschema.org/schema/Brick/ref#> .
+@prefix s223: <http://data.ashrae.org/standard223#> .
+@prefix sdo: <http://schema.org/> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix tag: <https://brickschema.org/schema/BrickTag#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix : <urn:incite_example/> .
+
+:building a brick:Building ;
+    brick:isLocationOf :HP, :DHWTank, :WeatherStation ;
+    brick:hasPoint :Indoor_Tind_avg, :Indoor_Twall_avg ;
+    # TODO: price
+.
+
+:Indoor_Tind_avg a brick:Air_Temperature_Sensor ;
+    ref:hasExternalReference [ ref:hasTimeseriesId "Indoor_Tind_avg" ];
+    brick:hasUnit unit:DEG_C ;
+.
+
+:Indoor_Twall_avg a brick:Air_Temperature_Sensor ;
+    ref:hasExternalReference [ ref:hasTimeseriesId "Indoor_Twall_avg" ];
+    brick:hasUnit unit:DEG_C ;
+.
+
+####### Weather STation
+
+:WeatherStation a brick:Weather_Station ;
+    brick:hasPoint :Weather_Irr, :Weather_RH, :Weather_Tamb, :Weather_WindVel ;
+.
+
+brick:Solar_Irradiance_Sensor a sh:NodeShape, owl:Class ;
+    rdfs:subClassOf brick:Sensor .
+:Weather_Irr a brick:Solar_Irradiance_Sensor ;
+    ref:hasExternalReference [ ref:hasTimeseriesId "Weather_Irr" ] ;
+    brick:hasUnit unit:W-PER-M2 ; # TODO: fix qudt unit?
+.
+
+:Weather_RH a brick:Relative_Humidity_Sensor ;
+    ref:hasExternalReference [ ref:hasTimeseriesId "Weather_RH" ] ;
+    brick:hasUnit unit:PERCENT ;
+.
+
+:Weather_Tamb a brick:Air_Temperature_Sensor ;
+    ref:hasExternalReference [ ref:hasTimeseriesId "Weather_Tamb" ];
+    brick:hasUnit unit:DEG_C;
+.
+
+:Weather_WindVel a brick:Wind_Speed_Sensor;
+    ref:hasExternalReference [ ref:hasTimeseriesId "Weather_WindVel" ] ;
+    brick:hasUnit unit:M-PER-SEC ;
+.
+
+####### Heat Pump
+
+:HP a brick:Heat_Pump ;
+    brick:hasPoint :HP_DHWon, :HP_Tret, :HP_Tsup ;
+    brick:hasPart :DHWTank, :HP_Compr ;
+.
+:HP_DHWon a brick:On_Off_Status ;
+    ref:hasExternalReference [ ref:hasTimeseriesId "HP_DHWon" ];
+    brick:hasUnit unit:Binary ;
+.
+
+:HP_Compr a brick:Compressor ;
+    brick:hasPoint :HP_FreqCompr ;
+.
+
+:HP_FreqCompr a brick:Frequency_Sensor ;
+    ref:hasExternalReference [ ref:hasTimeseriesId "HP_FreqCompr" ];
+    brick:hasUnit unit:HZ ;
+.
+
+:HP_Tret a brick:Entering_Water_Temperature_Sensor ;
+    ref:hasExternalReference [ ref:hasTimeseriesId "HP_Tret" ];
+    brick:hasUnit unit:DEG_C ;
+.
+
+:HP_Tsup a brick:Leaving_Water_Temperature_Sensor ;
+    ref:hasExternalReference [ ref:hasTimeseriesId "HP_Tsup"] ;
+    brick:hasUnit unit:DEG_C ;
+.
+
+###### Water tank
+
+:DHWTank a brick:Water_Tank ;
+    brick:hasPoint :HP_DHWtank_Temp ;
+.
+
+:HP_DHWtank_Temp  a brick:Leaving_Water_Temperature_Sensor ;
+    ref:hasExternalReference [ ref:hasTimeseriesId "HP_DHWtank_Temp" ] ;
+    brick:hasUnit unit:DEG_C ;
+.
+
+:HP_Meter a brick:Meter ;
+    brick:meters :HP ;
+    brick:hasPoint :HP_Pel ;
+.
+
+:HP_Pel a brick:Electric_Power_Sensor ;
+    ref:hasExternalReference [ ref:hasTimeseriesId "HP_Pel" ] ;
+    brick:hasUnit unit:KiloW ;
+.
