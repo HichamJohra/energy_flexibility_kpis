@@ -1,3 +1,4 @@
+# Note: ensure that the timestamp column of all files follows the %Y-%m-%d %I:%M:%S %p' format
 
 # Define path and file names
 path_to_dataset: '../data/incite_dataset'
@@ -6,16 +7,16 @@ brick_model_file_name: "incite.ttl"
 updated_brick_model_file_name: "incite_with_data.ttl"
 
 # Define the scenarios (csv file names) to analyse as baseline and flexible scenarios
-baseline_scenario: 'Ref_Cool'
-flexible_scenario: 'RBC_Cost_Cool'
+baseline_scenario: 'dataset_Ref_Cool'
+flexible_scenario: 'dataset_RBC_Cost_Cool'
 
 # Define a start and end time for the evaluation period 
 evaluation_timestamps:
-    start: '2016-08-07 00:00:00'
-    end: '2016-10-07 23:59:59'
+    start: '2016-07-08 00:00:00'
+    end: '2016-07-10 23:59:59'
 
 # Define input parameters not available in the Brick model
-price_signal_file_name: "Ref_Cool.csv"
+price_signal_file_name: "dataset_Ref_Cool.csv"
 timestamp_identifier: 'Timestamp'
 price_signal_identifier: 'Price'
 shift_window: 2  # Set the number of hours for shift period
