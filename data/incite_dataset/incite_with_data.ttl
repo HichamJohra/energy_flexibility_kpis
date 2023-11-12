@@ -28,27 +28,27 @@ brick:Solar_Irradiance_Sensor a owl:Class,
     brick:hasUnit unit:Binary ;
     ref:hasExternalReference [ a ref:TimeseriesReference ;
             ref:hasTimeseriesId "HP_DHWon" ;
-            ref:onTable "RBC_Cost_Heat" ;
+            ref:onTable "dataset_RBC_Co2_Cool" ;
             ref:storedAt "data.db" ],
         [ a ref:TimeseriesReference ;
             ref:hasTimeseriesId "HP_DHWon" ;
-            ref:onTable "MPC_Cost_Heat" ;
+            ref:onTable "dataset_RBC_Cost_Heat" ;
             ref:storedAt "data.db" ],
         [ a ref:TimeseriesReference ;
             ref:hasTimeseriesId "HP_DHWon" ;
-            ref:onTable "MPC_Co2_Cool" ;
+            ref:onTable "dataset_MPC_Co2_Cool" ;
             ref:storedAt "data.db" ],
         [ a ref:TimeseriesReference ;
             ref:hasTimeseriesId "HP_DHWon" ;
-            ref:onTable "MPC_Co2_Heat" ;
+            ref:onTable "dataset_MPC_Co2_Heat" ;
             ref:storedAt "data.db" ],
         [ a ref:TimeseriesReference ;
             ref:hasTimeseriesId "HP_DHWon" ;
-            ref:onTable "RBC_Co2_Cool" ;
+            ref:onTable "dataset_RBC_Co2_Heat" ;
             ref:storedAt "data.db" ],
         [ a ref:TimeseriesReference ;
             ref:hasTimeseriesId "HP_DHWon" ;
-            ref:onTable "MPC_Cost_Cool" ;
+            ref:onTable "dataset_Ref_Heat" ;
             ref:storedAt "data.db" ],
         [ a ref:TimeseriesReference ;
             ref:hasTimeseriesId "HP_DHWon" ;
@@ -56,15 +56,23 @@ brick:Solar_Irradiance_Sensor a owl:Class,
             ref:storedAt "data.db" ],
         [ a ref:TimeseriesReference ;
             ref:hasTimeseriesId "HP_DHWon" ;
+            ref:onTable "dataset_MPC_Cost_Heat" ;
+            ref:storedAt "data.db" ],
+        [ a ref:TimeseriesReference ;
+            ref:hasTimeseriesId "HP_DHWon" ;
             ref:onTable "Ref_Cool" ;
             ref:storedAt "data.db" ],
         [ a ref:TimeseriesReference ;
             ref:hasTimeseriesId "HP_DHWon" ;
-            ref:onTable "RBC_Cost_Cool" ;
+            ref:onTable "dataset_Ref_Cool" ;
             ref:storedAt "data.db" ],
         [ a ref:TimeseriesReference ;
             ref:hasTimeseriesId "HP_DHWon" ;
-            ref:onTable "RBC_Co2_Heat" ;
+            ref:onTable "dataset_RBC_Cost_Cool" ;
+            ref:storedAt "data.db" ],
+        [ a ref:TimeseriesReference ;
+            ref:hasTimeseriesId "HP_DHWon" ;
+            ref:onTable "dataset_MPC_Cost_Cool" ;
             ref:storedAt "data.db" ],
         [ ref:hasTimeseriesId "HP_DHWon" ] .
 
@@ -72,35 +80,23 @@ brick:Solar_Irradiance_Sensor a owl:Class,
     brick:hasUnit unit:DEG_C ;
     ref:hasExternalReference [ a ref:TimeseriesReference ;
             ref:hasTimeseriesId "HP_DHWtank_Temp" ;
-            ref:onTable "MPC_Co2_Heat" ;
-            ref:storedAt "data.db" ],
-        [ a ref:TimeseriesReference ;
-            ref:hasTimeseriesId "HP_DHWtank_Temp" ;
-            ref:onTable "RBC_Cost_Cool" ;
-            ref:storedAt "data.db" ],
-        [ a ref:TimeseriesReference ;
-            ref:hasTimeseriesId "HP_DHWtank_Temp" ;
-            ref:onTable "RBC_Co2_Cool" ;
-            ref:storedAt "data.db" ],
-        [ a ref:TimeseriesReference ;
-            ref:hasTimeseriesId "HP_DHWtank_Temp" ;
-            ref:onTable "MPC_Cost_Cool" ;
-            ref:storedAt "data.db" ],
-        [ a ref:TimeseriesReference ;
-            ref:hasTimeseriesId "HP_DHWtank_Temp" ;
-            ref:onTable "RBC_Cost_Heat" ;
-            ref:storedAt "data.db" ],
-        [ a ref:TimeseriesReference ;
-            ref:hasTimeseriesId "HP_DHWtank_Temp" ;
-            ref:onTable "RBC_Co2_Heat" ;
-            ref:storedAt "data.db" ],
-        [ a ref:TimeseriesReference ;
-            ref:hasTimeseriesId "HP_DHWtank_Temp" ;
             ref:onTable "Ref_Cool" ;
             ref:storedAt "data.db" ],
         [ a ref:TimeseriesReference ;
             ref:hasTimeseriesId "HP_DHWtank_Temp" ;
-            ref:onTable "MPC_Co2_Cool" ;
+            ref:onTable "dataset_MPC_Co2_Cool" ;
+            ref:storedAt "data.db" ],
+        [ a ref:TimeseriesReference ;
+            ref:hasTimeseriesId "HP_DHWtank_Temp" ;
+            ref:onTable "dataset_MPC_Co2_Heat" ;
+            ref:storedAt "data.db" ],
+        [ a ref:TimeseriesReference ;
+            ref:hasTimeseriesId "HP_DHWtank_Temp" ;
+            ref:onTable "dataset_RBC_Cost_Cool" ;
+            ref:storedAt "data.db" ],
+        [ a ref:TimeseriesReference ;
+            ref:hasTimeseriesId "HP_DHWtank_Temp" ;
+            ref:onTable "dataset_RBC_Co2_Cool" ;
             ref:storedAt "data.db" ],
         [ a ref:TimeseriesReference ;
             ref:hasTimeseriesId "HP_DHWtank_Temp" ;
@@ -108,7 +104,27 @@ brick:Solar_Irradiance_Sensor a owl:Class,
             ref:storedAt "data.db" ],
         [ a ref:TimeseriesReference ;
             ref:hasTimeseriesId "HP_DHWtank_Temp" ;
-            ref:onTable "MPC_Cost_Heat" ;
+            ref:onTable "dataset_MPC_Cost_Cool" ;
+            ref:storedAt "data.db" ],
+        [ a ref:TimeseriesReference ;
+            ref:hasTimeseriesId "HP_DHWtank_Temp" ;
+            ref:onTable "dataset_Ref_Cool" ;
+            ref:storedAt "data.db" ],
+        [ a ref:TimeseriesReference ;
+            ref:hasTimeseriesId "HP_DHWtank_Temp" ;
+            ref:onTable "dataset_MPC_Cost_Heat" ;
+            ref:storedAt "data.db" ],
+        [ a ref:TimeseriesReference ;
+            ref:hasTimeseriesId "HP_DHWtank_Temp" ;
+            ref:onTable "dataset_RBC_Co2_Heat" ;
+            ref:storedAt "data.db" ],
+        [ a ref:TimeseriesReference ;
+            ref:hasTimeseriesId "HP_DHWtank_Temp" ;
+            ref:onTable "dataset_RBC_Cost_Heat" ;
+            ref:storedAt "data.db" ],
+        [ a ref:TimeseriesReference ;
+            ref:hasTimeseriesId "HP_DHWtank_Temp" ;
+            ref:onTable "dataset_Ref_Heat" ;
             ref:storedAt "data.db" ],
         [ ref:hasTimeseriesId "HP_DHWtank_Temp" ] .
 
@@ -116,23 +132,35 @@ brick:Solar_Irradiance_Sensor a owl:Class,
     brick:hasUnit unit:HZ ;
     ref:hasExternalReference [ a ref:TimeseriesReference ;
             ref:hasTimeseriesId "HP_FreqCompr" ;
-            ref:onTable "MPC_Co2_Cool" ;
+            ref:onTable "Ref_Cool" ;
             ref:storedAt "data.db" ],
         [ a ref:TimeseriesReference ;
             ref:hasTimeseriesId "HP_FreqCompr" ;
-            ref:onTable "RBC_Cost_Heat" ;
+            ref:onTable "dataset_MPC_Co2_Cool" ;
             ref:storedAt "data.db" ],
         [ a ref:TimeseriesReference ;
             ref:hasTimeseriesId "HP_FreqCompr" ;
-            ref:onTable "RBC_Co2_Heat" ;
+            ref:onTable "dataset_RBC_Co2_Cool" ;
             ref:storedAt "data.db" ],
         [ a ref:TimeseriesReference ;
             ref:hasTimeseriesId "HP_FreqCompr" ;
-            ref:onTable "MPC_Co2_Heat" ;
+            ref:onTable "dataset_RBC_Cost_Cool" ;
             ref:storedAt "data.db" ],
         [ a ref:TimeseriesReference ;
             ref:hasTimeseriesId "HP_FreqCompr" ;
-            ref:onTable "RBC_Co2_Cool" ;
+            ref:onTable "dataset_Ref_Heat" ;
+            ref:storedAt "data.db" ],
+        [ a ref:TimeseriesReference ;
+            ref:hasTimeseriesId "HP_FreqCompr" ;
+            ref:onTable "dataset_RBC_Cost_Heat" ;
+            ref:storedAt "data.db" ],
+        [ a ref:TimeseriesReference ;
+            ref:hasTimeseriesId "HP_FreqCompr" ;
+            ref:onTable "dataset_RBC_Co2_Heat" ;
+            ref:storedAt "data.db" ],
+        [ a ref:TimeseriesReference ;
+            ref:hasTimeseriesId "HP_FreqCompr" ;
+            ref:onTable "dataset_MPC_Cost_Heat" ;
             ref:storedAt "data.db" ],
         [ a ref:TimeseriesReference ;
             ref:hasTimeseriesId "HP_FreqCompr" ;
@@ -140,19 +168,15 @@ brick:Solar_Irradiance_Sensor a owl:Class,
             ref:storedAt "data.db" ],
         [ a ref:TimeseriesReference ;
             ref:hasTimeseriesId "HP_FreqCompr" ;
-            ref:onTable "MPC_Cost_Heat" ;
+            ref:onTable "dataset_MPC_Co2_Heat" ;
             ref:storedAt "data.db" ],
         [ a ref:TimeseriesReference ;
             ref:hasTimeseriesId "HP_FreqCompr" ;
-            ref:onTable "Ref_Cool" ;
+            ref:onTable "dataset_MPC_Cost_Cool" ;
             ref:storedAt "data.db" ],
         [ a ref:TimeseriesReference ;
             ref:hasTimeseriesId "HP_FreqCompr" ;
-            ref:onTable "MPC_Cost_Cool" ;
-            ref:storedAt "data.db" ],
-        [ a ref:TimeseriesReference ;
-            ref:hasTimeseriesId "HP_FreqCompr" ;
-            ref:onTable "RBC_Cost_Cool" ;
+            ref:onTable "dataset_Ref_Cool" ;
             ref:storedAt "data.db" ],
         [ ref:hasTimeseriesId "HP_FreqCompr" ] .
 
@@ -160,27 +184,7 @@ brick:Solar_Irradiance_Sensor a owl:Class,
     brick:hasUnit unit:KiloW ;
     ref:hasExternalReference [ a ref:TimeseriesReference ;
             ref:hasTimeseriesId "HP_Pel" ;
-            ref:onTable "Ref_Heat" ;
-            ref:storedAt "data.db" ],
-        [ a ref:TimeseriesReference ;
-            ref:hasTimeseriesId "HP_Pel" ;
-            ref:onTable "MPC_Cost_Cool" ;
-            ref:storedAt "data.db" ],
-        [ a ref:TimeseriesReference ;
-            ref:hasTimeseriesId "HP_Pel" ;
-            ref:onTable "RBC_Cost_Heat" ;
-            ref:storedAt "data.db" ],
-        [ a ref:TimeseriesReference ;
-            ref:hasTimeseriesId "HP_Pel" ;
-            ref:onTable "RBC_Cost_Cool" ;
-            ref:storedAt "data.db" ],
-        [ a ref:TimeseriesReference ;
-            ref:hasTimeseriesId "HP_Pel" ;
-            ref:onTable "RBC_Co2_Cool" ;
-            ref:storedAt "data.db" ],
-        [ a ref:TimeseriesReference ;
-            ref:hasTimeseriesId "HP_Pel" ;
-            ref:onTable "MPC_Co2_Cool" ;
+            ref:onTable "dataset_Ref_Heat" ;
             ref:storedAt "data.db" ],
         [ a ref:TimeseriesReference ;
             ref:hasTimeseriesId "HP_Pel" ;
@@ -188,15 +192,43 @@ brick:Solar_Irradiance_Sensor a owl:Class,
             ref:storedAt "data.db" ],
         [ a ref:TimeseriesReference ;
             ref:hasTimeseriesId "HP_Pel" ;
-            ref:onTable "MPC_Co2_Heat" ;
+            ref:onTable "dataset_MPC_Co2_Heat" ;
             ref:storedAt "data.db" ],
         [ a ref:TimeseriesReference ;
             ref:hasTimeseriesId "HP_Pel" ;
-            ref:onTable "RBC_Co2_Heat" ;
+            ref:onTable "dataset_RBC_Cost_Heat" ;
             ref:storedAt "data.db" ],
         [ a ref:TimeseriesReference ;
             ref:hasTimeseriesId "HP_Pel" ;
-            ref:onTable "MPC_Cost_Heat" ;
+            ref:onTable "dataset_RBC_Cost_Cool" ;
+            ref:storedAt "data.db" ],
+        [ a ref:TimeseriesReference ;
+            ref:hasTimeseriesId "HP_Pel" ;
+            ref:onTable "dataset_Ref_Cool" ;
+            ref:storedAt "data.db" ],
+        [ a ref:TimeseriesReference ;
+            ref:hasTimeseriesId "HP_Pel" ;
+            ref:onTable "dataset_MPC_Cost_Heat" ;
+            ref:storedAt "data.db" ],
+        [ a ref:TimeseriesReference ;
+            ref:hasTimeseriesId "HP_Pel" ;
+            ref:onTable "dataset_MPC_Cost_Cool" ;
+            ref:storedAt "data.db" ],
+        [ a ref:TimeseriesReference ;
+            ref:hasTimeseriesId "HP_Pel" ;
+            ref:onTable "Ref_Heat" ;
+            ref:storedAt "data.db" ],
+        [ a ref:TimeseriesReference ;
+            ref:hasTimeseriesId "HP_Pel" ;
+            ref:onTable "dataset_MPC_Co2_Cool" ;
+            ref:storedAt "data.db" ],
+        [ a ref:TimeseriesReference ;
+            ref:hasTimeseriesId "HP_Pel" ;
+            ref:onTable "dataset_RBC_Co2_Cool" ;
+            ref:storedAt "data.db" ],
+        [ a ref:TimeseriesReference ;
+            ref:hasTimeseriesId "HP_Pel" ;
+            ref:onTable "dataset_RBC_Co2_Heat" ;
             ref:storedAt "data.db" ],
         [ ref:hasTimeseriesId "HP_Pel" ] .
 
@@ -204,31 +236,39 @@ brick:Solar_Irradiance_Sensor a owl:Class,
     brick:hasUnit unit:DEG_C ;
     ref:hasExternalReference [ a ref:TimeseriesReference ;
             ref:hasTimeseriesId "HP_Tret" ;
-            ref:onTable "RBC_Co2_Heat" ;
+            ref:onTable "dataset_MPC_Cost_Cool" ;
             ref:storedAt "data.db" ],
         [ a ref:TimeseriesReference ;
             ref:hasTimeseriesId "HP_Tret" ;
-            ref:onTable "RBC_Cost_Cool" ;
+            ref:onTable "dataset_Ref_Cool" ;
             ref:storedAt "data.db" ],
         [ a ref:TimeseriesReference ;
             ref:hasTimeseriesId "HP_Tret" ;
-            ref:onTable "RBC_Cost_Heat" ;
+            ref:onTable "dataset_MPC_Co2_Heat" ;
             ref:storedAt "data.db" ],
         [ a ref:TimeseriesReference ;
             ref:hasTimeseriesId "HP_Tret" ;
-            ref:onTable "MPC_Co2_Cool" ;
+            ref:onTable "dataset_Ref_Heat" ;
             ref:storedAt "data.db" ],
         [ a ref:TimeseriesReference ;
             ref:hasTimeseriesId "HP_Tret" ;
-            ref:onTable "MPC_Cost_Heat" ;
+            ref:onTable "dataset_RBC_Co2_Heat" ;
             ref:storedAt "data.db" ],
         [ a ref:TimeseriesReference ;
             ref:hasTimeseriesId "HP_Tret" ;
-            ref:onTable "MPC_Co2_Heat" ;
+            ref:onTable "dataset_RBC_Cost_Heat" ;
             ref:storedAt "data.db" ],
         [ a ref:TimeseriesReference ;
             ref:hasTimeseriesId "HP_Tret" ;
-            ref:onTable "MPC_Cost_Cool" ;
+            ref:onTable "dataset_MPC_Cost_Heat" ;
+            ref:storedAt "data.db" ],
+        [ a ref:TimeseriesReference ;
+            ref:hasTimeseriesId "HP_Tret" ;
+            ref:onTable "dataset_RBC_Cost_Cool" ;
+            ref:storedAt "data.db" ],
+        [ a ref:TimeseriesReference ;
+            ref:hasTimeseriesId "HP_Tret" ;
+            ref:onTable "dataset_RBC_Co2_Cool" ;
             ref:storedAt "data.db" ],
         [ a ref:TimeseriesReference ;
             ref:hasTimeseriesId "HP_Tret" ;
@@ -240,7 +280,7 @@ brick:Solar_Irradiance_Sensor a owl:Class,
             ref:storedAt "data.db" ],
         [ a ref:TimeseriesReference ;
             ref:hasTimeseriesId "HP_Tret" ;
-            ref:onTable "RBC_Co2_Cool" ;
+            ref:onTable "dataset_MPC_Co2_Cool" ;
             ref:storedAt "data.db" ],
         [ ref:hasTimeseriesId "HP_Tret" ] .
 
@@ -248,23 +288,11 @@ brick:Solar_Irradiance_Sensor a owl:Class,
     brick:hasUnit unit:DEG_C ;
     ref:hasExternalReference [ a ref:TimeseriesReference ;
             ref:hasTimeseriesId "HP_Tsup" ;
-            ref:onTable "RBC_Cost_Heat" ;
+            ref:onTable "dataset_Ref_Heat" ;
             ref:storedAt "data.db" ],
         [ a ref:TimeseriesReference ;
             ref:hasTimeseriesId "HP_Tsup" ;
-            ref:onTable "MPC_Co2_Heat" ;
-            ref:storedAt "data.db" ],
-        [ a ref:TimeseriesReference ;
-            ref:hasTimeseriesId "HP_Tsup" ;
-            ref:onTable "RBC_Cost_Cool" ;
-            ref:storedAt "data.db" ],
-        [ a ref:TimeseriesReference ;
-            ref:hasTimeseriesId "HP_Tsup" ;
-            ref:onTable "MPC_Co2_Cool" ;
-            ref:storedAt "data.db" ],
-        [ a ref:TimeseriesReference ;
-            ref:hasTimeseriesId "HP_Tsup" ;
-            ref:onTable "RBC_Co2_Heat" ;
+            ref:onTable "dataset_RBC_Cost_Heat" ;
             ref:storedAt "data.db" ],
         [ a ref:TimeseriesReference ;
             ref:hasTimeseriesId "HP_Tsup" ;
@@ -272,19 +300,39 @@ brick:Solar_Irradiance_Sensor a owl:Class,
             ref:storedAt "data.db" ],
         [ a ref:TimeseriesReference ;
             ref:hasTimeseriesId "HP_Tsup" ;
+            ref:onTable "dataset_Ref_Cool" ;
+            ref:storedAt "data.db" ],
+        [ a ref:TimeseriesReference ;
+            ref:hasTimeseriesId "HP_Tsup" ;
+            ref:onTable "dataset_RBC_Co2_Cool" ;
+            ref:storedAt "data.db" ],
+        [ a ref:TimeseriesReference ;
+            ref:hasTimeseriesId "HP_Tsup" ;
+            ref:onTable "dataset_RBC_Cost_Cool" ;
+            ref:storedAt "data.db" ],
+        [ a ref:TimeseriesReference ;
+            ref:hasTimeseriesId "HP_Tsup" ;
+            ref:onTable "dataset_RBC_Co2_Heat" ;
+            ref:storedAt "data.db" ],
+        [ a ref:TimeseriesReference ;
+            ref:hasTimeseriesId "HP_Tsup" ;
+            ref:onTable "dataset_MPC_Co2_Cool" ;
+            ref:storedAt "data.db" ],
+        [ a ref:TimeseriesReference ;
+            ref:hasTimeseriesId "HP_Tsup" ;
             ref:onTable "Ref_Cool" ;
             ref:storedAt "data.db" ],
         [ a ref:TimeseriesReference ;
             ref:hasTimeseriesId "HP_Tsup" ;
-            ref:onTable "RBC_Co2_Cool" ;
+            ref:onTable "dataset_MPC_Co2_Heat" ;
             ref:storedAt "data.db" ],
         [ a ref:TimeseriesReference ;
             ref:hasTimeseriesId "HP_Tsup" ;
-            ref:onTable "MPC_Cost_Cool" ;
+            ref:onTable "dataset_MPC_Cost_Cool" ;
             ref:storedAt "data.db" ],
         [ a ref:TimeseriesReference ;
             ref:hasTimeseriesId "HP_Tsup" ;
-            ref:onTable "MPC_Cost_Heat" ;
+            ref:onTable "dataset_MPC_Cost_Heat" ;
             ref:storedAt "data.db" ],
         [ ref:hasTimeseriesId "HP_Tsup" ] .
 
@@ -292,27 +340,15 @@ brick:Solar_Irradiance_Sensor a owl:Class,
     brick:hasUnit unit:DEG_C ;
     ref:hasExternalReference [ a ref:TimeseriesReference ;
             ref:hasTimeseriesId "Indoor_Tind_avg" ;
-            ref:onTable "RBC_Co2_Heat" ;
+            ref:onTable "dataset_MPC_Cost_Heat" ;
             ref:storedAt "data.db" ],
         [ a ref:TimeseriesReference ;
             ref:hasTimeseriesId "Indoor_Tind_avg" ;
-            ref:onTable "RBC_Cost_Heat" ;
+            ref:onTable "dataset_Ref_Cool" ;
             ref:storedAt "data.db" ],
         [ a ref:TimeseriesReference ;
             ref:hasTimeseriesId "Indoor_Tind_avg" ;
-            ref:onTable "MPC_Co2_Heat" ;
-            ref:storedAt "data.db" ],
-        [ a ref:TimeseriesReference ;
-            ref:hasTimeseriesId "Indoor_Tind_avg" ;
-            ref:onTable "MPC_Cost_Heat" ;
-            ref:storedAt "data.db" ],
-        [ a ref:TimeseriesReference ;
-            ref:hasTimeseriesId "Indoor_Tind_avg" ;
-            ref:onTable "MPC_Co2_Cool" ;
-            ref:storedAt "data.db" ],
-        [ a ref:TimeseriesReference ;
-            ref:hasTimeseriesId "Indoor_Tind_avg" ;
-            ref:onTable "MPC_Cost_Cool" ;
+            ref:onTable "dataset_MPC_Cost_Cool" ;
             ref:storedAt "data.db" ],
         [ a ref:TimeseriesReference ;
             ref:hasTimeseriesId "Indoor_Tind_avg" ;
@@ -320,7 +356,7 @@ brick:Solar_Irradiance_Sensor a owl:Class,
             ref:storedAt "data.db" ],
         [ a ref:TimeseriesReference ;
             ref:hasTimeseriesId "Indoor_Tind_avg" ;
-            ref:onTable "RBC_Cost_Cool" ;
+            ref:onTable "dataset_MPC_Co2_Heat" ;
             ref:storedAt "data.db" ],
         [ a ref:TimeseriesReference ;
             ref:hasTimeseriesId "Indoor_Tind_avg" ;
@@ -328,7 +364,27 @@ brick:Solar_Irradiance_Sensor a owl:Class,
             ref:storedAt "data.db" ],
         [ a ref:TimeseriesReference ;
             ref:hasTimeseriesId "Indoor_Tind_avg" ;
-            ref:onTable "RBC_Co2_Cool" ;
+            ref:onTable "dataset_Ref_Heat" ;
+            ref:storedAt "data.db" ],
+        [ a ref:TimeseriesReference ;
+            ref:hasTimeseriesId "Indoor_Tind_avg" ;
+            ref:onTable "dataset_RBC_Cost_Cool" ;
+            ref:storedAt "data.db" ],
+        [ a ref:TimeseriesReference ;
+            ref:hasTimeseriesId "Indoor_Tind_avg" ;
+            ref:onTable "dataset_MPC_Co2_Cool" ;
+            ref:storedAt "data.db" ],
+        [ a ref:TimeseriesReference ;
+            ref:hasTimeseriesId "Indoor_Tind_avg" ;
+            ref:onTable "dataset_RBC_Cost_Heat" ;
+            ref:storedAt "data.db" ],
+        [ a ref:TimeseriesReference ;
+            ref:hasTimeseriesId "Indoor_Tind_avg" ;
+            ref:onTable "dataset_RBC_Co2_Heat" ;
+            ref:storedAt "data.db" ],
+        [ a ref:TimeseriesReference ;
+            ref:hasTimeseriesId "Indoor_Tind_avg" ;
+            ref:onTable "dataset_RBC_Co2_Cool" ;
             ref:storedAt "data.db" ],
         [ ref:hasTimeseriesId "Indoor_Tind_avg" ] .
 
@@ -336,27 +392,19 @@ brick:Solar_Irradiance_Sensor a owl:Class,
     brick:hasUnit unit:DEG_C ;
     ref:hasExternalReference [ a ref:TimeseriesReference ;
             ref:hasTimeseriesId "Indoor_Twall_avg" ;
-            ref:onTable "Ref_Cool" ;
+            ref:onTable "dataset_Ref_Cool" ;
             ref:storedAt "data.db" ],
         [ a ref:TimeseriesReference ;
             ref:hasTimeseriesId "Indoor_Twall_avg" ;
-            ref:onTable "RBC_Co2_Cool" ;
+            ref:onTable "dataset_Ref_Heat" ;
             ref:storedAt "data.db" ],
         [ a ref:TimeseriesReference ;
             ref:hasTimeseriesId "Indoor_Twall_avg" ;
-            ref:onTable "MPC_Co2_Cool" ;
+            ref:onTable "dataset_RBC_Cost_Heat" ;
             ref:storedAt "data.db" ],
         [ a ref:TimeseriesReference ;
             ref:hasTimeseriesId "Indoor_Twall_avg" ;
-            ref:onTable "RBC_Cost_Heat" ;
-            ref:storedAt "data.db" ],
-        [ a ref:TimeseriesReference ;
-            ref:hasTimeseriesId "Indoor_Twall_avg" ;
-            ref:onTable "RBC_Co2_Heat" ;
-            ref:storedAt "data.db" ],
-        [ a ref:TimeseriesReference ;
-            ref:hasTimeseriesId "Indoor_Twall_avg" ;
-            ref:onTable "MPC_Cost_Heat" ;
+            ref:onTable "dataset_RBC_Cost_Cool" ;
             ref:storedAt "data.db" ],
         [ a ref:TimeseriesReference ;
             ref:hasTimeseriesId "Indoor_Twall_avg" ;
@@ -364,15 +412,31 @@ brick:Solar_Irradiance_Sensor a owl:Class,
             ref:storedAt "data.db" ],
         [ a ref:TimeseriesReference ;
             ref:hasTimeseriesId "Indoor_Twall_avg" ;
-            ref:onTable "MPC_Co2_Heat" ;
+            ref:onTable "dataset_MPC_Cost_Heat" ;
             ref:storedAt "data.db" ],
         [ a ref:TimeseriesReference ;
             ref:hasTimeseriesId "Indoor_Twall_avg" ;
-            ref:onTable "RBC_Cost_Cool" ;
+            ref:onTable "dataset_MPC_Cost_Cool" ;
             ref:storedAt "data.db" ],
         [ a ref:TimeseriesReference ;
             ref:hasTimeseriesId "Indoor_Twall_avg" ;
-            ref:onTable "MPC_Cost_Cool" ;
+            ref:onTable "dataset_RBC_Co2_Cool" ;
+            ref:storedAt "data.db" ],
+        [ a ref:TimeseriesReference ;
+            ref:hasTimeseriesId "Indoor_Twall_avg" ;
+            ref:onTable "dataset_MPC_Co2_Heat" ;
+            ref:storedAt "data.db" ],
+        [ a ref:TimeseriesReference ;
+            ref:hasTimeseriesId "Indoor_Twall_avg" ;
+            ref:onTable "Ref_Cool" ;
+            ref:storedAt "data.db" ],
+        [ a ref:TimeseriesReference ;
+            ref:hasTimeseriesId "Indoor_Twall_avg" ;
+            ref:onTable "dataset_MPC_Co2_Cool" ;
+            ref:storedAt "data.db" ],
+        [ a ref:TimeseriesReference ;
+            ref:hasTimeseriesId "Indoor_Twall_avg" ;
+            ref:onTable "dataset_RBC_Co2_Heat" ;
             ref:storedAt "data.db" ],
         [ ref:hasTimeseriesId "Indoor_Twall_avg" ] .
 
@@ -386,43 +450,51 @@ brick:Solar_Irradiance_Sensor a owl:Class,
     brick:hasUnit unit:W-PER-M2 ;
     ref:hasExternalReference [ a ref:TimeseriesReference ;
             ref:hasTimeseriesId "Weather_Irr" ;
-            ref:onTable "MPC_Cost_Heat" ;
+            ref:onTable "dataset_MPC_Co2_Cool" ;
             ref:storedAt "data.db" ],
         [ a ref:TimeseriesReference ;
             ref:hasTimeseriesId "Weather_Irr" ;
-            ref:onTable "Ref_Heat" ;
+            ref:onTable "dataset_RBC_Cost_Heat" ;
             ref:storedAt "data.db" ],
         [ a ref:TimeseriesReference ;
             ref:hasTimeseriesId "Weather_Irr" ;
-            ref:onTable "RBC_Cost_Cool" ;
+            ref:onTable "dataset_MPC_Co2_Heat" ;
             ref:storedAt "data.db" ],
         [ a ref:TimeseriesReference ;
             ref:hasTimeseriesId "Weather_Irr" ;
-            ref:onTable "RBC_Co2_Cool" ;
-            ref:storedAt "data.db" ],
-        [ a ref:TimeseriesReference ;
-            ref:hasTimeseriesId "Weather_Irr" ;
-            ref:onTable "MPC_Co2_Heat" ;
-            ref:storedAt "data.db" ],
-        [ a ref:TimeseriesReference ;
-            ref:hasTimeseriesId "Weather_Irr" ;
-            ref:onTable "MPC_Cost_Cool" ;
-            ref:storedAt "data.db" ],
-        [ a ref:TimeseriesReference ;
-            ref:hasTimeseriesId "Weather_Irr" ;
-            ref:onTable "RBC_Co2_Heat" ;
-            ref:storedAt "data.db" ],
-        [ a ref:TimeseriesReference ;
-            ref:hasTimeseriesId "Weather_Irr" ;
-            ref:onTable "RBC_Cost_Heat" ;
-            ref:storedAt "data.db" ],
-        [ a ref:TimeseriesReference ;
-            ref:hasTimeseriesId "Weather_Irr" ;
-            ref:onTable "MPC_Co2_Cool" ;
+            ref:onTable "dataset_Ref_Cool" ;
             ref:storedAt "data.db" ],
         [ a ref:TimeseriesReference ;
             ref:hasTimeseriesId "Weather_Irr" ;
             ref:onTable "Ref_Cool" ;
+            ref:storedAt "data.db" ],
+        [ a ref:TimeseriesReference ;
+            ref:hasTimeseriesId "Weather_Irr" ;
+            ref:onTable "dataset_MPC_Cost_Cool" ;
+            ref:storedAt "data.db" ],
+        [ a ref:TimeseriesReference ;
+            ref:hasTimeseriesId "Weather_Irr" ;
+            ref:onTable "dataset_Ref_Heat" ;
+            ref:storedAt "data.db" ],
+        [ a ref:TimeseriesReference ;
+            ref:hasTimeseriesId "Weather_Irr" ;
+            ref:onTable "dataset_RBC_Co2_Cool" ;
+            ref:storedAt "data.db" ],
+        [ a ref:TimeseriesReference ;
+            ref:hasTimeseriesId "Weather_Irr" ;
+            ref:onTable "dataset_MPC_Cost_Heat" ;
+            ref:storedAt "data.db" ],
+        [ a ref:TimeseriesReference ;
+            ref:hasTimeseriesId "Weather_Irr" ;
+            ref:onTable "dataset_RBC_Cost_Cool" ;
+            ref:storedAt "data.db" ],
+        [ a ref:TimeseriesReference ;
+            ref:hasTimeseriesId "Weather_Irr" ;
+            ref:onTable "dataset_RBC_Co2_Heat" ;
+            ref:storedAt "data.db" ],
+        [ a ref:TimeseriesReference ;
+            ref:hasTimeseriesId "Weather_Irr" ;
+            ref:onTable "Ref_Heat" ;
             ref:storedAt "data.db" ],
         [ ref:hasTimeseriesId "Weather_Irr" ] .
 
@@ -430,7 +502,23 @@ brick:Solar_Irradiance_Sensor a owl:Class,
     brick:hasUnit unit:PERCENT ;
     ref:hasExternalReference [ a ref:TimeseriesReference ;
             ref:hasTimeseriesId "Weather_RH" ;
-            ref:onTable "RBC_Co2_Heat" ;
+            ref:onTable "Ref_Cool" ;
+            ref:storedAt "data.db" ],
+        [ a ref:TimeseriesReference ;
+            ref:hasTimeseriesId "Weather_RH" ;
+            ref:onTable "dataset_Ref_Heat" ;
+            ref:storedAt "data.db" ],
+        [ a ref:TimeseriesReference ;
+            ref:hasTimeseriesId "Weather_RH" ;
+            ref:onTable "dataset_RBC_Cost_Heat" ;
+            ref:storedAt "data.db" ],
+        [ a ref:TimeseriesReference ;
+            ref:hasTimeseriesId "Weather_RH" ;
+            ref:onTable "dataset_MPC_Cost_Cool" ;
+            ref:storedAt "data.db" ],
+        [ a ref:TimeseriesReference ;
+            ref:hasTimeseriesId "Weather_RH" ;
+            ref:onTable "dataset_RBC_Co2_Heat" ;
             ref:storedAt "data.db" ],
         [ a ref:TimeseriesReference ;
             ref:hasTimeseriesId "Weather_RH" ;
@@ -438,35 +526,27 @@ brick:Solar_Irradiance_Sensor a owl:Class,
             ref:storedAt "data.db" ],
         [ a ref:TimeseriesReference ;
             ref:hasTimeseriesId "Weather_RH" ;
-            ref:onTable "MPC_Co2_Heat" ;
+            ref:onTable "dataset_MPC_Cost_Heat" ;
             ref:storedAt "data.db" ],
         [ a ref:TimeseriesReference ;
             ref:hasTimeseriesId "Weather_RH" ;
-            ref:onTable "MPC_Cost_Cool" ;
+            ref:onTable "dataset_RBC_Cost_Cool" ;
             ref:storedAt "data.db" ],
         [ a ref:TimeseriesReference ;
             ref:hasTimeseriesId "Weather_RH" ;
-            ref:onTable "MPC_Cost_Heat" ;
+            ref:onTable "dataset_Ref_Cool" ;
             ref:storedAt "data.db" ],
         [ a ref:TimeseriesReference ;
             ref:hasTimeseriesId "Weather_RH" ;
-            ref:onTable "RBC_Cost_Heat" ;
+            ref:onTable "dataset_RBC_Co2_Cool" ;
             ref:storedAt "data.db" ],
         [ a ref:TimeseriesReference ;
             ref:hasTimeseriesId "Weather_RH" ;
-            ref:onTable "RBC_Co2_Cool" ;
+            ref:onTable "dataset_MPC_Co2_Cool" ;
             ref:storedAt "data.db" ],
         [ a ref:TimeseriesReference ;
             ref:hasTimeseriesId "Weather_RH" ;
-            ref:onTable "RBC_Cost_Cool" ;
-            ref:storedAt "data.db" ],
-        [ a ref:TimeseriesReference ;
-            ref:hasTimeseriesId "Weather_RH" ;
-            ref:onTable "MPC_Co2_Cool" ;
-            ref:storedAt "data.db" ],
-        [ a ref:TimeseriesReference ;
-            ref:hasTimeseriesId "Weather_RH" ;
-            ref:onTable "Ref_Cool" ;
+            ref:onTable "dataset_MPC_Co2_Heat" ;
             ref:storedAt "data.db" ],
         [ ref:hasTimeseriesId "Weather_RH" ] .
 
@@ -474,23 +554,39 @@ brick:Solar_Irradiance_Sensor a owl:Class,
     brick:hasUnit unit:DEG_C ;
     ref:hasExternalReference [ a ref:TimeseriesReference ;
             ref:hasTimeseriesId "Weather_Tamb" ;
-            ref:onTable "RBC_Co2_Heat" ;
+            ref:onTable "dataset_MPC_Co2_Heat" ;
             ref:storedAt "data.db" ],
         [ a ref:TimeseriesReference ;
             ref:hasTimeseriesId "Weather_Tamb" ;
-            ref:onTable "RBC_Cost_Cool" ;
+            ref:onTable "dataset_RBC_Co2_Heat" ;
             ref:storedAt "data.db" ],
         [ a ref:TimeseriesReference ;
             ref:hasTimeseriesId "Weather_Tamb" ;
-            ref:onTable "MPC_Cost_Cool" ;
+            ref:onTable "dataset_Ref_Heat" ;
             ref:storedAt "data.db" ],
         [ a ref:TimeseriesReference ;
             ref:hasTimeseriesId "Weather_Tamb" ;
-            ref:onTable "MPC_Co2_Cool" ;
+            ref:onTable "dataset_MPC_Co2_Cool" ;
             ref:storedAt "data.db" ],
         [ a ref:TimeseriesReference ;
             ref:hasTimeseriesId "Weather_Tamb" ;
-            ref:onTable "Ref_Cool" ;
+            ref:onTable "dataset_MPC_Cost_Cool" ;
+            ref:storedAt "data.db" ],
+        [ a ref:TimeseriesReference ;
+            ref:hasTimeseriesId "Weather_Tamb" ;
+            ref:onTable "dataset_RBC_Co2_Cool" ;
+            ref:storedAt "data.db" ],
+        [ a ref:TimeseriesReference ;
+            ref:hasTimeseriesId "Weather_Tamb" ;
+            ref:onTable "dataset_RBC_Cost_Cool" ;
+            ref:storedAt "data.db" ],
+        [ a ref:TimeseriesReference ;
+            ref:hasTimeseriesId "Weather_Tamb" ;
+            ref:onTable "dataset_RBC_Cost_Heat" ;
+            ref:storedAt "data.db" ],
+        [ a ref:TimeseriesReference ;
+            ref:hasTimeseriesId "Weather_Tamb" ;
+            ref:onTable "dataset_Ref_Cool" ;
             ref:storedAt "data.db" ],
         [ a ref:TimeseriesReference ;
             ref:hasTimeseriesId "Weather_Tamb" ;
@@ -498,19 +594,11 @@ brick:Solar_Irradiance_Sensor a owl:Class,
             ref:storedAt "data.db" ],
         [ a ref:TimeseriesReference ;
             ref:hasTimeseriesId "Weather_Tamb" ;
-            ref:onTable "RBC_Co2_Cool" ;
+            ref:onTable "Ref_Cool" ;
             ref:storedAt "data.db" ],
         [ a ref:TimeseriesReference ;
             ref:hasTimeseriesId "Weather_Tamb" ;
-            ref:onTable "MPC_Cost_Heat" ;
-            ref:storedAt "data.db" ],
-        [ a ref:TimeseriesReference ;
-            ref:hasTimeseriesId "Weather_Tamb" ;
-            ref:onTable "MPC_Co2_Heat" ;
-            ref:storedAt "data.db" ],
-        [ a ref:TimeseriesReference ;
-            ref:hasTimeseriesId "Weather_Tamb" ;
-            ref:onTable "RBC_Cost_Heat" ;
+            ref:onTable "dataset_MPC_Cost_Heat" ;
             ref:storedAt "data.db" ],
         [ ref:hasTimeseriesId "Weather_Tamb" ] .
 
@@ -518,7 +606,15 @@ brick:Solar_Irradiance_Sensor a owl:Class,
     brick:hasUnit unit:M-PER-SEC ;
     ref:hasExternalReference [ a ref:TimeseriesReference ;
             ref:hasTimeseriesId "Weather_WindVel" ;
-            ref:onTable "MPC_Co2_Cool" ;
+            ref:onTable "Ref_Cool" ;
+            ref:storedAt "data.db" ],
+        [ a ref:TimeseriesReference ;
+            ref:hasTimeseriesId "Weather_WindVel" ;
+            ref:onTable "dataset_MPC_Co2_Cool" ;
+            ref:storedAt "data.db" ],
+        [ a ref:TimeseriesReference ;
+            ref:hasTimeseriesId "Weather_WindVel" ;
+            ref:onTable "dataset_Ref_Heat" ;
             ref:storedAt "data.db" ],
         [ a ref:TimeseriesReference ;
             ref:hasTimeseriesId "Weather_WindVel" ;
@@ -526,35 +622,35 @@ brick:Solar_Irradiance_Sensor a owl:Class,
             ref:storedAt "data.db" ],
         [ a ref:TimeseriesReference ;
             ref:hasTimeseriesId "Weather_WindVel" ;
-            ref:onTable "MPC_Co2_Heat" ;
+            ref:onTable "dataset_RBC_Co2_Cool" ;
             ref:storedAt "data.db" ],
         [ a ref:TimeseriesReference ;
             ref:hasTimeseriesId "Weather_WindVel" ;
-            ref:onTable "MPC_Cost_Heat" ;
+            ref:onTable "dataset_MPC_Cost_Heat" ;
             ref:storedAt "data.db" ],
         [ a ref:TimeseriesReference ;
             ref:hasTimeseriesId "Weather_WindVel" ;
-            ref:onTable "RBC_Co2_Heat" ;
+            ref:onTable "dataset_MPC_Co2_Heat" ;
             ref:storedAt "data.db" ],
         [ a ref:TimeseriesReference ;
             ref:hasTimeseriesId "Weather_WindVel" ;
-            ref:onTable "Ref_Cool" ;
+            ref:onTable "dataset_RBC_Cost_Heat" ;
             ref:storedAt "data.db" ],
         [ a ref:TimeseriesReference ;
             ref:hasTimeseriesId "Weather_WindVel" ;
-            ref:onTable "RBC_Cost_Cool" ;
+            ref:onTable "dataset_MPC_Cost_Cool" ;
             ref:storedAt "data.db" ],
         [ a ref:TimeseriesReference ;
             ref:hasTimeseriesId "Weather_WindVel" ;
-            ref:onTable "RBC_Co2_Cool" ;
+            ref:onTable "dataset_RBC_Co2_Heat" ;
             ref:storedAt "data.db" ],
         [ a ref:TimeseriesReference ;
             ref:hasTimeseriesId "Weather_WindVel" ;
-            ref:onTable "RBC_Cost_Heat" ;
+            ref:onTable "dataset_Ref_Cool" ;
             ref:storedAt "data.db" ],
         [ a ref:TimeseriesReference ;
             ref:hasTimeseriesId "Weather_WindVel" ;
-            ref:onTable "MPC_Cost_Cool" ;
+            ref:onTable "dataset_RBC_Cost_Cool" ;
             ref:storedAt "data.db" ],
         [ ref:hasTimeseriesId "Weather_WindVel" ] .
 
