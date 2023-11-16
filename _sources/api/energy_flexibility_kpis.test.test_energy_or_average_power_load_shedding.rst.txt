@@ -1,0 +1,7 @@
+energy\_flexibility\_kpis.test.test\_energy\_or\_average\_power\_load\_shedding module
+======================================================================================
+
+.. automodule:: energy_flexibility_kpis.test.test_energy_or_average_power_load_shedding
+   :members:
+   :undoc-members:
+   :show-inheritance:

@@ -1,0 +1,7 @@
+energy\_flexibility\_kpis.test.test\_master module
+==================================================
+
+.. automodule:: energy_flexibility_kpis.test.test_master
+   :members:
+   :undoc-members:
+   :show-inheritance:
