@@ -45,8 +45,8 @@ class DeviationDecreaseFromTheFlatDemandProfile(KPI):
         )
         
         value = 1.0 - (
-            vs.flexible_electricity_consumption_profile.value[vs.evaluation_mask]
-            /vs.baseline_electricity_consumption_profile.value[vs.evaluation_mask]
+            np.var(vs.flexible_electricity_consumption_profile.value[vs.evaluation_mask])
+            /np.var(vs.baseline_electricity_consumption_profile.value[vs.evaluation_mask])
         )**0.5
 
         return value
@@ -123,6 +123,8 @@ class Ramp(KPI):
         )
         
         value = vs.generic_electric_power_profile.value[vs.evaluation_mask] - np.roll(vs.generic_electric_power_profile.value[vs.evaluation_mask], 1)
+        if value.dtype != float:
+            value = value.astype(float)
         value[0] = np.nan
 
         return value
