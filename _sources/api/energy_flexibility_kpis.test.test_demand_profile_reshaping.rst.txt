@@ -1,0 +1,7 @@
+energy\_flexibility\_kpis.test.test\_demand\_profile\_reshaping module
+======================================================================
+
+.. automodule:: energy_flexibility_kpis.test.test_demand_profile_reshaping
+   :members:
+   :undoc-members:
+   :show-inheritance:

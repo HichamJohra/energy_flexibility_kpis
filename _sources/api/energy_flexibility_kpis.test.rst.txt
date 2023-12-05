@@ -12,5 +12,6 @@ Submodules
 .. toctree::
    :maxdepth: 4
 
+   energy_flexibility_kpis.test.test_demand_profile_reshaping
    energy_flexibility_kpis.test.test_energy_or_average_power_load_shedding
    energy_flexibility_kpis.test.test_master
