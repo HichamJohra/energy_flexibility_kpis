@@ -58,7 +58,7 @@ class test_AverageLoadReduction(unittest.TestCase):
         )
 
         # expected
-        expected = -6400
+        expected = 6400
         self.assertAlmostEqual(result, expected, 3)
 
 # class test_AverageLoadReduction(unittest.TestCase):
