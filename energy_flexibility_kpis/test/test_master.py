@@ -4,6 +4,7 @@ import inspect
 import unittest
 import io
 import textwrap
+import os
 
 def get_classes_from_module(module):
     """Given a module, returns a list of all classes defined in that module."""
@@ -56,19 +57,26 @@ def run_unittests_for_module(module_name, class_name):
     runner = unittest.TextTestRunner(stream=stream)
     result = runner.run(suite)
 
-    # Get the captured output
-    output = stream.getvalue()
+    # # Get the captured output
+    # output = stream.getvalue()
 
-    # Indent each line of the output
-    indented_output = textwrap.indent(output, '    ')
+    # # Indent each line of the output
+    # indented_output = textwrap.indent(output, '    ')
 
-    # Return the captured output
-    return indented_output
+    # # Return the captured output
+    # return indented_output
+    # Check if the tests passed or failed
+
+    if result.wasSuccessful():
+        return "    OKOKOK"
+    else:
+        return "    FAILFAIL"
 
 if __name__ == "__main__":
     source_dir = get_submodules_and_classes("energy_flexibility_kpis.kpi.energy_flexibility")
     test_dir = get_submodules_and_classes("energy_flexibility_kpis.test")
-    
+
+    # Print the results to the console    
     for module, classes in source_dir.items():
         print(f"Module: {module}")
         for cls in classes:
@@ -79,3 +87,21 @@ if __name__ == "__main__":
                 print(test_output)
             else:
                 print("    NA")
+
+
+    # Get the directory of the current file
+    current_dir = os.path.dirname(os.path.abspath(__file__))
+    # Specify the output file path in the same folder as the current file
+    output_file = os.path.join(current_dir, "test_output.txt")
+    # Write the results to a file
+    with open(output_file, "w") as file:
+        for module, classes in source_dir.items():
+            file.write(f"Module: {module}\n")
+            for cls in classes:
+                file.write(f"  Class: {cls}\n")
+                test_module_name = f"test_{module}"
+                if test_module_name in test_dir and f"test_{cls}" in test_dir[test_module_name]:
+                    test_output = run_unittests_for_module(test_module_name, cls)
+                    file.write(test_output + "\n")
+                else:
+                    file.write("    NA\n")
