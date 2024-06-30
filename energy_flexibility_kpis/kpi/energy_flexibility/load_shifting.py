@@ -388,7 +388,7 @@ class AverageDemandIncreaseIntensity(KPI):
         demand_increase = (
              vs.flexible_electric_power_profile.value[mask] - vs.baseline_electric_power_profile.value[mask] 
         ).mean()
-        value = demand_increase / 48 #to be updated with the floor_area (check with Kingsley)
+        value = demand_increase #to be updated with the floor_area (check with Kingsley)
         return value
     
 
