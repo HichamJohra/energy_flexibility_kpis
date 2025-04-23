@@ -88,7 +88,7 @@ class DefaultPrimitiveTypeMetaClass(type):
         return PrimitiveType(
             name='temperature',
             definition='The temperature of an entity (either an instantaneous value or average value).',
-            unit=Unit(numerator=[BaseUnit.CELCIUS])
+            unit=Unit(numerator=[BaseUnit.CELSIUS])
         )
     
     @property

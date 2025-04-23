@@ -499,7 +499,7 @@ class AverageDemandDecrease(KPI):
 
     NAME = 'average demand decrease'
     DEFINITION = __doc__
-    UNIT = Unit(numerator=[BaseUnit.KW], denominator=[BaseUnit.SQUARE_METER])
+    UNIT = Unit(numerator=[BaseUnit.KW])
     CATEGORY = KPICategory.EF_ENERGY_OR_AVERAGE_POWER_LOAD_SHEDDING
     RELEVANCE = Relevance.HIGH
     STAKEHOLDERS = [Stakeholder.DISTRIBUTION_SYSTEM_OPERATOR, Stakeholder.TRANSMISSION_SYSTEM_OPERATOR]
@@ -547,7 +547,7 @@ class AverageDemandDecreaseIntensity(KPI):
 
     NAME = 'average demand decrease intensity'
     DEFINITION = __doc__
-    UNIT = Unit(numerator=[BaseUnit.KW])
+    UNIT = Unit(numerator=[BaseUnit.KW], denominator=[BaseUnit.SQUARE_METER])
     CATEGORY = KPICategory.EF_ENERGY_OR_AVERAGE_POWER_LOAD_SHEDDING
     RELEVANCE = Relevance.HIGH
     STAKEHOLDERS = [Stakeholder.DISTRIBUTION_SYSTEM_OPERATOR, Stakeholder.TRANSMISSION_SYSTEM_OPERATOR]
@@ -570,7 +570,7 @@ class AverageDemandDecreaseIntensity(KPI):
         generic_signal_start_timestamp: Union[int, datetime.datetime, str],
         generic_signal_end_timestamp: Union[int, datetime.datetime, str],
         timestamps: Union[List[int], List[datetime.datetime], List[str]] = None,
-       # floor_area: Union[int,str] = None,
+        floor_area: float = None,
     ) -> float:
         _, vs = super().calculate(
             baseline_electric_power_profile=baseline_electric_power_profile,
@@ -578,7 +578,7 @@ class AverageDemandDecreaseIntensity(KPI):
             generic_signal_start_timestamp=generic_signal_start_timestamp,
             generic_signal_end_timestamp=generic_signal_end_timestamp,
             timestamps=timestamps,
-           # floor_area=floor_area,
+            floor_area=floor_area,
         )
         
         mask = vs.evaluation_mask\
@@ -588,7 +588,7 @@ class AverageDemandDecreaseIntensity(KPI):
             vs.baseline_electric_power_profile.value[mask] 
                 - vs.flexible_electric_power_profile.value[mask]
         ).mean()
-        value = demand_decrease  #to be updated with the floor_area (check with Kingsley)
+        value = demand_decrease/floor_area
         return value
     
 

@@ -8,16 +8,18 @@ class BaseUnit(Enum):
     KWH = ('kWh', 'kilowatt-hour')
     KW = ('kW', 'kilowatt')
     DOLLAR = ('%', 'dollar')
+    DAY = ('h', 'day')
     HOUR = ('h', 'hour')
     MINUTE = ('min', 'minute')
     SECOND = ('s', 'second')
     MILLISECOND = ('ms', 'millisecond')
     TON = ('ton', 'ton')
-    CELCIUS = ('C', 'celcius')
+    CELSIUS = ('C', 'celsius')
     KELVIN = ('K', 'kelvin')
     SQUARE_METER = ('m^2', 'square-meter')
     KG_OF_CO2 = ('kgCO2', 'kilograms-of-CO2')
     PPM = ('ppm', 'parts-per-million')
+    ZONE = ('zone', 'zone')
 
 @unique
 class ValueType(Enum):

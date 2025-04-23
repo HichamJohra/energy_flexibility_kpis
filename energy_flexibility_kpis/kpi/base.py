@@ -102,6 +102,12 @@ class KPI(Definition):
         high_price_end_timestamp: Union[int, datetime.datetime, str] = None,
         high_emission_start_timestamp: Union[int, datetime.datetime, str] = None,
         high_emission_end_timestamp: Union[int, datetime.datetime, str] = None,
+        zone_temperature_profile: List[float] = None,  # List of temperature profiles for each zone
+        cooling_setpoints: List[float] = None,  # List of cooling setpoints for each zone
+        heating_setpoints: List[float] = None,  # List of heating setpoints for each zone
+        floor_area: Union[int,str] = None,
+        num_zones: Union[int,str] = None,
+        num_days: Union[int,str] = None,
     ) -> Tuple[Union[float, List[float]], VariableSet]:
         vs = VariableSet(
             availability=availability,
@@ -144,6 +150,12 @@ class KPI(Definition):
             high_price_end_timestamp=high_price_end_timestamp,
             high_emission_start_timestamp=high_emission_start_timestamp,
             high_emission_end_timestamp=high_emission_end_timestamp,
+            zone_temperature_profile=zone_temperature_profile, 
+            cooling_setpoints=cooling_setpoints, 
+            heating_setpoints=heating_setpoints,
+            floor_area=floor_area,  
+            num_zones=num_zones, 
+            num_days=num_days, 
         )
         
         return np.nan, vs

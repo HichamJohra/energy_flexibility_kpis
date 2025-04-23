@@ -157,6 +157,33 @@ class DefaultVariableMetaClass(type):
         )
 
     @property
+    def zone_temperature_profile(cls) -> Variable:
+        return Variable(
+            name='zone_temperature_profile',
+            definition='A time series data points of zone_temperature_profile.',
+            primitive_type=DefaultPrimitiveType.temperature,
+            value_type=ValueType.SERIAL,
+        )
+    
+    @property
+    def cooling_setpoints(cls) -> Variable:
+        return Variable(
+            name='cooling_setpoints',
+            definition='A time series data points of cooling_setpoints.',
+            primitive_type=DefaultPrimitiveType.temperature,
+            value_type=ValueType.SERIAL,
+        )
+    
+    @property
+    def heating_setpoints(cls) -> Variable:
+        return Variable(
+            name='heating_setpoints',
+            definition='A time series data points of heating_setpoints.',
+            primitive_type=DefaultPrimitiveType.temperature,
+            value_type=ValueType.SERIAL,
+        )
+    
+    @property
     def baseline_electric_power_profile(cls) -> Variable:
         return Variable(
             name='baseline electric power profile',
@@ -534,6 +561,24 @@ class DefaultVariableMetaClass(type):
             value_type=ValueType.SINGLE,
         )
     
+    @property
+    def num_zones(cls) -> Variable:
+        return Variable(
+            name='num_zones',
+            definition='num_zones.',
+            primitive_type=DefaultPrimitiveType.unspecified,
+            value_type=ValueType.SINGLE,
+        )
+    
+    @property
+    def num_days(cls) -> Variable:
+        return Variable(
+            name='num_days',
+            definition='num_days.',
+            primitive_type=DefaultPrimitiveType.unspecified,
+            value_type=ValueType.SINGLE,
+        )
+    
 class DefaultVariable(metaclass=DefaultVariableMetaClass):
     pass
 
@@ -581,6 +626,11 @@ class VariableSet(Definition):
             high_emission_start_timestamp: Union[int, datetime.datetime, str] = None,
             high_emission_end_timestamp: Union[int, datetime.datetime, str] = None,
             floor_area: Union[int,str] = None,
+            num_zones: Union[int,str] = None,
+            num_days: Union[int,str] = None,
+            zone_temperature_profile: List[float] = None,
+            cooling_setpoints: List[float] = None,
+            heating_setpoints: List[float] = None,
         ) -> None:
 
         # variables
@@ -625,6 +675,11 @@ class VariableSet(Definition):
         self.high_emission_start_timestamp = self.__set_variable(DefaultVariable.high_emission_start_timestamp, high_emission_start_timestamp)
         self.high_emission_end_timestamp = self.__set_variable(DefaultVariable.high_emission_end_timestamp, high_emission_end_timestamp)
         self.floor_area = self.__set_variable(DefaultVariable.floor_area, floor_area)
+        self.num_zones = self.__set_variable(DefaultVariable.num_zones, num_zones)
+        self.num_days = self.__set_variable(DefaultVariable.num_days, num_days)
+        self.zone_temperature_profile = self.__set_variable(DefaultVariable.zone_temperature_profile, zone_temperature_profile)
+        self.cooling_setpoints = self.__set_variable(DefaultVariable.cooling_setpoints, cooling_setpoints)
+        self.heating_setpoints = self.__set_variable(DefaultVariable.heating_setpoints, heating_setpoints)
         self.validate_serial_variables()
     
     @property

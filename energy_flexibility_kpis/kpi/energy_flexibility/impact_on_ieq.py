@@ -7,6 +7,8 @@ from energy_flexibility_kpis.enumerations import BaseUnit, Complexity, DOEFlexib
 from energy_flexibility_kpis.enumerations import Stakeholder, TemporalEvaluationWindow,TemporalResolution, SpatialResolution
 from energy_flexibility_kpis.unit import Unit
 
+import numpy as np
+
 class CumulativeAverageThermalDiscomfort(KPI):
     """Defines the cumulative deviation of zone temperatures from upper and 
     lower comfort limits that are predefined within the test case FMU for 
@@ -14,7 +16,7 @@ class CumulativeAverageThermalDiscomfort(KPI):
 
     NAME = 'cumulative average thermal discomfort'
     DEFINITION = __doc__
-    UNIT = Unit(numerator=[BaseUnit.KELVIN, BaseUnit.HOUR])
+    UNIT = Unit(numerator=[BaseUnit.CELSIUS, BaseUnit.HOUR], denominator=[BaseUnit.ZONE, BaseUnit.DAY])
     CATEGORY = KPICategory.EF_IMPACT_ON_IEQ
     RELEVANCE = Relevance.MEDIUM
     STAKEHOLDERS = [Stakeholder.BUILDING_OWNER, Stakeholder.BUILDING_OPERATOR]
@@ -32,18 +34,51 @@ class CumulativeAverageThermalDiscomfort(KPI):
     @classmethod
     def calculate(
         cls,
+        zone_temperature_profile: List[List[float]],
+        cooling_setpoints: List[List[float]],
+        heating_setpoints: List[List[float]],
+        num_zones: int = None,
+        num_days: int = None,
         timestamps: Union[List[int], List[datetime.datetime], List[str]] = None,
         evaluation_start_timestamp: Union[int, datetime.datetime, str] = None,
-        evaluation_end_timestamp: Union[int, datetime.datetime, str] = None,
+        evaluation_end_timestamp: Union[int, datetime.datetime, str] = None
     ) -> float:
         _, vs = super().calculate(
-            timestamps=timestamps,
-            evaluation_start_timestamp=evaluation_start_timestamp,
-            evaluation_end_timestamp=evaluation_end_timestamp,
+            zone_temperature_profile=zone_temperature_profile, 
+            cooling_setpoints=cooling_setpoints, 
+            heating_setpoints=heating_setpoints, 
+            num_zones=num_zones, 
+            num_days=num_days, 
+            timestamps=timestamps, 
+            evaluation_start_timestamp=evaluation_start_timestamp, 
+            evaluation_end_timestamp=evaluation_end_timestamp
         )
         
-        raise NotImplementedError('Variables are unclear.')
-    
+        zone_temp = np.array(vs.zone_temperature_profile.value)  # shape (timesteps, zones)
+        cooling_setpoint = np.array(vs.cooling_setpoints.value)
+        heating_setpoint = np.array(vs.heating_setpoints.value)
+
+        mask = vs.evaluation_mask
+
+        # Filter for evaluation period
+        zone_temp = zone_temp[mask, :]  # (timesteps_selected, zones)
+        cooling_setpoint = cooling_setpoint[mask, :]
+        heating_setpoint = heating_setpoint[mask, :]
+
+        # Calculate discomfort 
+        temp_deviation_cooling = np.maximum(zone_temp - cooling_setpoint, 0)
+        temp_deviation_heating = np.maximum(heating_setpoint - zone_temp, 0)
+
+        discomfort_per_zone = np.sum(temp_deviation_cooling + temp_deviation_heating, axis=0)  # sum over time
+
+        total_discomfort = np.sum(discomfort_per_zone)  # sum over zones
+
+        # Normalize by zones and days 
+        value = total_discomfort / (num_zones * num_days)
+
+        return value
+
+                    
 class CumulativeAverageIndoorAirQualityDiscomfort(KPI):
     """Defines the extent that the CO2 concentration levels in zones exceed 
     bounds of the acceptable concentration level, which are predefined within 
