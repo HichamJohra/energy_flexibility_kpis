@@ -9,8 +9,8 @@ dataset:
     evaluation_period: # [REQUIRED]
         start_timestamp: '2022-01-01 00:00:00'
         end_timestamp: '2022-07-01 00:00:00'
-    signal:
-        variable_name: 'price' # [REQUIRED]
+    signal: # flexible_signal?
+        variable_name: variable_name # [REQUIRED] (e.g., price, emission as labeled in the dataset)
         high_threshold: # [OPTIONAL] Option 1
         start_timestamp: # [OPTIONAL] Option 2.1
         end_timestamp: # [OPTIONAL] Option 2.2
@@ -20,19 +20,55 @@ dataset:
     # where applicable. By the default, it is assumed that your custom dataset uses EFont's variable naming
     # convention. Any other variables in your dataset that cannot be mapped to the EFont variables will be
     # ignored and cannot be used for calculations at this time.
-    variable_name:
+     timestamps: timestamps
+     baseline_electric_power_profile: 
+        variable_name:
+            name: variable_name 
         building_id:
-            name: building_id
-        availability:
-            name: availability
-            filepath: filepath/to/variable_name # [OPTIONAL] Supply filepath to dataset where variable can be found if different from <dataset>:<filepath> value
-        timestamps: timestamps
-        baseline_electric_power_profile: baseline_electric_power_profile
-        baseline_electricity_consumption_profile: baseline_electricity_consumption_profile
-        baseline_natural_gas_consumption_profile: baseline_natural_gas_consumption_profile
-        flexible_electric_power_profile: flexible_electric_power_profile
-        flexible_electricity_consumption_profile: flexible_electricity_consumption_profile
-        flexible_natural_gas_consumption_profile: flexible_natural_gas_consumption_profile
-        load_profile_peak_timestamp: load_profile_peak_timestamp
-        load_profile_valley_timestamp: load_profile_valley_timestamp
+            name: building_id 
+        filepath: filepath/to/variable_name # [OPTIONAL] Supply filepath to dataset where variable can be found if different from <dataset>:<filepath> value
+     baseline_electricity_consumption_profile: 
+        variable_name:
+            name: variable_name 
+        building_id:
+            name: building_id 
+        filepath: filepath/to/variable_name # [OPTIONAL] Supply filepath to dataset where variable can be found if different from <dataset>:<filepath> value  
+     baseline_natural_gas_consumption_profile: 
+        variable_name:
+            name: variable_name 
+        building_id:
+            name: building_id 
+        filepath: filepath/to/variable_name # [OPTIONAL] Supply filepath to dataset where variable can be found if different from <dataset>:<filepath> value  flexible_electric_power_profile: flexible_electric_power_profile
+     flexible_electricity_consumption_profile: 
+        variable_name:
+            name: variable_name 
+        building_id:
+            name: building_id 
+        filepath: filepath/to/variable_name # [OPTIONAL] Supply filepath to dataset where variable can be found if different from <dataset>:<filepath> value 
+     flexible_natural_gas_consumption_profile: 
+        variable_name:
+            name: variable_name
+        building_id:
+            name: building_id 
+        filepath: filepath/to/variable_name # [OPTIONAL] Supply filepath to dataset where variable can be found if different from <dataset>:<filepath> value 
+     
+     
+     # does this refer to operation states? 
+     availability:
+        variable_name:
+            name: variable_name 
+        filepath: filepath/to/variable_name # [OPTIONAL] Supply filepath to dataset where variable can be found if different from <dataset>:<filepath> value 
+        
+     
+        # I think these are estimated variables, right?
+        #load_profile_peak_timestamp: load_profile_peak_timestamp   
+        #load_profile_valley_timestamp: load_profile_valley_timestamp 
+        
+        # variables to be added (some datasets have them and same KPIs require them):
+        # energy_generation (baseline and flexible?)
+        # indoor_temperature (baseline and flexible?)
+        # thermostat_setpoint (baseline and flexible?)
+        # storage_volume (capacity?)
+        # occupancy (baseline and flexible?)
+        # indoor_co2 (baseline and flexible?)
 ...
