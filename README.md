@@ -1,2 +1,2 @@
 # energy_flexibility_kpis
-Energy flexibility KPIs
+Python package used to calculate baseline-required and data-driven energy flexibility KPIs.

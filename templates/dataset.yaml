@@ -1,0 +1,38 @@
+# Use to map custom dataset to an EFont dataset
+---
+dataset:
+    filepath: /filepath/to/dataset # [REQUIRED] Absolute filepath to dataset.
+    resolution:
+        temporal_resolution: 60 # [REQUIRED] Time resolution of dataset in seconds.
+        spatial_resolution:
+            single_resource: true # [REQUIRED] Set to true if the dataset is for a single building or DER otherwise, false.
+    evaluation_period: # [REQUIRED]
+        start_timestamp: '2022-01-01 00:00:00'
+        end_timestamp: '2022-07-01 00:00:00'
+    signal:
+        variable_name: 'price' # [REQUIRED]
+        high_threshold: # [OPTIONAL] Option 1
+        start_timestamp: # [OPTIONAL] Option 2.1
+        end_timestamp: # [OPTIONAL] Option 2.2
+    
+    # [OPTIONAL] Use the <variable_name> to map custom dataset variable name to EFont variable name (<>).
+    # Replace the value for the following variable name keys with the custom variable names in your dataset
+    # where applicable. By the default, it is assumed that your custom dataset uses EFont's variable naming
+    # convention. Any other variables in your dataset that cannot be mapped to the EFont variables will be
+    # ignored and cannot be used for calculations at this time.
+    variable_name:
+        building_id:
+            name: building_id
+        availability:
+            name: availability
+            filepath: filepath/to/variable_name # [OPTIONAL] Supply filepath to dataset where variable can be found if different from <dataset>:<filepath> value
+        timestamps: timestamps
+        baseline_electric_power_profile: baseline_electric_power_profile
+        baseline_electricity_consumption_profile: baseline_electricity_consumption_profile
+        baseline_natural_gas_consumption_profile: baseline_natural_gas_consumption_profile
+        flexible_electric_power_profile: flexible_electric_power_profile
+        flexible_electricity_consumption_profile: flexible_electricity_consumption_profile
+        flexible_natural_gas_consumption_profile: flexible_natural_gas_consumption_profile
+        load_profile_peak_timestamp: load_profile_peak_timestamp
+        load_profile_valley_timestamp: load_profile_valley_timestamp
+...

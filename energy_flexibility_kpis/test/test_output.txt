@@ -1,0 +1,124 @@
+Module: demand_profile_reshaping
+  Class: DeviationDecreaseFromTheFlatDemandProfile
+    OKOKOK
+  Class: FlexibilityMap
+    NA
+  Class: Ramp
+    OKOKOK
+Module: demand_response_costs_or_savings
+  Class: CostOrEnergyDeviationRatio
+    OKOKOK
+  Class: CostSavings
+    NA
+  Class: FlexibilitySavingsIndex
+    OKOKOK
+  Class: RelativeOperationalCostOfADR
+    FAILFAIL
+Module: demand_response_emission_or_environmental_impact
+  Class: EnvironmentalSavings
+    NA
+  Class: RelativeCO2EmissionsReduction
+    NA
+Module: demand_response_energy_efficiency
+  Class: ConsistencyWithEnergySavings
+    NA
+  Class: DemandRecoveryRatio
+    NA
+  Class: EnergyConsumptionRatio
+    NA
+  Class: EnergySavingsOfDemandResponse
+    NA
+  Class: NetBuildingConsumptionChangePercentage
+    NA
+Module: energy_or_average_power_load_shedding
+  Class: AnnualAverageDailyLoadVariation
+    NA
+  Class: AverageDemandDecrease
+    NA
+  Class: AverageDemandDecreaseIndex
+    NA
+  Class: AverageDemandDecreaseIntensity
+    NA
+  Class: AverageDownwardPowerDeviation
+    NA
+  Class: AverageLoadReduction
+    FAILFAIL
+  Class: BuildingEnergyFlexibilityIndex
+    NA
+  Class: DimensionlessPeakShaving
+    NA
+  Class: EnergyDeviationForPeakShaving
+    OKOKOK
+  Class: FlexibilityDensity
+    NA
+  Class: FlexibleTimeDuration
+    NA
+  Class: LoadFactor
+    NA
+  Class: PriceResponsiveness
+    NA
+Module: energy_storage_capability
+  Class: AvailableFlexibleEnergy
+    NA
+  Class: CapacityOfADR
+    NA
+  Class: EnergyEfficiencyOfDemandResponseAction
+    NA
+Module: grid_interaction
+  Class: FlexibilityAggregationSynergyFactor
+    NA
+  Class: RelativeEnergyImportSavings
+    NA
+  Class: SelfConsumptionDuringDRAction
+    NA
+Module: impact_on_ieq
+  Class: AverageDisruptionDuration
+    NA
+  Class: CumulativeAverageIndoorAirQualityDiscomfort
+    NA
+  Class: CumulativeAverageThermalDiscomfort
+    NA
+  Class: ImpactedDwellingsPercentage
+    NA
+Module: load_shifting
+  Class: AverageDemandIncrease
+    NA
+  Class: AverageDemandIncreaseIndex
+    NA
+  Class: AverageDemandIncreaseIntensity
+    NA
+  Class: CyclePowerFlexibility
+    NA
+  Class: EnergyShiftFlexibilityFactor
+    NA
+  Class: FlexibilityClassificationFactor
+    NA
+  Class: FlexibilityFactor
+    NA
+  Class: FlexibilityIndex
+    NA
+  Class: FlexibilityIndicator
+    NA
+Module: peak_power_or_energy_rebound
+  Class: AveragePowerRebound
+    NA
+  Class: AveragePowerReboundIndex
+    NA
+  Class: PeakPowerRebound
+    NA
+  Class: ReboundEnergy
+    NA
+Module: peak_power_shedding
+  Class: HourlyRelativePowerDemandReduction
+    NA
+  Class: PeakPowerReduction
+    NA
+  Class: PowerPaybackRatio
+    NA
+  Class: RelativePeakPowerDemandReduction
+    NA
+Module: valley_filling
+  Class: AveragePowerDeviation
+    NA
+  Class: EnergyDeviationForValleyFilling
+    NA
